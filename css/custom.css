@@ -18,3 +18,6 @@ header {
   margin-left:auto;
   margin-right:auto;
 }
+.ui.positive.message {
+  height:100%;
+}

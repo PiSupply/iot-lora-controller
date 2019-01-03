@@ -21,8 +21,10 @@
 //Global variables
 
 $configLocation = "/opt/iotloragateway/local_conf.json";
+$globalConfigLocation = "/opt/iotloragateway/global_conf.json";
 
- ?>
+if (php_sapi_name() != "cli") {
+  echo ('
 <!doctype html>
 <html lang="en">
   <head>
@@ -41,6 +43,22 @@ $configLocation = "/opt/iotloragateway/local_conf.json";
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/semantic.min.js"></script>
+    <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 
   </head>
 
@@ -61,3 +79,8 @@ $configLocation = "/opt/iotloragateway/local_conf.json";
 
 <!-- Begin page content -->
 <div class="ui container">
+
+');
+}
+
+?>

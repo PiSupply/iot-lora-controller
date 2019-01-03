@@ -17,56 +17,73 @@
 *along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-
 include('inc/header.php');
-$randomId = $_POST['gatewayId'];
-$randomId = hash("md5",$randomId);
 
-$selectedRouter = $_POST['router'];
+$configHandler = fopen($configLocation, 'r');
+$currentConfig = fread($configHandler, filesize($configLocation));
+fclose($configHandler);
+$jsonDecoded = json_decode($currentConfig,true);
 
-$routerList = array(
-  'eu' => 'router.eu.thethings.network',
-  'jp' => 'router.asia-se.thethings.network',
-  'us-west' => 'router.us.thethings.network',
-  'brazil' => 'router.brazil.thethings.network',
-  'asia-se' => 'router.as.thethings.network',
-  'digital' => 'ttn.thingsconnected.net',
-  'switched' => 'ttn.opennetworkinfrastructure.org',
-  'meshed' => 'thethings.meshed.com.au'
-  );
+//TheGatewayID Is based off of the
 
-$configFile = (object)array(
-  'gateway_conf' =>
-                  (object)array(
-                    'gateway_ID' => $randomId,
-                    'description' => $_POST['description'],
-                    'contact_email' => $_POST['email'],
-                    'servers' => array((object)array(
-                      'serv_type' => "ttn",
-                      'server_address' => $routerList[$selectedRouter],
-                      'serv_gw_id' => $_POST['gatewayId'],
-                      'serv_gw_key' => $_POST['ttnKey'],
-                      'serv_enabled' => true
-                    )),
-                    "fake_gps" => true,
-                    'ref_latitude' => $_POST['latitude'],
-                    'ref_longitude' => $_POST['longitude'],
-                    'ref_altitude' => $_POST['altitude']
-                  )
-);
+if (php_sapi_name() != "cli") {
+//These values will be updated only if not run by the CLI
+//This gateway ID Is the TTN Name, only if the value is not null
+if($_POST['gatewayId']) {
+  $jsonDecoded['gateway_conf']['servers'][0]['serv_gw_id'] = $_POST['gatewayId'];
+}
+//TTN key
+if($_POST['ttnKey']) {
+$jsonDecoded['gateway_conf']['servers'][0]['serv_gw_key'] = $_POST['ttnKey'];
+}
+//Contact Email
+if($_POST['email']) {
+$jsonDecoded['gateway_conf']['contact_email'] = $_POST['email'];
+}
+}
 
-$jsonEncoded = json_encode($configFile, JSON_PRETTY_PRINT);
+$ttnApiUrl = "https://account.thethingsnetwork.org/api/v2/gateways/".$jsonDecoded['gateway_conf']['servers'][0]['serv_gw_id'];
+$ttnApiData = json_decode(file_get_contents($ttnApiUrl),true);
+$frequencyPlan = file_get_contents($ttnApiData['frequency_plan_url']);
+//We need to set the following
+//TTN Server Address
+$jsonDecoded['gateway_conf']['servers'][0]['server_address'] = explode(":",$ttnApiData['router']['address'])[0];
+//description
+$jsonDecoded['gateway_conf']['description'] = $ttnApiData['attributes']['description'];
+
+//currently GPS Is false and FakeGPS Is true
+$jsonDecoded['gateway_conf']['gps'] = false;
+$jsonDecoded['gateway_conf']['fake_gps'] = true;
+
+//Latitude
+$jsonDecoded['gateway_conf']['ref_latitude'] = $ttnApiData['location']['lat'];
+//Longitude
+$jsonDecoded['gateway_conf']['ref_longitude'] = $ttnApiData['location']['lng'];
+//Altitude
+$jsonDecoded['gateway_conf']['ref_altitude'] = $ttnApiData['altitude'];
+
+//Frequency Plan Updater
+
+$freqHandler = fopen($globalConfigLocation, 'w');
+fwrite($freqHandler, $frequencyPlan);
+fclose($freqHandler);
+
+
+$jsonEncoded = json_encode($jsonDecoded, JSON_PRETTY_PRINT);
 $configHandler = fopen($configLocation, 'w');
 fwrite($configHandler, $jsonEncoded);
 fclose($configHandler);
 
 
+if (php_sapi_name() != "cli") {
+echo('
+<div class="row align-items-center">
+   <div class="text-center">
+     <h1>IoT LoRa Gateway Configuration Tool</h1>
+     <h4>Configuration has been written, please reboot the packet forwarder from the commands tab.</h4>
+   </div>
+</div>
+'
+);
+}
  ?>
-
-
- <div class="row align-items-center">
-    <div class="text-center">
-      <h1>IoT LoRa Gateway Configuration Tool</h1>
-      <h4>Configuration has been written, please reboot the packet forwarder from the commands tab.</h4>
-    </div>
- </div>

@@ -112,7 +112,7 @@ if($gatewayConfigured == 0) {
       }
       ?>
 
-          <h4>Internet Connectivity <i class="globe icon"></i></h3>
+          <h3>Internet Connectivity <i class="globe icon"></i></h3>
             <?php
             //Change the text based on the status.
 
@@ -138,14 +138,14 @@ if($gatewayConfigured == 0) {
         echo("<div class=\"ui error message segment\">");
       }
        ?>
-          <h4>Packet Forwarder <i class="microchip icon"></i></h4>
+          <h3>Packet Forwarder <i class="microchip icon"></i></h3>
           The packet forwarder service is <?php if($packetForwarder==0){echo("not ");}?>running.
       </div>
     </div>
 
     <div class="column wide">
       <div class="ui info message segment">
-          <h4>Uptime <i class="calendar check icon"></i></h4>
+          <h3>Uptime <i class="calendar check icon"></i></h3>
           This gateway has been online for:<br/>
           <?php echo($uptime); ?>
       </div>
@@ -204,6 +204,17 @@ if($gatewayConfigured == 0) {
   </div>
 </div>
 <h4>Packet statistics are from The Things Network Console</h4>
+<br/>
+<h4>
+<a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=My%20@PiSupply%20IoT%20LoRa%20Gateway%20has%20recieved%20<?php echo $packetsRx;?>%20Packets%20on%20%23thethingsnetwork%20&hashtags=IoTLoraGateway,IoT,TTN,LoRaWAN&related=PiSupply,TheThingsNtwrk"
+  data-size="large"
+  >
+  <link rel="me"
+  href="https://twitter.com/pisupply"
+>
+Tweet</a>
+</h4>
 </div>
 </div>
 

@@ -48,10 +48,6 @@ $jsonServers = $jsonDecoded['servers'][0];
        <input type="email" id="email" name="email" class="form-control" required <?php if($jsonDecoded['contact_email']!=null) { echo "value='".$jsonDecoded['contact_email']."'"; }?>/>
        </div>
       <div class="field">
-       <label for="emailAddr"  >Description:</label> Short description of the Gateway.
-       <input type="text" id="description" name="description" class="form-control" required <?php if($jsonDecoded['description']!=null) { echo "value='".$jsonDecoded['description']."'"; }?>/>
-       </div>
-      <div class="field">
        <label for="emailAddr"  >Gateway ID:</label> This is the same as the Gateway ID from the TTN Console.
        <input type="text" id="gatewayId" name="gatewayId" class="form-control" required <?php if($jsonServers['serv_gw_id']!=null) { echo "value='".$jsonServers['serv_gw_id']."'"; }?>/>
        </div>
@@ -60,21 +56,10 @@ $jsonServers = $jsonDecoded['servers'][0];
        <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($jsonServers['serv_gw_key']!=null) { echo "value='".$jsonServers['serv_gw_key']."'"; }?>/>
        </div>
        <div class="field">
-        <label for="emailAddr"  >Location:</label> The location is retrieved from TTN and will use the address specified in the console when you click update.
-      </div>
-      <div class="field">
-       <label for="router"  >TTN Router:</label>
-       <select name="router" class="form-control">
-        <option value="eu">ttn-router-eu</option>
-        <option value="jp">ttn-router-jp</option>
-        <option value="us-west">ttn-router-us-west</option>
-        <option value="brazil">ttn-router-brazil</option>
-        <option value="asia-se">ttn-router-asia-se</option>
-        <option value="digital">digitalcatapult-uk-router</option>
-        <option value="meshed">meshed-router</option>
-        <option value="switch">switch-router</option>
-      </select>
-      </div>
+        <h3>Missing Fields?</h3>
+        <p>Location, TTN Region, Server and more are all got by your gateway from the TTN Console. Use the TTN Console to setup these settings.</p>
+          </div>
+
 
       <br/>
       <input type="submit" class="ui primary button" value="Update Configuration">
