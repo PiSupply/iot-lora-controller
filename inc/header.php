@@ -72,6 +72,7 @@ if (php_sapi_name() != "cli") {
         <a class="item menuButt" href="index.php"><strong>Gateway Status</strong></a>
         <a class="item menuButt" href="configureGateway.php"><strong>Change Configuration</strong></a>
         <a class="item menuButt" href="systemControls.php"><strong>System Controls</strong></a>
+        <a class="item menuButt" href="viewLog.php"><strong>Logfile</strong></a>
 </div>
 
     </header>
