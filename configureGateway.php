@@ -58,6 +58,7 @@ $jsonServers = $jsonDecoded['servers'][0];
        <div class="field">
         <h3>Missing Fields?</h3>
         <p>Location, TTN Region, Server and more are all got by your gateway from the TTN Console. Use the TTN Console to setup these settings.</p>
+        <p>Then reboot the packet forwarder from the controls page to update the settings</p>
           </div>
 
 

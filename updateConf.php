@@ -24,7 +24,13 @@ $currentConfig = fread($configHandler, filesize($configLocation));
 fclose($configHandler);
 $jsonDecoded = json_decode($currentConfig,true);
 
-//TheGatewayID Is based off of the
+
+//TheGatewayID Is based off of the mac and starts with PIS
+$macAddress = substr(trim(shell_exec("cat /proc/cpuinfo | grep ^Serial")), -10);
+$gatewayId = "504953".$macAddress;
+$jsonDecoded['gateway_conf']['gateway_ID'] = $gatewayId;
+
+
 
 if (php_sapi_name() != "cli") {
 //These values will be updated only if not run by the CLI
