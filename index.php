@@ -68,6 +68,8 @@ $ttnNocStatus = json_decode(file_get_contents('http://noc.thethingsnetwork.org:8
 $packetsRx = $ttnNocStatus["rx_ok"];
 $packetsTx = $ttnNocStatus["tx_in"];
 
+$cpuTemp = shell_exec("cat /sys/class/thermal/thermal_zone0/temp");
+$cpuTemp = $cpuTemp/1000;
 
 
 ?>
@@ -170,6 +172,19 @@ if($gatewayConfigured == 0) {
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="column">
+  <div class="ui info message">
+      <strong>CPU Temperature:</strong>
+      <div class="ui teal progress" id="progressBar" data-percent="<?php echo($cpuTemp); ?>">
+        <div class="bar"></div>
+
+        <div class="label"><?php echo($cpuTemp); ?> Degrees C</div>
+      </div>
+  </div>
+</div>
+</div>
 </div>
 <hr/>
 <br/>
@@ -216,8 +231,23 @@ if($gatewayConfigured == 0) {
 Tweet</a>
 </h4>
 </div>
+
+<br/><br/>
+
+
+
+<br/><br/>
+
 </div>
 
+
+
+
+
+</div>
+<script>
+$('#progressBar').progress();
+</script>
 <?php
 include('inc/footer.php');
 ?>
