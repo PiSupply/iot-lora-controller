@@ -67,7 +67,7 @@ if (php_sapi_name() != "cli") {
 
     <header>
       <!-- Fixed navbar -->
-      <div class="ui menu">
+      <div class="ui stackable menu">
         <div class="header item"><img id="logo" src="img/logo.png"/></div>
         <a class="item menuButt" href="index.php"><strong>Gateway Status</strong></a>
         <a class="item menuButt" href="configureGateway.php"><strong>Change Configuration</strong></a>
