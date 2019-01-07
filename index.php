@@ -65,8 +65,20 @@ if($jsonServers == NULL) {
 
 //Lets get the data from the NOC api
 $ttnNocStatus = json_decode(file_get_contents('http://noc.thethingsnetwork.org:8085/api/v2/gateways/'.trim($jsonServers['serv_gw_id'])),true);
+
+
+if($ttnNocStatus["rx_ok"]) {
 $packetsRx = $ttnNocStatus["rx_ok"];
-$packetsTx = $ttnNocStatus["tx_in"];
+}
+else {
+  $packetsRx = "0";
+}
+if($ttnNocStatus["tx_in"]) {
+  $packetsTx = $ttnNocStatus["tx_in"];
+}
+else {
+$packetsTx = " 0";
+}
 
 $cpuTemp = shell_exec("cat /sys/class/thermal/thermal_zone0/temp");
 $cpuTemp = $cpuTemp/1000;

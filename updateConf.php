@@ -53,13 +53,26 @@ $ttnApiData = json_decode(file_get_contents($ttnApiUrl),true);
 $frequencyPlan = file_get_contents($ttnApiData['frequency_plan_url']);
 //We need to set the following
 //TTN Server Address
-$jsonDecoded['gateway_conf']['servers'][0]['server_address'] = explode(":",$ttnApiData['router']['address'])[0];
+$serverAddress = explode(":",$ttnApiData['router']['address'])[0];
+
+if(strstr($serverAddress, "thethings.network")) {
+  $serverAddress = "router.".$serverAddress;
+
+}
+else {
+  $serverAddress = $serverAddress;
+}
+$jsonDecoded['gateway_conf']['servers'][0]['server_address'] = $serverAddress;
 //description
 $jsonDecoded['gateway_conf']['description'] = $ttnApiData['attributes']['description'];
 
 //currently GPS Is false and FakeGPS Is true
 $jsonDecoded['gateway_conf']['gps'] = false;
 $jsonDecoded['gateway_conf']['fake_gps'] = true;
+
+//Serv type and enabled
+$jsonDecoded['gateway_conf']['servers'][0]['serv_type'] = "ttn";
+$jsonDecoded['gateway_conf']['servers'][0]['serv_enabled'] = true;
 
 //Latitude
 $jsonDecoded['gateway_conf']['ref_latitude'] = $ttnApiData['location']['lat'];
