@@ -36,18 +36,9 @@ $packetForwarder = 0;
   }
 
 //Lets check for external internet connectivity by doing a http request to three servers
-$internetCheck1 = file_get_contents('https://httpbin.org/ip');
-$internetCheck2 = file_get_contents('https://status.thethings.network/');
-$internetCheck3 = file_get_contents('https://1.1.1.1');
-
+$internetCheck1 = file_get_contents('https://1.1.1.1');
 $internetStatus = 0;
 if($internetCheck1 == FALSE) {
-  $internetStatus++;
-}
-if($internetCheck2 == FALSE) {
-  $internetStatus++;
-}
-if($internetCheck3 == FALSE) {
   $internetStatus++;
 }
 //If the number is greater than 0 then either one of the sites is down, if all three are down there is likely an internet issue.
@@ -135,11 +126,8 @@ if($gatewayConfigured == 0) {
             if($internetStatus == 0) {
               echo("All good!");
             }
-            elseif($internetStatus == 3) {
-              echo("All 3 Sites we've tested against are producing no response indicating an internet outage.");
-            }
-            else {
-              echo("One or more of the 3 sites we've tested against are producing no response indicating a potential outage");
+            elseif($internetStatus == 1) {
+              echo("There might be an issue of this gateway connecting to the internet, please check and reload.");
             }
             ?>
       </div>
