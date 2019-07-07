@@ -158,14 +158,14 @@ if($gatewayConfigured == 0) {
   </div>
 <div class="ui divided grid stackable">
 
-  <div class="row">
+<!--  <div class="row">
       <div class="column wide">
     <div class="ui positive message">
         <strong>Gateway Public IP Address:</strong> <?php echo($gatewayIpAddress);?>
     </div>
   </div>
 </div>
-
+-->
 
   <div class="row">
     <div class="column">
