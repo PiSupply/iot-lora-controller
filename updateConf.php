@@ -54,8 +54,10 @@ $frequencyPlan = file_get_contents($ttnApiData['frequency_plan_url']);
 //We need to set the following
 //TTN Server Address
 $serverAddress = explode(":",$ttnApiData['router']['address'])[0];
+//
+if(strstr($serverAddress, "thethings.network")
 
-if(strstr($serverAddress, "thethings.network")) {
+) {
   $serverAddress = "bridge.".$serverAddress;
 
 }
