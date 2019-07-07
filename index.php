@@ -36,9 +36,10 @@ $packetForwarder = 0;
   }
 
 //Lets check for external internet connectivity by doing a http request to three servers
-$internetCheck1 = file_get_contents('http://www.google.com');
+$internetCheck1 = file_get_contents('https://httpbin.org/ip');
 $internetCheck2 = file_get_contents('https://status.thethings.network/');
-$internetCheck3 = file_get_contents('https://www.cloudflare.com/');
+$internetCheck3 = file_get_contents('https://1.1.1.1');
+
 $internetStatus = 0;
 if($internetCheck1 == FALSE) {
   $internetStatus++;
@@ -50,7 +51,8 @@ if($internetCheck3 == FALSE) {
   $internetStatus++;
 }
 //If the number is greater than 0 then either one of the sites is down, if all three are down there is likely an internet issue.
-$gatewayIpAddress = getHostByName(getHostName());
+//Get Public IP Address from httpbin
+$gatewayIpAddress = explode(",",json_decode($internetCheck1,true)['origin'])[0];
 
 $configHandler = fopen($configLocation, 'r');
 $currentConfig = fread($configHandler, filesize($configLocation));
