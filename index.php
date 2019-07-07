@@ -173,7 +173,7 @@ if($gatewayConfigured == 0) {
   <div class="row">
       <div class="column wide">
     <div class="ui positive message">
-        <strong>Gateway IP Address:</strong> <?php echo($gatewayIpAddress);?>
+        <strong>Gateway Public IP Address:</strong> <?php echo($gatewayIpAddress);?>
     </div>
   </div>
 </div>
