@@ -56,7 +56,7 @@ $frequencyPlan = file_get_contents($ttnApiData['frequency_plan_url']);
 $serverAddress = explode(":",$ttnApiData['router']['address'])[0];
 
 if(strstr($serverAddress, "thethings.network")) {
-  $serverAddress = "router.".$serverAddress;
+  $serverAddress = "bridge.".$serverAddress;
 
 }
 else {
