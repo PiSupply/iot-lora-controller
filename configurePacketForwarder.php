@@ -29,7 +29,7 @@ $jsonServers = $jsonDecoded['servers'][0];
 
 <div class="row align-items-center">
    <div class="text-center">
-     <h1>IoT LoRa Gateway Configuration Tool</h1>
+     <h1>Packet Forwarder Configuration Tool</h1>
    </div>
 </div>
 <div class="row align-items-center">
@@ -41,7 +41,7 @@ $jsonServers = $jsonDecoded['servers'][0];
 <div class="row">
   <div class="coullumn">
      <h1 class="ui top attached block header">Edit config file</h1>
-     <form action="updateConf.php" method="post" class="ui form">
+     <form action="updatePacketfwd.php" method="post" class="ui form">
          <div class="ui bottom attached segment">
       <div class="field">
        <label for="emailAddr">Contact Email Address:</label> Contact email address in case of any issues.
@@ -55,6 +55,20 @@ $jsonServers = $jsonDecoded['servers'][0];
        <label for="emailAddr"  >TTN Gateway Key:</label> This is the Gateway Key from the TTN Console
        <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($jsonServers['serv_gw_key']!=null) { echo "value='".$jsonServers['serv_gw_key']."'"; }?>/>
        </div>
+
+       <div class="field">
+        <label for="emailAddr"  >Enable GPS Module:</label> Enables use of the GPS Module. Only set if you have a GPS module plugged in.
+        <div class="ui slider checkbox">
+          <input type="checkbox" name="newsletter">
+          <label>Enable GPS Module</label>
+        </div>
+        </div>
+        <div class="field">
+         <label for="emailAddr"  >TTN Gateway Key:</label> This is the Gateway Key from the TTN Console
+         <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($jsonServers['serv_gw_key']!=null) { echo "value='".$jsonServers['serv_gw_key']."'"; }?>/>
+         </div>
+
+
        <div class="field">
         <h3>Missing Fields?</h3>
         <p>Location, TTN Region, Server and more are all got by your gateway from the TTN Console. Use the TTN Console to setup these settings.</p>
