@@ -70,10 +70,11 @@ if (php_sapi_name() != "cli") {
       <div class="ui stackable menu">
         <div class="header item"><img id="logo" src="img/logo.png"/></div>
         <a class="item menuButt" href="index.php"><strong>Gateway Status</strong></a>
-        <a class="item menuButt" href="configureGateway.php"><strong>Packet Fowarder Config</strong></a>
+        <a class="item menuButt" href="configurePacketForwarder.php"><strong>Packet Fowarder Config</strong></a>
         <a class="item menuButt" href="configureHost.php"><strong>Host Config</strong></a>
         <a class="item menuButt" href="systemControls.php"><strong>System Controls</strong></a>
-        <a class="item menuButt" href="viewLog.php"><strong>Logfile</strong></a>
+        <a class="item menuButt" href="viewLog.php"><strong>Packet Forwarder Logfile</strong></a>
+        <a class="item menuButt" href="about.php"><strong>About</strong></a>
 </div>
 
     </header>
