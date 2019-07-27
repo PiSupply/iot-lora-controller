@@ -26,10 +26,7 @@ $currentConfig = fread($configHandler, filesize($configLocation));
 $jsonDecoded = json_decode($currentConfig,true)['gateway_conf'];
 $jsonServers = $jsonDecoded['servers'][0];
 
-<<<<<<< HEAD
 //var_dump($jsonDecoded);
-=======
->>>>>>> 494a8b6fd8242408ba85a675e21bf852f43c2c0c
 
 ?>
 
@@ -61,11 +58,7 @@ $jsonServers = $jsonDecoded['servers'][0];
  <label for="emailAddr"  >Enable Semtech Mode:</label> Sets the packet forwarder to legacy semtech mode.
  <br/><br/>
  <div class="ui slider checkbox">
-<<<<<<< HEAD
    <input type="checkbox" name="semtech"   class="form-control" <?php if($jsonServers['serv_type'] == "semtech") { echo "checked";}?> >
-=======
-   <input type="checkbox" name="semtech"  class="form-control" <?php if($jsonDecoded['gps'] == "true") { echo "checked";}?> >
->>>>>>> 494a8b6fd8242408ba85a675e21bf852f43c2c0c
    <label>Enable Semtech Mode</label>
  </div>
  </div>
@@ -75,11 +68,7 @@ $jsonServers = $jsonDecoded['servers'][0];
 
 
       <br/>
-<<<<<<< HEAD
       <input type="submit" class="ui primary button" value="Change Mode" >
-=======
-      <input type="submit" class="ui primary button" value="Update Configuration">
->>>>>>> 494a8b6fd8242408ba85a675e21bf852f43c2c0c
       </div>
      </form>
    </div>
@@ -172,7 +161,6 @@ if($jsonServers['serv_type'] == "semtech") {
          </div>
          <br/>
 
-<<<<<<< HEAD
          <div class="field">
           <label for="emailAddr"  >Description:</label>
           <input type="text" id="description" name="description" class="form-control" required <?php if($jsonDecoded['description']!=null) { echo "value='".$jsonDecoded['description']."'"; }?>/>
@@ -186,8 +174,6 @@ if($jsonServers['serv_type'] == "semtech") {
                    </div>
                    <br/>
 
-=======
->>>>>>> 494a8b6fd8242408ba85a675e21bf852f43c2c0c
         <div class="field">
          <label for="emailAddr"  >Gateway Key:</label> This is the Gateway Key from the TTN Console
          <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($jsonServers['serv_gw_key']!=null) { echo "value='".$jsonServers['serv_gw_key']."'"; }?>/>
@@ -195,7 +181,6 @@ if($jsonServers['serv_type'] == "semtech") {
          <br/>
 
          <div class="field">
-<<<<<<< HEAD
           <label for="emailAddr"  >Region Plan:</label>
           <select class="ui fluid search dropdown" name="regionPlan">
            <option value="EU">Europe 868</option>
@@ -209,10 +194,6 @@ if($jsonServers['serv_type'] == "semtech") {
            <option value="RU">Russia 864-870</option>
          </select>
 
-=======
-          <label for="emailAddr"  >Gateway Key:</label> This is the Gateway Key from the TTN Console
-          <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($jsonServers['serv_gw_key']!=null) { echo "value='".$jsonServers['serv_gw_key']."'"; }?>/>
->>>>>>> 494a8b6fd8242408ba85a675e21bf852f43c2c0c
           </div>
           <br/>
 
@@ -227,21 +208,14 @@ if($jsonServers['serv_type'] == "semtech") {
          </div>
         <br/>
 
-<<<<<<< HEAD
                   <h4>These values will be ignored if the GPS module is enabled</h4>
                   <div class="field">
                    <label for="emailAddr"  >Latitude:</label> This is the Gateway Key from the TTN Console
                    <input type="text" id="latitude" name="latitude" class="form-control"  minlength=3 <?php if($jsonDecoded['ref_latitude']!=null) { echo "value='".$jsonDecoded['ref_latitude']."'"; }?>/>
-=======
-                  <div class="field">
-                   <label for="emailAddr"  >Gateway Key:</label> This is the Gateway Key from the TTN Console
-                   <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($jsonServers['serv_gw_key']!=null) { echo "value='".$jsonServers['serv_gw_key']."'"; }?>/>
->>>>>>> 494a8b6fd8242408ba85a675e21bf852f43c2c0c
                    </div>
                    <br/>
 
                    <div class="field">
-<<<<<<< HEAD
                     <label for="emailAddr"  >Longitude:</label> This is the Gateway Key from the TTN Console
                     <input type="text" id="longitude" name="longitude" class="form-control"  minlength=3 <?php if($jsonDecoded['ref_longitude']!=null) { echo "value='".$jsonDecoded['ref_longitude']."'"; }?>/>
                     </div>
@@ -251,17 +225,6 @@ if($jsonServers['serv_type'] == "semtech") {
                      <input type="text" id="altitude" name="altitude" class="form-control"   <?php if($jsonDecoded['ref_altitude']!=null) { echo "value='".$jsonDecoded['ref_altitude']."'"; }?>/>
                      </div>
                      <br/>
-=======
-                    <label for="emailAddr"  >Gateway Key:</label> This is the Gateway Key from the TTN Console
-                    <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($jsonServers['serv_gw_key']!=null) { echo "value='".$jsonServers['serv_gw_key']."'"; }?>/>
-                    </div>
-                    <br/>
-                    <div class="field">
-                     <label for="emailAddr"  >Gateway Key:</label> This is the Gateway Key from the TTN Console
-                     <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($jsonServers['serv_gw_key']!=null) { echo "value='".$jsonServers['serv_gw_key']."'"; }?>/>
-                     </div>
-                     <br/>        
->>>>>>> 494a8b6fd8242408ba85a675e21bf852f43c2c0c
 
 
 
@@ -269,11 +232,8 @@ if($jsonServers['serv_type'] == "semtech") {
         <br/>
         <input type="submit" class="ui primary button" value="Update Configuration">
         </div>
-<<<<<<< HEAD
    <input type="hidden" name="semtech"   class="form-control" <?php if($jsonServers['serv_type'] == "semtech") { echo "value='1'";}?> >
 
-=======
->>>>>>> 494a8b6fd8242408ba85a675e21bf852f43c2c0c
        </form>
      </div>
     </div>
