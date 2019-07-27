@@ -46,6 +46,8 @@ $jsonDecoded['gateway_conf']['servers'][0]['serv_gw_key'] = $_POST['ttnKey'];
 if($_POST['email']) {
 $jsonDecoded['gateway_conf']['contact_email'] = $_POST['email'];
 }
+
+
 }
 
 $ttnApiUrl = "https://account.thethingsnetwork.org/api/v2/gateways/".$jsonDecoded['gateway_conf']['servers'][0]['serv_gw_id'];

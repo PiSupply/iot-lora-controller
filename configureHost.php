@@ -34,32 +34,12 @@ $jsonServers = $jsonDecoded['servers'][0];
 </div>
 <div class="row align-items-center">
    <div class="text-center">
-     <p>This page modifies the host (Raspberry Pi) configuration.</p>
+     <h3>This page modifies the host (Raspberry Pi) configuration.</h3>
    </div>
 </div>
 <br>
-<div class="row">
-  <div class="collumn">
-     <h1 class="ui top attached block header">Edit RPi Configuration</h1>
-     <form action="updateHost.php" method="post" class="ui form">
-         <div class="ui bottom attached segment">
-
-       <div class="field">
-        <label for="emailAddr"  >Enable GPS Module:</label> Enables use of the GPS Module. Only set if you have a GPS module plugged in.
-        <div class="ui slider checkbox">
-          <input type="checkbox" name="newsletter">
-          <label>Enable GPS Module</label>
-        </div>
-      </div>
 
 
-
-      <br/>
-      <input type="submit" class="ui primary button" value="Update Configuration">
-      </div>
-     </form>
-   </div>
-  </div>
 
   <div class="row">
     <div class="collumn">
@@ -73,6 +53,7 @@ $jsonServers = $jsonDecoded['servers'][0];
        </form>
      </div>
     </div>
+    <br/>
 
     <div class="row">
       <div class="collumn">

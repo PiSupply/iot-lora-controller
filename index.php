@@ -56,6 +56,9 @@ if($jsonServers == NULL) {
   $jsonServers['serv_gw_id'] = "GATEWAY CONFIG IS MISSING";
 }
 
+
+if($jsonServers['serv_type'] == "ttn") {
+
 //Lets get the data from the NOC api
 $ttnNocStatus = json_decode(file_get_contents('http://noc.thethingsnetwork.org:8085/api/v2/gateways/'.trim($jsonServers['serv_gw_id'])),true);
 
@@ -71,6 +74,7 @@ if($ttnNocStatus["tx_in"]) {
 }
 else {
 $packetsTx = " 0";
+}
 }
 
 $cpuTemp = shell_exec("cat /sys/class/thermal/thermal_zone0/temp");
@@ -188,6 +192,13 @@ if($gatewayConfigured == 0) {
 </div>
 </div>
 </div>
+
+
+<?php
+if($jsonServers['serv_type'] == "ttn") {
+
+echo '
+<br/>
 <hr/>
 <br/>
 <div class="ui divided grid stackable centered">
@@ -198,7 +209,7 @@ if($gatewayConfigured == 0) {
 <div class="ui statistics">
   <div class="statistic">
     <div class="value">
-      <i class="arrow down icon"></i> <?php echo $packetsRx;?>
+      <i class="arrow down icon"></i> '.$packetsRx.'
     </div>
     <div class="label">
       Packets Recieved
@@ -210,7 +221,7 @@ if($gatewayConfigured == 0) {
 <div class="ui statistics">
   <div class="statistic">
     <div class="value">
-      <i class="arrow up icon"></i><?php echo $packetsTx;?>
+      <i class="arrow up icon"></i> '.$packetsTx.'
     </div>
     <div class="label">
       Packets Transmitted
@@ -234,19 +245,23 @@ Tweet</a>
 </h4>
 </div>
 
+';
+}
+?>
+
 <br/><br/>
 
 
 
 <br/><br/>
 
-</div>
 
 
 
 
 
-</div>
+
+
 <script>
 $('#progressBar').progress();
 </script>

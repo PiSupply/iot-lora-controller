@@ -32,11 +32,7 @@ include('inc/header.php');
         <strong>Restart Packet Forwarder:</strong> This'll restart the packet forwarder service. &amp; Update the configuration details from the TTN Console.
 
 </div>
-<div class="ui message">
-    <a href="#"  class="ui inactive big button fluid">Run Diagnostics</a>
-        <strong>Run diagnostics program:</strong> Run a quick diagnostics program on the gateway to check for hardware errors.
 
-</div>
 <div class="ui collumn segment error message ">
     <a href="runCommand.php?butt=rbtSys"  class="ui yellow button big fluid ">Reboot system</a>
   <strong>Reboot Gateway:</strong> Issues the linux restart command to restart the entire system.
