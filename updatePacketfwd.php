@@ -45,6 +45,11 @@ if (php_sapi_name() != "cli") {
     //Altitude
     $jsonDecoded['gateway_conf']['ref_altitude'] = intval($_POST['altitude']);
 
+//Ports
+$jsonDecoded['gateway_conf']['servers'][0]['serv_port_up'] = 1700;
+$jsonDecoded['gateway_conf']['servers'][0]['serv_port_down'] = 1700;
+
+
     //Description
     $jsonDecoded['gateway_conf']['description'] = $_POST['description'];
 
