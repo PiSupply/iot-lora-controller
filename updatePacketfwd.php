@@ -61,10 +61,11 @@ $jsonDecoded['gateway_conf']['servers'][0]['serv_port_down'] = 1700;
 
 
     $freqPlan = fopen($globalConfTemp, 'r');
-    //var_dump($freqPlan);
+    var_dump($freqPlan);
 
     $freqPlanRead= fread($freqPlan, filesize($globalConfTemp));
     $freqHandler = fopen($globalConfigLocation, 'w');
+    //var_dump($freqHandler);
     fwrite($freqHandler, $freqPlanRead);
     fclose($freqHandler);
 
@@ -150,7 +151,19 @@ if($jsonDecoded['gateway_conf']['servers'][0]['serv_type']  == "ttn") {
   //Frequency Plan Updater
 
   $freqHandler = fopen($globalConfigLocation, 'w');
-  fwrite($freqHandler, $frequencyPlan);
+
+  $freqPlanJson = json_decode($frequencyPlan,true);
+
+  //Implement workaround for As920 and as923
+
+  if($freqPlanJson['SX1301_conf']['lbt_cfg']) {
+      $freqPlanJson['SX1301_conf']['lbt_cfg']['enable'] = false;
+}
+
+
+$jsonFreqEncoded = json_encode($freqPlanJson, JSON_PRETTY_PRINT);
+  fwrite($freqHandler, $jsonFreqEncoded);
+
   fclose($freqHandler);
 }
 
@@ -171,4 +184,6 @@ echo('
 '
 );
 }
+
+include('inc/footer.php');
  ?>
