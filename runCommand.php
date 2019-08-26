@@ -79,15 +79,15 @@ var countdownTimer = window.setInterval(function () {
 
 if($buttonPressed == "rstPkt") {
   //Restart the packet forwarder
-  echo("<h2>The Packet Forwader Is Restarting</h2>  <p>This may take around 30 Seconds</p>");
+  echo("<h2>The Packet Forwarder Is Restarting</h2>  <p>This may take around 30 Seconds</p>");
 }
 else if($buttonPressed == "stpPkt") {
   //Restart the packet forwarder
-  echo("<h2>The Packet Forwader Is Starting</h2>  <p>This may take around 30 Seconds</p>");
+  echo("<h2>The Packet Forwarder Is Starting</h2>  <p>This may take around 30 Seconds</p>");
 }
 else if($buttonPressed == "strPkt") {
   //Restart the packet forwarder
-  echo("<h2>The Packet Forwader Is Stopping</h2> <p>This may take around 30 Seconds</p>");
+  echo("<h2>The Packet Forwarder Is Stopping</h2> <p>This may take around 30 Seconds</p>");
 }
 else if($buttonPressed == "diag") {
   //Restart the packet forwarder
