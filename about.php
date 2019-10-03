@@ -39,6 +39,26 @@ include('inc/header.php');
     </div>
   </div>
 
+
+  <div class="row">
+      <div class="column wide">
+        <h3>System Information:</h3>
+        <h5>Please send these to technical support if requested</h5>
+        <textarea rows="10" cols="50">
+
+        <?php
+        echo(shell_exec("uname -r"));
+        echo(explode("Hardware	: ", shell_exec("cat /proc/cpuinfo"))[1]);
+        echo(shell_exec("lscpu"));
+
+
+        ?>
+      </textarea>
+
+  </div>
+</div>
+
+
   <div class="row">
       <div class="column wide">
         <h3>Software Used:</h3>

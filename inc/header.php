@@ -21,7 +21,13 @@
 //Global variables
 
 $configLocation = "/opt/iotloragateway/local_conf.json";
+$configLocation = "/opt/iotloragateway/local_conf.json";
+$configLocation = "/opt/iotloragateway/local_conf.json";
 $globalConfigLocation = "/opt/iotloragateway/global_conf.json";
+$globalConfigLocation2 = "/opt/iotloragateway/global_conf.json";
+$globalConfigLocation3 = "/opt/iotloragateway/global_conf.json";
+
+$nebra = true;
 
 if (php_sapi_name() != "cli") {
   echo ('
@@ -39,7 +45,15 @@ if (php_sapi_name() != "cli") {
     <!-- Bootstrap core CSS -->
 
     <link href="css/semantic.min.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+
+    ');
+
+    if($nebra) { echo ('   <link href="css/custom-nebra.css" rel="stylesheet">  ');}
+    else { echo ('   <link href="css/custom.css" rel="stylesheet">  '); }
+
+
+
+    echo ('
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/semantic.min.js"></script>
@@ -75,6 +89,11 @@ if (php_sapi_name() != "cli") {
         <a class="item menuButt" href="systemControls.php"><strong>System Controls</strong></a>
         <a class="item menuButt" href="viewLog.php"><strong>Packet Forwarder Logfile</strong></a>
         <a class="item menuButt" href="about.php"><strong>About</strong></a>
+        ');
+        if($nebra) { echo ('<div class="header item right"><img id="logo" src="img/nebra-white.png"/></div>');}
+
+         echo ('
+
 </div>
 
     </header>

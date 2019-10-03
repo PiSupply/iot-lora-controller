@@ -82,7 +82,10 @@ $cpuTemp = $cpuTemp/1000;
 
 
 ?>
-<h1>IoT LoRa Gateway Status Page</h1>
+<?php
+if($nebra) {echo('<h1>IoT Smart LoRa Gateway</h1>');}
+else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
+?>
 <h2>Gateway ID: <?php echo($jsonServers['serv_gw_id']);?></h2>
 
 <?php
@@ -162,22 +165,47 @@ if($gatewayConfigured == 0) {
   </div>
 <div class="ui divided grid stackable">
 
-<!--  <div class="row">
-      <div class="column wide">
-    <div class="ui positive message">
-        <strong>Gateway Public IP Address:</strong> <?php echo($gatewayIpAddress);?>
-    </div>
-  </div>
-</div>
--->
+
+  <?php
+  if($nebra == 0) {
+
+  echo ('
+
 
   <div class="row">
     <div class="column">
     <div class="ui positive message">
-        <strong>Configured TTN Server:</strong> <?php echo($jsonServers['server_address']);?>
+        <strong>Configured Server:</strong> '.$jsonServers['server_address'].'
     </div>
   </div>
 </div>
+');
+}
+
+else {
+    echo ('
+    <div class="row">
+    <div class="column">
+    <div class="ui positive message">
+        <strong>Concentrator 1 Server:</strong> '.$jsonServers['server_address'].'
+    </div>
+  </div>
+  </div>
+  ');
+  if($concentrator2 == true) {
+      echo ('
+
+    <div class="row">
+    <div class="column">
+    <div class="ui positive message">
+        <strong>Concentrator 2 Server:</strong> '.$jsonServers2['server_address'].'
+    </div>
+    </div>
+    </div>
+    ');
+    }
+}
+?>
 
 <div class="row">
   <div class="column">
@@ -195,7 +223,7 @@ if($gatewayConfigured == 0) {
 
 
 <?php
-if($jsonServers['serv_type'] == "ttn") {
+if($jsonServers['serv_type'] == "ttn" && $nebra == 0) {
 
 echo '
 <br/>
@@ -212,7 +240,7 @@ echo '
       <i class="arrow down icon"></i> '.$packetsRx.'
     </div>
     <div class="label">
-      Packets Recieved
+      Packets Received
     </div>
   </div>
 </div>
@@ -249,11 +277,7 @@ Tweet</a>
 }
 ?>
 
-<br/><br/>
 
-
-
-<br/><br/>
 
 
 
