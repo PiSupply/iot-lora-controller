@@ -1,8 +1,8 @@
 header {
   margin-bottom:20px;
 }
-.ui.menu      {
-  background-color:#8bc34a;
+.ui.vertical.menu      {
+  background:#8bc34a;
 }
 
 .ui.button.fixedWidth {

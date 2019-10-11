@@ -81,21 +81,48 @@ if (php_sapi_name() != "cli") {
 
     <header>
       <!-- Fixed navbar -->
-      <div class="ui stackable menu">
+      <div class="ui left fixed vertical menu">
+      ');
+      if($nebra) { echo ('<div class="header item right"><img id="logo" src="img/nebra-white.png"/></div>');}
+
+       echo ('
         <div class="header item"><img id="logo" src="img/logo.png"/></div>
         <a class="item menuButt" href="index.php"><strong>Gateway Status</strong></a>
-        <a class="item menuButt" href="configurePacketForwarder.php"><strong>Packet Forwarder Config</strong></a>
-        <!---<a class="item menuButt" href="configureHost.php"><strong>Host Config</strong></a>--->
-        <a class="item menuButt" href="systemControls.php"><strong>System Controls</strong></a>
-        <a class="item menuButt" href="viewLog.php"><strong>Packet Forwarder Logfile</strong></a>
-        <a class="item menuButt" href="about.php"><strong>About</strong></a>
-        ');
-        if($nebra) { echo ('<div class="header item right"><img id="logo" src="img/nebra-white.png"/></div>');}
+        <div class="ui dropdown item menuButt">
+          <strong>LoRa Configuration</strong>
+          <i class="dropdown icon menuButt"></i>
+          <div class="menu">
+            <a class="item menuButt" href="configurePacketForwarder.php"><strong>Packet Forwarder Config</strong></a>
+            <a class="item menuButt" href="viewLog.php"><strong>Packet Forwarder Logfile</strong></a>
+          </div>
+        </div>
+        <div class="ui dropdown item menuButt">
+          <strong>WAN Configuration</strong>
+          <i class="dropdown icon menuButt"></i>
+          <div class="menu">
+            <a class="item menuButt" href="4gconfiguration.php"><strong>4G Module Configuration</strong></a>
+          </div>
+        </div>
+        <div class="ui dropdown item menuButt">
+          <strong>System Configuration</strong>
+          <i class="dropdown icon menuButt"></i>
+          <div class="menu">
+            <a class="item menuButt" href="systemControls.php"><strong>System Controls</strong></a>
+            <a class="item menuButt" href="changePassword.php"><strong>Change Password</strong></a>
+          </div>
+        </div>
 
-         echo ('
+
+
+        <a class="item menuButt" href="about.php"><strong>About</strong></a>
+
 
 </div>
-
+<script>
+$(".ui.dropdown")
+  .dropdown()
+;
+</script>
     </header>
 
 

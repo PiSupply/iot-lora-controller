@@ -83,7 +83,7 @@ if($jsonServers['serv_type'] == "ttn") {
 
 
 <div class="row">
-  <div class="coullumn">
+  <div class="coulumn">
      <h1 class="ui top attached block header">Edit config file - TTN Server</h1>
      <form action="updatePacketfwd.php" method="post" class="ui form">
          <div class="ui bottom attached segment">
