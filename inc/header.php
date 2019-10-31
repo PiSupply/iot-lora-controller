@@ -21,8 +21,8 @@
 
 //Global variables
 
-$configurationLocation = '/opt/iotloragateway/config/gateway_configuration.yml';
-$configurationFile = yaml_parse_file($configurationLocation);
+
+$configurationFile = yaml_parse_file('/opt/iotloragateway/config/gateway_configuration.yml');
 
 $nebra = true;
 
