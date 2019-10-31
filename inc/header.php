@@ -17,15 +17,11 @@
 *along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+use Symfony\Component\Yaml\Yaml;
 
 //Global variables
 
-$configLocation = "/opt/iotloragateway/local_conf.json";
-$configLocation = "/opt/iotloragateway/local_conf.json";
-$configLocation = "/opt/iotloragateway/local_conf.json";
-$globalConfigLocation = "/opt/iotloragateway/global_conf.json";
-$globalConfigLocation2 = "/opt/iotloragateway/global_conf.json";
-$globalConfigLocation3 = "/opt/iotloragateway/global_conf.json";
+$configurationLocation = Yaml::parseFile('/opt/iotloragateway/config/gateway_configuration.yml');
 
 $nebra = true;
 
