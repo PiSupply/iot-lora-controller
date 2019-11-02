@@ -7,7 +7,19 @@ var confirm_pass = document.getElementById("confirmPassword");
 
 function validatePass() {
   if(password.value != confirm_pass.value) {
+    confirm_pass.setCustomValidity("Passwords do not match.");
+  }
+  else {
+    confirm_pass.setCustomValidity("");
+  }
+}
 
+function validateEmail() {
+  if(email.value != confirm_email.value) {
+    confirm_email.setCustomValidity("Emails do not match.");
+  }
+  else {
+    confirm_email.setCustomValidity("");
   }
 }
 
