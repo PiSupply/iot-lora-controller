@@ -45,7 +45,7 @@ var_dump($configurationFile)
   <div class="coullumn">
 
 
-     <form action="updatePacketfwd.php" method="post" class="ui form">
+     <form action="firstTimeSetupP.php" method="post" class="ui form">
          <div class="ui bottom attached segment">
 
            <!--Email Address-->
