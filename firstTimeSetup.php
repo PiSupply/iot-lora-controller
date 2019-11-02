@@ -20,7 +20,7 @@
 
 include('inc/header.php');
 
-var_dump($configurationFile)
+var_dump($configurationFile['gateway-info'])
 
 
 
