@@ -23,5 +23,8 @@ function validateEmail() {
   }
 }
 
-password.onchange = validatePass();
-confirm_password.onchange = validatePass();
+password.onchange = validatePass;
+confirm_pass.onchange = validatePass;
+
+email.onchange = validateEmail;
+confirm_email.onchange = validateEmail
