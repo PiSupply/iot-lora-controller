@@ -20,7 +20,7 @@
 
 include('inc/header.php');
 
-var_dump($configurationFile['gateway-info'])
+var_dump()
 
 
 
@@ -78,6 +78,7 @@ var_dump($configurationFile['gateway-info'])
             <option value="nebraSmart">Nebra Smart LoRa Gateway</option>
             <option value="loraHat">Pi Supply IoT LoRa Gateway HAT</option>
           </select>
+          <br/>
 
           <div class="field">
             <label for="emailAddr"  >Enable GPS Module:</label> Enables the GPS Module, (if plugged in on Gateway HAT).
