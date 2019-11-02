@@ -105,10 +105,15 @@ var_dump($configurationFile)
 
       <input type="submit" class="ui primary button" value="Complete First Time Setup">
       </div>
- <input type="hidden" name="semtech"   class="form-control" <?php if($jsonServers['serv_type'] == "semtech") { echo "value='1'";}?> >
-
      </form>
 
    </div>
   </div>
 <br/><br/>
+
+<script src="js/firstTmeSetup.js"></script>
+
+<?php
+include('inc/footer.php');
+
+ ?>
