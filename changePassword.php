@@ -20,7 +20,10 @@
 
 include('inc/header.php');
 
-
+if($configurationFile['gateway-info']['initial-setup'] == 0) {
+  //Send to first time setup
+  header("Location: firstTimeSetup.php");
+}
 
 
 ?>

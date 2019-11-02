@@ -20,13 +20,12 @@
 
 include('inc/header.php');
 
-$configHandler = fopen($configLocation, 'r');
-$currentConfig = fread($configHandler, filesize($configLocation));
 
-$jsonDecoded = json_decode($currentConfig,true)['gateway_conf'];
-$jsonServers = $jsonDecoded['servers'][0];
+if($configurationFile['gateway-info']['initial-setup'] == 0) {
+  //Send to first time setup
+  header("Location: firstTimeSetup.php");
+}
 
-//var_dump($jsonDecoded);
 
 ?>
 
