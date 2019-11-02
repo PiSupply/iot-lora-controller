@@ -111,7 +111,7 @@ var_dump($configurationFile)
   </div>
 <br/><br/>
 
-<script src="js/firstTmeSetup.js"></script>
+<script src="js/firstTimeSetup.js"></script>
 
 <?php
 include('inc/footer.php');
