@@ -85,8 +85,8 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
         echo("<div class=\"ui error message segment\">");
       }
        ?>
-          <h3>Packet Forwarder <i class="microchip icon"></i></h3>
-          The packet forwarder service is <?php if($packetForwarder==0){echo("not ");}?>running.
+          <h3>Packet Forwarder 1<i class="microchip icon"></i></h3>
+          The packet forwarder container is <?php if($packetForwarder==0){echo("not ");}?>running.
       </div>
     </div>
 
@@ -100,8 +100,8 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
         echo("<div class=\"ui error message segment\">");
       }
        ?>
-          <h3>Packet Forwarder <i class="microchip icon"></i></h3>
-          The packet forwarder service is <?php if($packetForwarder==0){echo("not ");}?>running.
+          <h3>Packet Forwarder 2 <i class="microchip icon"></i></h3>
+          The packet forwarder container is <?php if($packetForwarder==0){echo("not ");}?>running.
       </div>
     </div>
 
@@ -132,7 +132,7 @@ else {
     <div class="row">
     <div class="column">
     <div class="ui positive message">
-        <strong>Concentrator 1 Server:</strong> '.$jsonServers['server_address'].'
+        <strong>Concentrator 1 Server:</strong> '.$configurationFile['packet-forwarder-1']['router'].'
     </div>
   </div>
   </div>
@@ -143,7 +143,7 @@ else {
     <div class="row">
     <div class="column">
     <div class="ui positive message">
-        <strong>Concentrator 2 Server:</strong> '.$jsonServers2['server_address'].'
+        <strong>Concentrator 2 Server:</strong> '.$configurationFile['packet-forwarder-2']['router'].'
     </div>
     </div>
     </div>
