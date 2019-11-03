@@ -26,7 +26,7 @@ $emailAddress_c = $_POST['emailConfirm'];
 
 if($emailAddress != $emailAddress_c || $emailAddress == null)
 {
-  echo("<h1>Email Addresses Do Not Match");
+  echo("<h1>Email Addresses Do Not Match</h1>");
   include('inc/footer.php');
   exit();
 }
@@ -37,15 +37,41 @@ $password_c = $_POST['confirmPassword'];
 
 if($password != $password_c || $password == null)
 {
-  echo("<h1>Passwords Do Not Match");
+  echo("<h1>Passwords Do Not Match</h1>");
   include('inc/footer.php');
   exit();
 }
 
-$model = $_POST['model'];
-$gps = $_POST['gps'];
+//Model
+if($_POST['model'] == "nebraSmart") {
+  $model = 1;
+}
+else {
+  $model = 0;
+}
+
+//GPS
+if($_POST['gps']) {
+  $gps = 1;
+}
+else {
+  $gps = 0;
+}
+
 $gatewayID = $_POST['gatewayId'];
 $description = $_POST['description'];
+
+//Build the configuration file
+
+//Gateway Info Section
+$configurationFile['gateway-info']['initial-setup'] = 1;
+$configurationFile['gateway-info']['gateway-type'] = $model;
+$configurationFile['gateway-info']['gatway-friendly-name'] = $gatewayID;
+$configurationFile['gateway-info']['gatway-description'] = $description;
+
+//User Section
+$configurationFile['user']['email-address'] = $emailAddress;
+$configurationFile['user']['password'] = $password;
 
 
 var_dump(yaml_emit($configurationFile));

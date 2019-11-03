@@ -22,6 +22,12 @@ include('inc/header.php');
 
 var_dump()
 
+if($configurationFile['gateway-info']['initial-setup'] == 1) {
+  //Send to first time setup
+  echo("<h1>First Time Setup Has Already Been Performed.</h1>");
+  include('inc/footer.php');
+  exit();
+}
 
 
 ?>
