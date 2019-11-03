@@ -22,7 +22,7 @@ include('inc/header.php');
 
 var_dump($_POST);
 
-var_dump(yaml_emit($configurationFile))
+var_dump(yaml_emit($configurationFile));
 
 include('inc/footer.php');
  ?>
