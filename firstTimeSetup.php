@@ -20,7 +20,7 @@
 
 include('inc/header.php');
 
-var_dump()
+
 
 if($configurationFile['gateway-info']['initial-setup'] == 1) {
   //Send to first time setup
