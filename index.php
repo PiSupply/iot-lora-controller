@@ -120,7 +120,7 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
   <div class="row">
     <div class="column">
     <div class="ui positive message">
-        <strong>Configured Server:</strong> '.$jsonServers['server_address'].'
+        <strong>Configured Server:</strong> '.$configurationFile['packet-forwarder-1']['router'].'
     </div>
   </div>
 </div>
@@ -132,7 +132,7 @@ else {
     <div class="row">
     <div class="column">
     <div class="ui positive message">
-        <strong>Concentrator 1 Server:</strong> '.$configurationFile['packet-forwarder-1']['router'].'
+        <strong>Packet Forwarder 1 Server:</strong> '.$configurationFile['packet-forwarder-1']['router'].'
     </div>
   </div>
   </div>
@@ -143,7 +143,7 @@ else {
     <div class="row">
     <div class="column">
     <div class="ui positive message">
-        <strong>Concentrator 2 Server:</strong> '.$configurationFile['packet-forwarder-2']['router'].'
+        <strong>Packet Forwarder 2 Server:</strong> '.$configurationFile['packet-forwarder-2']['router'].'
     </div>
     </div>
     </div>
