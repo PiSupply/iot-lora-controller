@@ -61,19 +61,19 @@ var_dump()
           <br/>
           <!--Password-->
           <div class="field">
-            <label for="emailConfirm">Password:</label>
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" class="form-control" required />
           </div>
           <br/>
           <div class="field">
-            <label for="emailConfirm">Confirm Password:</label>
+            <label for="confirmPassword">Confirm Password:</label>
             <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required />
           </div>
           <br/>
 
           <!--Hardware Config-->
           <div class="field">
-           <label for="emailAddr"  >Hardware Model:</label>
+           <label for="model"  >Hardware Model:</label>
            <select class="ui fluid search dropdown" name="model">
             <option value="nebraSmart">Nebra Smart LoRa Gateway</option>
             <option value="loraHat">Pi Supply IoT LoRa Gateway HAT</option>
@@ -81,7 +81,7 @@ var_dump()
           <br/>
 
           <div class="field">
-            <label for="emailAddr"  >Enable GPS Module:</label> Enables the GPS Module, (if plugged in on Gateway HAT).
+            <label for="gps"  >Enable GPS Module:</label> Enables the GPS Module, (if plugged in on Gateway HAT).
             <br/><br/>
             <div class="ui slider checkbox">
              <input type="checkbox" name="gps"  class="form-control" <?php if($jsonDecoded['gps'] == "true") { echo "checked";}?> >
@@ -92,12 +92,12 @@ var_dump()
 
           <!--Final bit of information-->
           <div class="field">
-           <label for="emailAddr">Gateway ID:</label> An ID for your gateway to be known by.
-           <input type="text" id="description" name="description" class="form-control" required/>
+           <label for="gatewayId">Gateway ID:</label> An ID for your gateway to be known by.
+           <input type="text" id="gatewayId" name="gatewayId" class="form-control" required/>
           </div>
           <br/>
           <div class="field">
-           <label for="emailAddr">Gateway Description:</label> A human readable description of your gateway.
+           <label for="description">Gateway Description:</label> A human readable description of your gateway.
            <input type="text" id="description" name="description" class="form-control" required/>
           </div>
           <br/>

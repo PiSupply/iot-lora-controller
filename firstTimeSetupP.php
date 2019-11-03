@@ -20,9 +20,38 @@
 include('inc/header.php');
 
 
-var_dump($_POST);
+//Check email address
+$emailAddress = $_POST('emailAddr');
+$emailAddress_c = $_POST('emailConfirm');
+
+if($emailAddress != $emailAddress_c || $emailAddress == null)
+{
+  echo("<h1>Email Addresses Do Not Match");
+  include('inc/footer.php');
+  exit();
+}
+
+//Check password
+$password = $_POST('password');
+$password_c = $_POST('confirmPassword');
+
+if($password != $password_c || $password == null)
+{
+  echo("<h1>Passwords Do Not Match");
+  include('inc/footer.php');
+  exit();
+}
+
+$model = $_POST('model');
+$gps = $_POST('gps');
+$gatewayID = $_POST('gatewayId');
+$description = $_POST('description');
+
 
 var_dump(yaml_emit($configurationFile));
+
+$arr = get_defined_vars();
+print_r($arr);
 
 include('inc/footer.php');
  ?>
