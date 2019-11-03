@@ -112,7 +112,7 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 
 
   <?php
-  if($nebra == 0) {
+  if($configurationFile['gateway-info']['gateway-type'] == 0) {
 
   echo ('
 
@@ -137,7 +137,7 @@ else {
   </div>
   </div>
   ');
-  if($concentrator2 == true) {
+  if($configurationFile['packet-forwarder-2']['enabled'] == true) {
       echo ('
 
     <div class="row">

@@ -24,7 +24,7 @@
 
 $configurationFile = yaml_parse_file('/opt/iotloragateway/config/gateway_configuration.yml');
 
-$nebra = true;
+$nebra = $configurationFile['gateway-info']['gateway-type'];
 
 if (php_sapi_name() != "cli") {
   echo ('
