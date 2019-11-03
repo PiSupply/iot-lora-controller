@@ -76,9 +76,9 @@ $configurationFile['user']['password'] = $password;
 $idHash = substr(hash(sha512, $gatewayID), -14);
 
 $eui1 = $idHash + "01";
-$eui2 = $idHash + "01";
-$configurationFile['packet-forwarder-1']['packet-forwarder-eui'] = $emailAddress;
-$configurationFile['packet-forwarder-2']['packet-forwarder-eui'] = $password;
+$eui2 = $idHash + "02";
+$configurationFile['packet-forwarder-1']['packet-forwarder-eui'] = $eui1;
+$configurationFile['packet-forwarder-2']['packet-forwarder-eui'] = $eui2;
 
 
 yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configurationFile);
