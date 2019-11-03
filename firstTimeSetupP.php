@@ -73,9 +73,14 @@ $configurationFile['gateway-info']['gatway-description'] = $description;
 $configurationFile['user']['email-address'] = $emailAddress;
 $configurationFile['user']['password'] = $password;
 
-echo("<pre>");
-var_dump(yaml_emit($configurationFile));
-echo("</pre>");
+
+yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml');
+
+echo("
+<h2>First Time Setup Complete</h2>
+<p>You can now continue to configure the rest of the gateway</p>
+
+");
 
 include('inc/footer.php');
  ?>
