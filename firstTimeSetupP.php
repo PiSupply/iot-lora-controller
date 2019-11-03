@@ -74,7 +74,7 @@ $configurationFile['user']['email-address'] = $emailAddress;
 $configurationFile['user']['password'] = $password;
 
 
-yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml');
+yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configurationFile);
 
 echo("
 <h2>First Time Setup Complete</h2>
