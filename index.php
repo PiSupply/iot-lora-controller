@@ -51,7 +51,7 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 
 <div class="ui divided grid stackable">
 
-    <div class="<?php if($configurationFile['gateway-info']['gateway-type'] == 1) { echo('three');} else {echo('two');} ?>column row">
+    <div class="<?php if($configurationFile['gateway-info']['gateway-type'] == 1) { echo('three');} else {echo('two');} ?> column row">
     <div class="column wide">
       <?php
       //Change the alert box's colour based on the status.
