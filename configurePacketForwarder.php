@@ -44,42 +44,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 <br>
 
 
-<div class="row">
-  <div class="coullumn">
-     <h1 class="ui top attached block header">Edit config file - Mode Select</h1>
-
-     <form action="updatePacketfwd.php" method="post" class="ui form">
-         <div class="ui bottom attached segment">
-
-
-
-<div class="field">
- <label for="emailAddr"  >Enable Semtech Mode:</label> Sets the packet forwarder to legacy semtech mode.
- <br/><br/>
- <div class="ui slider checkbox">
-   <input type="checkbox" name="semtech"   class="form-control" <?php if($jsonServers['serv_type'] == "semtech") { echo "checked";}?> >
-   <label>Enable Semtech Mode</label>
- </div>
- </div>
-<br/>
-
-
-
-
-      <br/>
-      <input type="submit" class="ui primary button" value="Change Mode" >
-      </div>
-     </form>
-   </div>
-  </div>
 <br/><br/>
-<?php
-
-
-if($jsonServers['serv_type'] == "ttn") {
-
-  ?>
-
 
 <div class="row">
   <div class="coulumn">
@@ -130,10 +95,7 @@ if($jsonServers['serv_type'] == "ttn") {
   <br/>
   <br/>
 
-<?php
-}
-if($jsonServers['serv_type'] == "semtech") {
- ?>
+
   <div class="row">
     <div class="coullumn">
        <h1 class="ui top attached block header">Edit config file - Semtech Server</h1>
@@ -237,9 +199,7 @@ if($jsonServers['serv_type'] == "semtech") {
      </div>
     </div>
 
-    <?php
-
-  } ?>
+  
 
 
 
