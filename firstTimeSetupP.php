@@ -73,11 +73,9 @@ $configurationFile['gateway-info']['gatway-description'] = $description;
 $configurationFile['user']['email-address'] = $emailAddress;
 $configurationFile['user']['password'] = $password;
 
-
+echo("<pre>");
 var_dump(yaml_emit($configurationFile));
-
-$arr = get_defined_vars();
-print_r($arr);
+echo("</pre>");
 
 include('inc/footer.php');
  ?>
