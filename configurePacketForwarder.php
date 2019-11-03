@@ -51,11 +51,21 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
      <h1 class="ui top attached block header">Edit config file - TTN Server</h1>
      <form action="updatePacketfwd.php" method="post" class="ui form">
          <div class="ui bottom attached segment">
-      <div class="field">
-       <label for="emailAddr">Contact Email Address:</label> Contact email address in case of any issues.
-       <input type="email" id="email" name="email" class="form-control" required <?php if($jsonDecoded['contact_email']!=null) { echo "value='".$jsonDecoded['contact_email']."'"; }?>/>
-       </div>
-       <br/>
+
+           <div class="field">
+            <label for="emailAddr">LoRa Provider:</label>
+            <select class="ui fluid search dropdown" name="serverType">
+             <option value="TTN">The Things Network</option>
+             <option value="LORIOT">Loriot</option>
+             <option value="Other">Other</option>
+            </select>
+
+            <div class="field">
+             <label for="emailAddr"  >Gateway EUI:</label> This is the fixed MAC address of this gateway.
+             <p>6b 2d 70 FF F0 73 2d 31</p>
+             </div>
+             <br/>
+
       <div class="field">
        <label for="emailAddr"  >Gateway ID:</label> This is the same as the Gateway ID from the TTN Console.
        <input type="text" id="gatewayId" name="gatewayId" class="form-control" required <?php if($jsonServers['serv_gw_id']!=null) { echo "value='".$jsonServers['serv_gw_id']."'"; }?>/>
@@ -199,7 +209,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
      </div>
     </div>
 
-  
+
 
 
 
