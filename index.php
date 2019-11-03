@@ -30,15 +30,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
   header("Location: firstTimeSetup.php");
 }
 
-//Linux uptime
-$uptime = shell_exec('uptime -p');
-$packetForwarder = shell_exec('systemctl is-active iot-lora-gateway.service');
-if(strlen($packetForwarder) < 9) {
-  $packetForwarder = 1;
-}
-else {
-$packetForwarder = 0;
-  }
+
 
 //Lets check for external internet connectivity by doing a http request to three servers
 $internetCheck1 = file_get_contents('https://1.1.1.1');
@@ -46,73 +38,16 @@ $internetStatus = 0;
 if($internetCheck1 == FALSE) {
   $internetStatus++;
 }
-//If the number is greater than 0 then either one of the sites is down, if all three are down there is likely an internet issue.
-//Get Public IP Address from httpbin
-$gatewayIpAddress = explode(",",json_decode($internetCheck1,true)['origin'])[0];
-
-$configHandler = fopen($configLocation, 'r');
-$currentConfig = fread($configHandler, filesize($configLocation));
-
-$jsonDecoded = json_decode($currentConfig,true)['gateway_conf'];
-$jsonServers = $jsonDecoded['servers'][0];
-$gatewayConfigured = 1;
-if($jsonServers == NULL) {
-  $gatewayConfigured = 0;
-  $jsonServers['serv_gw_id'] = "GATEWAY CONFIG IS MISSING";
-}
-
-
-if($jsonServers['serv_type'] == "ttn") {
-
-//Lets get the data from the NOC api
-$ttnNocStatus = json_decode(file_get_contents('http://noc.thethingsnetwork.org:8085/api/v2/gateways/'.trim($jsonServers['serv_gw_id'])),true);
-
-
-if($ttnNocStatus["rx_ok"]) {
-$packetsRx = $ttnNocStatus["rx_ok"];
-}
-else {
-  $packetsRx = "0";
-}
-if($ttnNocStatus["tx_in"]) {
-  $packetsTx = $ttnNocStatus["tx_in"];
-}
-else {
-$packetsTx = " 0";
-}
-}
 
 $cpuTemp = shell_exec("cat /sys/class/thermal/thermal_zone0/temp");
 $cpuTemp = $cpuTemp/1000;
-
-
 ?>
 <?php
 if($nebra) {echo('<h1>IoT Smart LoRa Gateway</h1>');}
 else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 ?>
-<h2>Gateway ID: <?php echo($jsonServers['serv_gw_id']);?></h2>
-
-<?php
-if($gatewayConfigured == 0) {
-  echo '
-  <div class="ui divided grid stackable">
-    <div class="row">
-        <div class="column wide">
-      <div class="ui error message">
-          <h3>Gateway Is Not Configured!</h3>
-          There is no configuration file detected for this gateway. Please use the change configuration tab to configure this gateway.
-      </div>
-    </div>
-  </div>
-  </div>
-
-   ';
-}
-
-
- ?>
-
+<h2>Gateway Name: <?php echo($configurationFile['gateway-info']['gatway-friendly-name']);?></h2>
+<h3><?php echo($configurationFile['gateway-info']['gatway-description']);?></h3>
 
 <div class="ui divided grid stackable">
 
