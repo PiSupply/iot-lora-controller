@@ -21,8 +21,8 @@ include('inc/header.php');
 
 
 //Check email address
-$emailAddress = $_POST('emailAddr');
-$emailAddress_c = $_POST('emailConfirm');
+$emailAddress = $_POST['emailAddr'];
+$emailAddress_c = $_POST['emailConfirm'];
 
 if($emailAddress != $emailAddress_c || $emailAddress == null)
 {
@@ -32,8 +32,8 @@ if($emailAddress != $emailAddress_c || $emailAddress == null)
 }
 
 //Check password
-$password = $_POST('password');
-$password_c = $_POST('confirmPassword');
+$password = $_POST['password'];
+$password_c = $_POST['confirmPassword'];
 
 if($password != $password_c || $password == null)
 {
@@ -42,10 +42,10 @@ if($password != $password_c || $password == null)
   exit();
 }
 
-$model = $_POST('model');
-$gps = $_POST('gps');
-$gatewayID = $_POST('gatewayId');
-$description = $_POST('description');
+$model = $_POST['model'];
+$gps = $_POST['gps'];
+$gatewayID = $_POST['gatewayId'];
+$description = $_POST['description'];
 
 
 var_dump(yaml_emit($configurationFile));
