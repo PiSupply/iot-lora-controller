@@ -51,7 +51,7 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 
 <div class="ui divided grid stackable">
 
-    <div class="three column row">
+    <div class="<?php if($configurationFile['gateway-info']['gateway-type'] == 1) { echo('three');} else {echo('two');} ?>column row">
     <div class="column wide">
       <?php
       //Change the alert box's colour based on the status.
@@ -90,6 +90,20 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
       </div>
     </div>
 
+    <div class="column wide">
+      <?php
+      //Change the alert box's colour based on the status.
+      if($configurationFile['packet-forwarder-2']['enabled'] == true) {
+        echo("<div class=\"ui positive message segment\">");
+      }
+      else {
+        echo("<div class=\"ui error message segment\">");
+      }
+       ?>
+          <h3>Packet Forwarder <i class="microchip icon"></i></h3>
+          The packet forwarder service is <?php if($packetForwarder==0){echo("not ");}?>running.
+      </div>
+    </div>
 
 
       </div>
