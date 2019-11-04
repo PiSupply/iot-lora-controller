@@ -20,6 +20,12 @@
 
 include('inc/header.php');
 
+if($_GET("loraModule") == 2) {
+  $loraModule = 2;
+}
+else {
+  $loraModule = 1;
+}
 
 if($configurationFile['gateway-info']['initial-setup'] == 0) {
   //Send to first time setup
@@ -37,9 +43,18 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 <div class="row align-items-center">
    <div class="text-center">
      <h4>This page modifies the packet forwarder configuration. After updating the configuration you will have to go to the system control's page to reload the software.</h4>
-     <h4>To use either select TTN Mode, Or Legacy Mode and then fill out the corrosponding values.</h4>
-     <h5>Please note, switching between modes will wipe the settings for the packet forwarder and is not reversible</h5>
-   </div>
+     </div>
+
+     <?php
+      if($configurationFile['packet-forwarder-2']['enabled'] == true) {
+        if($loraModule = 1) {
+            echo("<a href='configurePacketForwarder.php?loraModule=2'  class='ui big orange button fluid'>Configure Lora Module 2</a>")
+        }
+        elseif($loraModule = 2) {
+            echo("<a href='configurePacketForwarder.php?loraModule=2'  class='ui big orange button fluid'>Configure Lora Module 1</a>")
+        }
+      }
+      ?>
 </div>
 <br>
 
@@ -48,7 +63,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
 <div class="row">
   <div class="coulumn">
-     <h1 class="ui top attached block header">Edit config file - LoRa Module 1</h1>
+     <h1 class="ui top attached block header">Edit config file - LoRa Module <?php echo($loraModule); ?> </h1>
      <form action="updatePacketfwd.php" method="post" class="ui form">
          <div class="ui bottom attached segment">
 
