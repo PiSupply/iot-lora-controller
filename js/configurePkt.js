@@ -38,3 +38,5 @@ function hideBoxes(servType) {
 
 
 }
+
+hideBoxes(serverType.value);

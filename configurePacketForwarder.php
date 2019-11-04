@@ -177,6 +177,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
     </div>
     </div>
 
+<script src="js/configurePkt.js"></script>
 
 <?php
 include('inc/footer.php');
