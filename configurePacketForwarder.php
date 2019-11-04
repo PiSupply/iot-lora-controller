@@ -145,6 +145,22 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
          </div>
          <br/>
 
+         <div class="field">
+          <label for="gatewayId">Latitude:</label> Latitude of the gateway's location.
+          <input type="text" id="gatewayId" name="gatewayId" class="form-control" required />
+         </div>
+         <br/>
+         <div class="field">
+          <label for="gatewayId">Longitude:</label> Longitude of the gateway's location.
+          <input type="text" id="gatewayId" name="gatewayId" class="form-control" required />
+         </div>
+         <br/>
+         <div class="field">
+          <label for="gatewayId">Altitude:</label> Approximate altitude of the gateway in meters.
+          <input type="text" id="gatewayId" name="gatewayId" class="form-control" required />
+         </div>
+         <br/>
+
 
           <br/>
           <input type="submit" class="ui primary button" value="Update Configuration" >
