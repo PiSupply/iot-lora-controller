@@ -20,7 +20,7 @@
 
 include('inc/header.php');
 
-if($_GET("loraModule") == 2) {
+if($_GET["loraModule"] == 2) {
   $loraModule = 2;
 }
 else {
