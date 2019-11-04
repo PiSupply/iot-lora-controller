@@ -182,7 +182,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
          </div>
          <br/>
 
-          <input id="loraModule" name="loraModule" type="hidden" value="1">
+          <input id="loraModule" name="loraModule" type="hidden" value="<?php echo($loraModule);?>">
           <br/>
           <input type="submit" class="ui primary button" value="Update Configuration" >
           </div>
