@@ -69,19 +69,19 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
           <br/>
 
           <!--Display these fields for TTN only-->
-          <div class="field">
+          <div class="field" id="ttnIDF">
            <label for="gatewayId"  >TTN ID:</label> This is the same as the Gateway ID from the TTN Console.
            <input type="text" id="gatewayId" name="gatewayId" class="form-control" required <?php if($configurationFile['packet-forwarder-2']['packet-forwarder-id']!=null) { echo "value='".$configurationFile['packet-forwarder-2']['packet-forwarder-id']."'"; }?>/>
           </div>
           <br/>
 
-          <div class="field">
-           <label for="ttnKey"  >TTN Gateway Key:</label> This is the Gateway Key from the TTN Console
+          <div class="field" id="ttnKeyF">
+           <label for="ttnKey" >TTN Gateway Key:</label> This is the Gateway Key from the TTN Console
            <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($jsonServers['serv_gw_key']!=null) { echo "value='".$jsonServers['serv_gw_key']."'"; }?>/>
           </div>
           <br/>
 
-          <div class="field">
+          <div class="field" id="ttnServF">
            <label for="routerTtn">TTN Server:</label>
            <select class="ui fluid search dropdown" name="routerTtn">
             <option value="ttn.thingsconnected.net">digitalcatapult-uk-router</option>
@@ -98,7 +98,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
 
           <!--Display these fields for Loriot-->
-          <div class="field">
+          <div class="field" id="loriotServF">
            <label for="routerLor">Loriot Server:</label>
            <select class="ui fluid search dropdown" name="routerLor">
             <option value="">AF1</option>
@@ -120,7 +120,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
           <!--Display these fields for Other-->
 
-          <div class="field">
+          <div class="field" id="servF">
            <label for="routerOth">Server Address:</label> The IP of the LoRa Server / Provider you wish to use.
            <input type="text" id="routerOth" name="routerOth" class="form-control" required />
           </div>
@@ -129,7 +129,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
           <!--Display this for Loriot & Other-->
 
-          <div class="field">
+          <div class="field" id="freqF">
            <label for="frequencyPlan">Frequency Plan:</label>
            <select class="ui fluid search dropdown" name="frequencyPlan">
             <option value="AS920">AS920</option>
@@ -161,13 +161,14 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
          </div>
          <br/>
 
-
+          <input id="loraModule" name="loraModule" type="hidden" value="1">
           <br/>
           <input type="submit" class="ui primary button" value="Update Configuration" >
           </div>
          </form>
        </div>
      </div>
+    </div>
     </div>
 
 
