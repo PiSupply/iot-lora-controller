@@ -69,19 +69,21 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
           <br/>
 
           <!--Display these fields for TTN only-->
-          <div class="field" id="ttnIDF">
+          <div class="field" id="ttnIDF" hidden>
            <label for="gatewayId"  >TTN ID:</label> This is the same as the Gateway ID from the TTN Console.
            <input type="text" id="gatewayId" name="gatewayId" class="form-control" required <?php if($configurationFile['packet-forwarder-2']['packet-forwarder-id']!=null) { echo "value='".$configurationFile['packet-forwarder-2']['packet-forwarder-id']."'"; }?>/>
+            <br/>
           </div>
-          <br/>
 
-          <div class="field" id="ttnKeyF">
+          <div class="field" id="ttnKeyF" hidden>
            <label for="ttnKey" >TTN Gateway Key:</label> This is the Gateway Key from the TTN Console
            <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($jsonServers['serv_gw_key']!=null) { echo "value='".$jsonServers['serv_gw_key']."'"; }?>/>
-          </div>
-          <br/>
 
-          <div class="field" id="ttnServF">
+           <br/>
+
+          </div>
+
+          <div class="field" id="ttnServF" hidden>
            <label for="routerTtn">TTN Server:</label>
            <select class="ui fluid search dropdown" name="routerTtn">
             <option value="ttn.thingsconnected.net">digitalcatapult-uk-router</option>
@@ -93,12 +95,13 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
             <option value="bridge.asia-se.thethings.network">ttn-router-jp</option>
             <option value="bridge.us-west.thethings.network">ttn-router-us-west</option>
            </select>
+
+           <br/>
          </div>
-         <br/>
 
 
           <!--Display these fields for Loriot-->
-          <div class="field" id="loriotServF">
+          <div class="field" id="loriotServF" hidden>
            <label for="routerLor">Loriot Server:</label>
            <select class="ui fluid search dropdown" name="routerLor">
             <option value="">AF1</option>
@@ -115,21 +118,23 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
             <option value="">US1</option>
             <option value="">US2</option>
            </select>
+
+           <br/>
          </div>
-         <br/>
 
           <!--Display these fields for Other-->
 
-          <div class="field" id="servF">
+          <div class="field" id="servF" hidden>
            <label for="routerOth">Server Address:</label> The IP of the LoRa Server / Provider you wish to use.
            <input type="text" id="routerOth" name="routerOth" class="form-control" required />
+
+           <br/>
           </div>
-          <br/>
 
 
           <!--Display this for Loriot & Other-->
 
-          <div class="field" id="freqF">
+          <div class="field" id="freqF" hidden>
            <label for="frequencyPlan">Frequency Plan:</label>
            <select class="ui fluid search dropdown" name="frequencyPlan">
             <option value="AS920">AS920</option>
@@ -142,8 +147,9 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
             <option value="RU864">RU864</option>
             <option value="US915">US915</option>
            </select>
+
+           <br/>
          </div>
-         <br/>
 
          <div class="field">
           <label for="gatewayId">Latitude:</label> Latitude of the gateway's location.
