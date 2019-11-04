@@ -89,7 +89,14 @@ if (php_sapi_name() != "cli") {
           <strong>LoRa Configuration</strong>
           <i class="dropdown icon menuButt"></i>
           <div class="menu">
-            <a class="item menuButt" href="configurePacketForwarder.php"><strong>Packet Forwarder Config</strong></a>
+            <a class="item menuButt" href="configurePacketForwarder.php?loraModule=1"><strong>Configure Packet Forwarder 1</strong></a>
+            ');
+
+            if($nebra) {
+              echo('<a class="item menuButt" href="configurePacketForwarder.php?loraModule=2"><strong>Configure Packet Forwarder 2</strong></a>');
+            }
+
+            echo('
             <a class="item menuButt" href="viewLog.php"><strong>Packet Forwarder Logfile</strong></a>
           </div>
         </div>
