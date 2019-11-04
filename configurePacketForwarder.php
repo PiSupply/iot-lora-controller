@@ -54,7 +54,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
            <div class="field">
             <label for="emailAddr">LoRa Provider:</label>
-            <select class="ui fluid search dropdown" name="serverType">
+            <select class="ui fluid search dropdown" name="serverType" id="serverType">
              <option value="TTN">The Things Network</option>
              <option value="LORIOT">Loriot</option>
              <option value="Other">Other</option>
