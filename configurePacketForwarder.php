@@ -86,7 +86,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
            <select class="ui fluid search dropdown" name="routerTtn">
             <option value="ttn.thingsconnected.net">digitalcatapult-uk-router</option>
             <option value="thethings.meshed.com.au">meshed-router</option>
-            <option value="ttn.opernnetworkinfrastructure.org"></option>
+            <option value="ttn.opernnetworkinfrastructure.org">switch-router</option>
             <option value="bridge.asisa-se.thethings.network">ttn-router-asia-se</option>
             <option value="bridge.brazil.thethings.network">ttn-router-brazil</option>
             <option value="bridge.eu.thethings.network">ttn-router-eu</option>
@@ -147,7 +147,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
          <div class="field">
           <label for="gatewayId">Latitude:</label> Latitude of the gateway's location.
-          <input type="latitude" id="latitude" name="latitude" class="form-control" required />
+          <input type="text" id="latitude" name="latitude" class="form-control" required />
          </div>
          <br/>
          <div class="field">
