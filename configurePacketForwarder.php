@@ -48,10 +48,10 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
      <?php
       if($configurationFile['packet-forwarder-2']['enabled'] == true) {
         if($loraModule = 1) {
-            echo("<a href='configurePacketForwarder.php?loraModule=2'  class='ui big orange button fluid'>Configure Lora Module 2</a>")
+            echo("<a href='configurePacketForwarder.php?loraModule=2'  class='ui big orange button fluid'>Configure Lora Module 2</a>");
         }
         elseif($loraModule = 2) {
-            echo("<a href='configurePacketForwarder.php?loraModule=2'  class='ui big orange button fluid'>Configure Lora Module 1</a>")
+            echo("<a href='configurePacketForwarder.php?loraModule=2'  class='ui big orange button fluid'>Configure Lora Module 1</a>");
         }
       }
       ?>
