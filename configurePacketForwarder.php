@@ -48,7 +48,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
 <div class="row">
   <div class="coulumn">
-     <h1 class="ui top attached block header">Edit config file - LoRa Module 2</h1>
+     <h1 class="ui top attached block header">Edit config file - LoRa Module 1</h1>
      <form action="updatePacketfwd.php" method="post" class="ui form">
          <div class="ui bottom attached segment">
 
@@ -64,7 +64,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
           <div class="field">
            <label for="emailAddr"  >Gateway EUI:</label> This is the fixed MAC address of this gateway.
-           <h4><?php echo($configurationFile['packet-forwarder-2']['packet-forwarder-eui']); ?></h4>
+           <h4><?php echo($configurationFile['packet-forwarder-1']['packet-forwarder-eui']); ?></h4>
           </div>
           <br/>
 
@@ -82,8 +82,8 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
           <br/>
 
           <div class="field">
-           <label for="emailAddr">TTN Server:</label>
-           <select class="ui fluid search dropdown" name="router">
+           <label for="routerTtn">TTN Server:</label>
+           <select class="ui fluid search dropdown" name="routerTtn">
             <option value="ttn.thingsconnected.net">digitalcatapult-uk-router</option>
             <option value="thethings.meshed.com.au">meshed-router</option>
             <option value="ttn.opernnetworkinfrastructure.org"></option>
@@ -99,8 +99,8 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
           <!--Display these fields for Loriot-->
           <div class="field">
-           <label for="emailAddr">Loriot Server:</label>
-           <select class="ui fluid search dropdown" name="loriot">
+           <label for="routerLor">Loriot Server:</label>
+           <select class="ui fluid search dropdown" name="routerLor">
             <option value="">AF1</option>
             <option value="">AP1</option>
             <option value="">AP2</option>
@@ -121,8 +121,8 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
           <!--Display these fields for Other-->
 
           <div class="field">
-           <label for="gatewayId">Server Address:</label> The IP of the LoRa Server / Provider you wish to use.
-           <input type="text" id="gatewayId" name="gatewayId" class="form-control" required />
+           <label for="routerOth">Server Address:</label> The IP of the LoRa Server / Provider you wish to use.
+           <input type="text" id="routerOth" name="routerOth" class="form-control" required />
           </div>
           <br/>
 
@@ -130,8 +130,8 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
           <!--Display this for Loriot & Other-->
 
           <div class="field">
-           <label for="emailAddr">Frequency Plan:</label>
-           <select class="ui fluid search dropdown" name="serverType">
+           <label for="frequencyPlan">Frequency Plan:</label>
+           <select class="ui fluid search dropdown" name="frequencyPlan">
             <option value="AS920">AS920</option>
             <option value="AS923">AS923</option>
             <option value="AU915">AU915</option>
@@ -147,17 +147,17 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
          <div class="field">
           <label for="gatewayId">Latitude:</label> Latitude of the gateway's location.
-          <input type="text" id="gatewayId" name="gatewayId" class="form-control" required />
+          <input type="latitude" id="latitude" name="latitude" class="form-control" required />
          </div>
          <br/>
          <div class="field">
-          <label for="gatewayId">Longitude:</label> Longitude of the gateway's location.
-          <input type="text" id="gatewayId" name="gatewayId" class="form-control" required />
+          <label for="longitude">Longitude:</label> Longitude of the gateway's location.
+          <input type="text" id="longitude" name="longitude" class="form-control" required />
          </div>
          <br/>
          <div class="field">
-          <label for="gatewayId">Altitude:</label> Approximate altitude of the gateway in meters.
-          <input type="text" id="gatewayId" name="gatewayId" class="form-control" required />
+          <label for="altitude">Altitude:</label> Approximate altitude of the gateway in meters.
+          <input type="text" id="altitude" name="altitude" class="form-control" required />
          </div>
          <br/>
 
