@@ -65,23 +65,23 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
          <div class="field">
           <label for="apn">APN:</label> Access Point Name for your 3G/4G Provider.
-          <input type="text" id="apn" name="apn" class="form-control" required />
+          <input type="text" id="apn" name="apn" class="form-control" required <?php if($configurationFile['lte-modem']['apn']!=null) { echo "value='".$configurationFile['lte-modem']['apn']."'"; }?>/>
          </div>
          <br/>
          <div class="field">
           <label for="number">Number:</label> This is the phone number for your 3G/4G provider.
-          <input type="text" id="number" name="number" class="form-control"  />
+          <input type="text" id="number" name="number" class="form-control"  <?php if($configurationFile['lte-modem']['apn']!=null) { echo "value='".$configurationFile['lte-modem']['number']."'"; }?>/>
          </div>
          <br/>
          <div class="field">
           <label for="username">Username:</label> This is the username for your 3G/4G provider.
-          <input type="text" id="username" name="username" class="form-control"  />
+          <input type="text" id="username" name="username" class="form-control" <?php if($configurationFile['lte-modem']['apn']!=null) { echo "value='".$configurationFile['lte-modem']['username']."'"; }?> />
          </div>
          <br/>
 
          <div class="field">
           <label for="password">Password:</label> This is the password for your 3G/4G provider.
-          <input type="text" id="password" name="password" class="form-control" />
+          <input type="text" id="password" name="password" class="form-control" <?php if($configurationFile['lte-modem']['apn']!=null) { echo "value='".$configurationFile['lte-modem']['password']."'"; }?>/>
          </div>
          <br/>
 
