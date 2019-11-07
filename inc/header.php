@@ -104,7 +104,7 @@ if (php_sapi_name() != "cli") {
           <strong>WAN Configuration</strong>
           <i class="dropdown icon menuButt"></i>
           <div class="menu">
-            <a class="item menuButt" href="4gconfiguration.php"><strong>4G Module Configuration</strong></a>
+            <a class="item menuButt" href="configure4G.php"><strong>4G Module Configuration</strong></a>
           </div>
         </div>
         <div class="ui dropdown item menuButt">
