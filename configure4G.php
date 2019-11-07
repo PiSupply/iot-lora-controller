@@ -56,7 +56,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
              <label for="gps"  >Enable 4G Module:</label> Enables the 4G Module.
              <br/><br/>
              <div class="ui slider checkbox">
-              <input type="checkbox" name="gps"  class="form-control" <?php if($jsonDecoded['gps'] == "true") { echo "checked";}?> >
+              <input type="checkbox" name="enable4G"  class="form-control" <?php if($configurationFile['lte-modem']['enabled'] == true) { echo "checked";}?> >
               <label>Enable 4G Module</label>
              </div>
             </div>
