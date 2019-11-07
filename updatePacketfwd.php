@@ -67,6 +67,14 @@ else {
 
 
 
+if($_POST['enabled'] == true) {
+  $loraConfig['enabled'] == true;
+}
+else {
+  $loraConfig['enabled'] == false;
+
+}
+
 if($loraModule == 2) {
    $configurationFile['packet-forwarder-2'] = $loraConfig;
 }
@@ -77,6 +85,7 @@ else {
 $configurationFile['location']['latitude'] = $_POST['latitude'];
 $configurationFile['location']['longitude'] = $_POST['longitude'];
 $configurationFile['location']['altitude'] = $_POST['altitude'];
+
 
 
 yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configurationFile);
