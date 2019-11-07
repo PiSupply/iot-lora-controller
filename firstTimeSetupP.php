@@ -85,7 +85,7 @@ $idHash = substr(hash("sha512", $gatewayID), -11);
 $splitId = str_split($idHash,6);
 
 $mac1 = $splitId[0].$splitId[1]."1";
-$mac2 = $splitId[0].$splitId[1]."1";
+$mac2 = $splitId[0].$splitId[1]."2";
 $eui1 = $splitId[0]."FFFF".$splitId[1]."1";
 $eui2 = $splitId[0]."FFFF".$splitId[1]."2";
 $configurationFile['packet-forwarder-1']['packet-forwarder-eui'] = $eui1;
