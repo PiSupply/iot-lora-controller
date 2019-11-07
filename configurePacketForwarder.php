@@ -85,7 +85,7 @@ $macAddress = implode(':', str_split($loraConfig['packet-forwarder-mac'],2));
            <h4><?php echo($loraConfig['packet-forwarder-eui']); ?></h4>
           </div>
           <br/>
-          
+
           <div class="field">
           <label for="emailAddr"  >Gateway MAC:</label> This is the fixed MAC address of this gateway.
           <h4><?php echo($macAddress); ?></h4>
@@ -110,14 +110,14 @@ $macAddress = implode(':', str_split($loraConfig['packet-forwarder-mac'],2));
           <div class="field" id="ttnServF" hidden>
            <label for="routerTtn">TTN Server:</label>
            <select class="ui fluid search dropdown" name="routerTtn">
-            <option value="ttn.thingsconnected.net" >digitalcatapult-uk-router</option>
-            <option value="thethings.meshed.com.au">meshed-router</option>
-            <option value="ttn.opernnetworkinfrastructure.org">switch-router</option>
-            <option value="bridge.asisa-se.thethings.network">ttn-router-asia-se</option>
-            <option value="bridge.brazil.thethings.network">ttn-router-brazil</option>
-            <option value="bridge.eu.thethings.network">ttn-router-eu</option>
-            <option value="bridge.asia-se.thethings.network">ttn-router-jp</option>
-            <option value="bridge.us-west.thethings.network">ttn-router-us-west</option>
+            <option value="ttn.thingsconnected.net" <?php if($loraConfig['router']=="ttn.thingsconnected.net") { echo "selected"; }?>>digitalcatapult-uk-router</option>
+            <option value="thethings.meshed.com.au" <?php if($loraConfig['router']=="thethings.meshed.com.au") { echo "selected"; }?>>meshed-router</option>
+            <option value="ttn.opernnetworkinfrastructure.org" <?php if($loraConfig['router']=="ttn.opernnetworkinfrastructure.org") { echo "selected"; }?>>switch-router</option>
+            <option value="bridge.asisa-se.thethings.network" <?php if($loraConfig['router']=="bridge.asisa-se.thethings.network") { echo "selected"; }?>>ttn-router-asia-se</option>
+            <option value="bridge.brazil.thethings.network" <?php if($loraConfig['router']=="bridge.brazil.thethings.network") { echo "selected"; }?>>ttn-router-brazil</option>
+            <option value="bridge.eu.thethings.network" <?php if($loraConfig['router']=="bridge.eu.thethings.network") { echo "selected"; }?>>ttn-router-eu</option>
+            <option value="bridge.asia-se.thethings.network" <?php if($loraConfig['router']=="bridge.asia-se.thethings.network") { echo "selected"; }?>>ttn-router-jp</option>
+            <option value="bridge.us-west.thethings.network" <?php if($loraConfig['router']=="bridge.us-west.thethings.network") { echo "selected"; }?>>ttn-router-us-west</option>
            </select>
 
            <br/>
@@ -128,18 +128,18 @@ $macAddress = implode(':', str_split($loraConfig['packet-forwarder-mac'],2));
           <div class="field" id="loriotServF" hidden>
            <label for="routerLor">Loriot Server:</label>
            <select class="ui fluid search dropdown" name="routerLor">
-            <option value="af1.loriot.io">AF1</option>
-            <option value="ap1.loriot.io">AP1</option>
-            <option value="ap2.loriot.io">AP2</option>
-            <option value="ap3.loriot.io">AP3</option>
-            <option value="au1.loriot.io">AU1</option>
-            <option value="cn1.loriot.io">CN1</option>
-            <option value="eu1.loriot.io">EU1</option>
-            <option value="eu2.loriot.io">EU2</option>
-            <option value="eu3.loriot.io">EU3</option
-            <option value="uk1.loriot.io">UK1</option>
-            <option value="us1.loriot.io">US1</option>
-            <option value="us1.loriot.io">US2</option>
+            <option value="af1.loriot.io"  <?php if($loraConfig['router']=="af1.loriot.io") { echo "selected"; }?>>AF1</option>
+            <option value="ap1.loriot.io" <?php if($loraConfig['router']=="ap1.loriot.io") { echo "selected"; }?>>AP1</option>
+            <option value="ap2.loriot.io" <?php if($loraConfig['router']=="ap2.loriot.io") { echo "selected"; }?>>AP2</option>
+            <option value="ap3.loriot.io" <?php if($loraConfig['router']=="ap3.loriot.io") { echo "selected"; }?>>AP3</option>
+            <option value="au1.loriot.io" <?php if($loraConfig['router']=="au1.loriot.io") { echo "selected"; }?>>AU1</option>
+            <option value="cn1.loriot.io" <?php if($loraConfig['router']=="cn1.loriot.io") { echo "selected"; }?>>CN1</option>
+            <option value="eu1.loriot.io" <?php if($loraConfig['router']=="eu1.loriot.io") { echo "selected"; }?>>EU1</option>
+            <option value="eu2.loriot.io" <?php if($loraConfig['router']=="eu2.loriot.io") { echo "selected"; }?>>EU2</option>
+            <option value="eu3.loriot.io" <?php if($loraConfig['router']=="eu3.loriot.io") { echo "selected"; }?>>EU3</option
+            <option value="uk1.loriot.io" <?php if($loraConfig['router']=="uk1.loriot.io") { echo "selected"; }?>>UK1</option>
+            <option value="us1.loriot.io" <?php if($loraConfig['router']=="us1.loriot.io") { echo "selected"; }?>>US1</option>
+            <option value="us1.loriot.io" <?php if($loraConfig['router']=="us2.loriot.io") { echo "selected"; }?>>US2</option>
            </select>
 
            <br/>
