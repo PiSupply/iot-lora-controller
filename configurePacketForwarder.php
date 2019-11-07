@@ -85,7 +85,8 @@ $macAddress = implode(':', str_split($loraConfig['packet-forwarder-mac'],2));
            <h4><?php echo($loraConfig['packet-forwarder-eui']); ?></h4>
           </div>
           <br/>
-
+          
+          <div class="field">
           <label for="emailAddr"  >Gateway MAC:</label> This is the fixed MAC address of this gateway.
           <h4><?php echo($macAddress); ?></h4>
          </div>
