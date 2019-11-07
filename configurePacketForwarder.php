@@ -191,11 +191,11 @@ $macAddress = implode(':', str_split($loraConfig['packet-forwarder-mac'],2));
          <br/>
 
          <div class="field">
-           <label for="enable"  >Enable LoRa Module <?php echo($loraModule); ?>:</label> Enables the GPS Module, (if plugged in on Gateway HAT).
+           <label for="enable"  >Enable LoRa Module <?php echo($loraModule); ?>:</label> Enables the LoRa Module.
            <br/><br/>
            <div class="ui slider checkbox">
             <input type="checkbox" name="enabled"  class="form-control" <?php if($loraConfig['enabled'] == "true") { echo "checked";}?> >
-            <label>Enable GPS Module</label>
+            <label>Enable LoRa Module <?php echo($loraModule); ?></label>
            </div>
           </div>
           <br/>
