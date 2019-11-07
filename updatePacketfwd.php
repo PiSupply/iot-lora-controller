@@ -74,6 +74,10 @@ else {
   $configurationFile['packet-forwarder-1'] = $loraConfig;
 }
 
+$configurationFile['location']['latitude'] = $_POST['latitude'];
+$configurationFile['location']['latitude'] = $_POST['longitude'];
+$configurationFile['location']['latitude'] = $_POST['altitude'];
+
 
 yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configurationFile);
 
