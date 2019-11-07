@@ -49,14 +49,14 @@ $macAddress = implode(':', str_split($loraConfig['packet-forwarder-mac'],2));
      </div>
 
      <?php
-
+      if($configurationFile['packet-forwarder-2']['enabled'] == true) {
         if($loraModule == 1) {
             echo("<a href='configurePacketForwarder.php?loraModule=2'  class='ui big orange button fluid'>Configure Lora Module 2</a>");
         }
         elseif($loraModule == 2) {
             echo("<a href='configurePacketForwarder.php?loraModule=1'  class='ui big orange button fluid'>Configure Lora Module 1</a>");
         }
-
+      }
       ?>
 </div>
 <br>
