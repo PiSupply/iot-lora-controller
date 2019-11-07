@@ -60,9 +60,9 @@ else {
 
 //Create a Salt
 
-$salt = "7493669DBF".random_int(100000,999999)."135C06E33A45EA".random_int(100000,999999)."9FCFE5"..random_int(100000,999999);
+$salt = "7493669DBF".random_int(100000,999999)."135C06E33A45EA".random_int(100000,999999)."9FCFE5".random_int(100000,999999);
 $configurationFile['user']['salt'] = $salt;
-$salt = "7493669DBF".random_int(100000,999999)."135C06E33A45EA".random_int(100000,999999)."9FCFE5"..random_int(100000,999999);
+$salt = "7493669DBF".random_int(100000,999999)."135C06E33A45EA".random_int(100000,999999)."9FCFE5".random_int(100000,999999);
 
 
 $gatewayID = $_POST['gatewayId'];
