@@ -24,6 +24,8 @@ function hideBoxes(servType) {
     document.getElementById("ttnIDF").hidden=false;
     document.getElementById("ttnKeyF").hidden=false;
     document.getElementById("ttnServF").hidden=false;
+    document.getElementById("freqF").hidden=false;
+  }
   }
 
   if(serverType.value == "LORIOT") {

@@ -21,13 +21,61 @@ include('inc/header.php');
 
 var_dump($_POST); //For Dev Only
 
-//TheGatewayID Is based off of the mac and starts with PIS
+if($_POST["loraModule"] == 2) {
+  $loraModule = 2;
+  $loraConfig = $configurationFile['packet-forwarder-2'];
+}
+else {
+  $loraModule = 1;
+  $loraConfig = $configurationFile['packet-forwarder-1'];
+}
+
+//Lets update the configuration file with all of the information.
+
+//First which server is being used.
+if($_POST['serverType'] == "TTN") {
+$loraConfig['providerType'] = "TTN";
+$loraConfig['packet-forwarder-id'] = $_POST['gatewayId'];
+$loraConfig['packet-forwarder-key'] = $_POST['ttnKey'];
+$loraConfig['router'] = $_POST['routerTtn'];
+$loraConfig['frequency-plan'] = $_POST['frequencyPlan'];
+
+
+}
+
+elseif($_POST['serverType'] == "LORIOT") {
+$loraConfig['providerType'] = "LORIOT";
+$loraConfig['router'] = $_POST['routerLor'];
+$loraConfig['frequency-plan'] = $_POST['frequencyPlan'];
+
+
+}
+
+elseif($_POST['serverType'] == "OTHER") {
+  $loraConfig['providerType'] = "OTHER";
+  $loraConfig['router'] = $_POST['routerOth'];
+  $loraConfig['frequency-plan'] = $_POST['frequencyPlan'];
+
+
+}
+
+else {
+  echo ("<h1>There has been an error processing the data, please re-submit");
+  include('inc/footer.php');
+  die();
+}
 
 
 
+if($loraModule == 2) {
+   $configurationFile['packet-forwarder-2'] = $loraConfig;
+}
+else {
+  $configurationFile['packet-forwarder-1'] = $loraConfig;
+}
 
 
-
+yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configurationFile);
 
 echo('
 <div class="row align-items-center">
@@ -39,5 +87,5 @@ echo('
 '
 );
 
-include('inc/footer.php');
+
  ?>
