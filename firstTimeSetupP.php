@@ -82,12 +82,12 @@ $configurationFile['user']['password'] = $password;
 
 $idHash = substr(hash("sha512", $gatewayID), -11);
 
-$splitId = str_split($idhash,6);
+$splitId = str_split($idHash,6);
 
 $mac1 = $splitId[0].$splitId[1]."1";
 $mac2 = $splitId[0].$splitId[1]."1";
 $eui1 = $splitId[0]."FFFF".$splitId[1]."1";
-$eui1 = $splitId[0]."FFFF".$splitId[1]."2";
+$eui2 = $splitId[0]."FFFF".$splitId[1]."2";
 $configurationFile['packet-forwarder-1']['packet-forwarder-eui'] = $eui1;
 $configurationFile['packet-forwarder-1']['packet-forwarder-mac'] = $mac1;
 $configurationFile['packet-forwarder-2']['packet-forwarder-eui'] = $eui2;
