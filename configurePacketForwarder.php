@@ -22,9 +22,11 @@ include('inc/header.php');
 
 if($_GET["loraModule"] == 2) {
   $loraModule = 2;
+  $loraConfig = $configurationFile['packet-forwarder-2'];
 }
 else {
   $loraModule = 1;
+  $loraConfig = $configurationFile['packet-forwarder-1']
 }
 
 if($configurationFile['gateway-info']['initial-setup'] == 0) {
@@ -51,7 +53,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
             echo("<a href='configurePacketForwarder.php?loraModule=2'  class='ui big orange button fluid'>Configure Lora Module 2</a>");
         }
         elseif($loraModule = 2) {
-            echo("<a href='configurePacketForwarder.php?loraModule=2'  class='ui big orange button fluid'>Configure Lora Module 1</a>");
+            echo("<a href='configurePacketForwarder.php?loraModule=1'  class='ui big orange button fluid'>Configure Lora Module 1</a>");
         }
       }
       ?>
@@ -70,29 +72,29 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
            <div class="field">
             <label for="emailAddr">LoRa Provider:</label>
             <select class="ui fluid search dropdown" name="serverType" id="serverType">
-             <option value="TTN">The Things Network</option>
-             <option value="LORIOT">Loriot</option>
-             <option value="Other">Other</option>
+             <option value="TTN" <?php if($loraConfig['providerType']=="TTN") { echo "selected"; }?>>The Things Network</option>
+             <option value="LORIOT" <?php if($loraConfig['providerType']=="LORIOT") { echo "selected"; }?>>Loriot</option>
+             <option value="OTHER" <?php if($loraConfig['providerType']=="OTHER") { echo "selected"; }?>>Other</option>
             </select>
           </div>
           <br/>
 
           <div class="field">
            <label for="emailAddr"  >Gateway EUI:</label> This is the fixed MAC address of this gateway.
-           <h4><?php echo($configurationFile['packet-forwarder-1']['packet-forwarder-eui']); ?></h4>
+           <h4><?php echo($loraConfig['packet-forwarder-eui']); ?></h4>
           </div>
           <br/>
 
           <!--Display these fields for TTN only-->
           <div class="field" id="ttnIDF" hidden>
            <label for="gatewayId"  >TTN ID:</label> This is the same as the Gateway ID from the TTN Console.
-           <input type="text" id="gatewayId" name="gatewayId" class="form-control" required <?php if($configurationFile['packet-forwarder-2']['packet-forwarder-id']!=null) { echo "value='".$configurationFile['packet-forwarder-2']['packet-forwarder-id']."'"; }?>/>
+           <input type="text" id="gatewayId" name="gatewayId" class="form-control" required <?php if($loraConfig['packet-forwarder-id']!=null) { echo "value='".$loraConfig['packet-forwarder-id']."'"; }?>/>
             <br/>
           </div>
 
           <div class="field" id="ttnKeyF" hidden>
            <label for="ttnKey" >TTN Gateway Key:</label> This is the Gateway Key from the TTN Console
-           <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($jsonServers['serv_gw_key']!=null) { echo "value='".$jsonServers['serv_gw_key']."'"; }?>/>
+           <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($loraConfig['packet-forwarder-key']!=null) { echo "value='".$loraConfig['packet-forwarder-key']."'"; }?>/>
 
            <br/>
 
@@ -101,7 +103,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
           <div class="field" id="ttnServF" hidden>
            <label for="routerTtn">TTN Server:</label>
            <select class="ui fluid search dropdown" name="routerTtn">
-            <option value="ttn.thingsconnected.net">digitalcatapult-uk-router</option>
+            <option value="ttn.thingsconnected.net" >digitalcatapult-uk-router</option>
             <option value="thethings.meshed.com.au">meshed-router</option>
             <option value="ttn.opernnetworkinfrastructure.org">switch-router</option>
             <option value="bridge.asisa-se.thethings.network">ttn-router-asia-se</option>
@@ -141,7 +143,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
           <div class="field" id="servF" hidden>
            <label for="routerOth">Server Address:</label> The IP of the LoRa Server / Provider you wish to use.
-           <input type="text" id="routerOth" name="routerOth" class="form-control" required />
+           <input type="text" id="routerOth" name="routerOth" class="form-control" <?php if($loraConfig['router']!=null) { echo "value='".$loraConfig['router']."'"; }?>required />
 
            <br/>
           </div>
@@ -152,15 +154,15 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
           <div class="field" id="freqF" hidden>
            <label for="frequencyPlan">Frequency Plan:</label>
            <select class="ui fluid search dropdown" name="frequencyPlan">
-            <option value="AS920">AS920</option>
-            <option value="AS923">AS923</option>
-            <option value="AU915">AU915</option>
-            <option value="CN470">CN470</option>
-            <option value="EU868">EU868</option>
-            <option value="IN865">IN865</option>
-            <option value="KR920">KR920</option>
-            <option value="RU864">RU864</option>
-            <option value="US915">US915</option>
+            <option value="AS920" <?php if($loraConfig['frequency-plan']=="AS920") { echo "selected"; }?>>AS920</option>
+            <option value="AS923" <?php if($loraConfig['frequency-plan']=="AS923") { echo "selected"; }?>>AS923</option>
+            <option value="AU915" <?php if($loraConfig['frequency-plan']=="AU915") { echo "selected"; }?>>AU915</option>
+            <option value="CN470" <?php if($loraConfig['frequency-plan']=="CN470") { echo "selected"; }?>>CN470</option>
+            <option value="EU868" <?php if($loraConfig['frequency-plan']=="EU868") { echo "selected"; }?>>EU868</option>
+            <option value="IN865" <?php if($loraConfig['frequency-plan']=="IN865") { echo "selected"; }?>>IN865</option>
+            <option value="KR920" <?php if($loraConfig['frequency-plan']=="KR920") { echo "selected"; }?>>KR920</option>
+            <option value="RU864" <?php if($loraConfig['frequency-plan']=="RU864") { echo "selected"; }?>>RU864</option>
+            <option value="US915" <?php if($loraConfig['frequency-plan']=="US915") { echo "selected"; }?>>US915</option>
            </select>
 
            <br/>
@@ -168,17 +170,17 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
          <div class="field">
           <label for="gatewayId">Latitude:</label> Latitude of the gateway's location.
-          <input type="text" id="latitude" name="latitude" class="form-control" required />
+          <input type="text" id="latitude" name="latitude" class="form-control" required <?php if($configurationFile['location']['latitude']!=null) { echo "value='".$configurationFile['location']['latitude']."'"; }?>/>
          </div>
          <br/>
          <div class="field">
           <label for="longitude">Longitude:</label> Longitude of the gateway's location.
-          <input type="text" id="longitude" name="longitude" class="form-control" required />
+          <input type="text" id="longitude" name="longitude" class="form-control" required <?php if($configurationFile['location']['longitude']!=null) { echo "value='".$configurationFile['location']['longitude']."'"; }?> />
          </div>
          <br/>
          <div class="field">
           <label for="altitude">Altitude:</label> Approximate altitude of the gateway in meters.
-          <input type="text" id="altitude" name="altitude" class="form-control" required />
+          <input type="text" id="altitude" name="altitude" class="form-control" required  <?php if($configurationFile['location']['altitude']!=null) { echo "value='".$configurationFile['location']['altitude']."'"; }?>/>
          </div>
          <br/>
 
