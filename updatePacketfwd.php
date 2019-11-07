@@ -19,7 +19,7 @@
 
 include('inc/header.php');
 
-//var_dump($_POST); //For Dev Only
+var_dump($_POST); //For Dev Only
 
 if($_POST["loraModule"] == 2) {
   $loraModule = 2;

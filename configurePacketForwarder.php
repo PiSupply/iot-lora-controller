@@ -194,7 +194,7 @@ $macAddress = implode(':', str_split($loraConfig['packet-forwarder-mac'],2));
            <label for="enable"  >Enable LoRa Module <?php echo($loraModule); ?>:</label> Enables the LoRa Module.
            <br/><br/>
            <div class="ui slider checkbox">
-            <input type="checkbox" name="enabled"  class="form-control" <?php if($loraConfig['enabled'] == "true") { echo "checked";}?> >
+            <input type="checkbox" name="enabled" id="enabled" class="form-control" <?php if($loraConfig['enabled'] == "true") { echo "checked";}?> >
             <label>Enable LoRa Module <?php echo($loraModule); ?></label>
            </div>
           </div>
