@@ -26,7 +26,7 @@ if($_GET["loraModule"] == 2) {
 }
 else {
   $loraModule = 1;
-  $loraConfig = $configurationFile['packet-forwarder-1']
+  $loraConfig = $configurationFile['packet-forwarder-1'];
 }
 
 if($configurationFile['gateway-info']['initial-setup'] == 0) {
