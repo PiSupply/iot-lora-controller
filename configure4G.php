@@ -64,24 +64,24 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
 
          <div class="field">
-          <label for="gatewayId">APN:</label> Access Point Name for your 3G/4G Provider.
-          <input type="text" id="latitude" name="latitude" class="form-control" required />
+          <label for="apn">APN:</label> Access Point Name for your 3G/4G Provider.
+          <input type="text" id="apn" name="apn" class="form-control" required />
          </div>
          <br/>
          <div class="field">
-          <label for="longitude">Number:</label> This is the phone number for your 3G/4G provider.
-          <input type="text" id="longitude" name="longitude" class="form-control" required />
+          <label for="number">Number:</label> This is the phone number for your 3G/4G provider.
+          <input type="text" id="number" name="number" class="form-control"  />
          </div>
          <br/>
          <div class="field">
-          <label for="altitude">Username:</label> This is the username for your 3G/4G provider.
-          <input type="text" id="altitude" name="altitude" class="form-control" required />
+          <label for="username">Username:</label> This is the username for your 3G/4G provider.
+          <input type="text" id="username" name="username" class="form-control"  />
          </div>
          <br/>
 
          <div class="field">
-          <label for="altitude">Password:</label> This is the password for your 3G/4G provider.
-          <input type="text" id="altitude" name="altitude" class="form-control" required />
+          <label for="password">Password:</label> This is the password for your 3G/4G provider.
+          <input type="text" id="password" name="password" class="form-control" />
          </div>
          <br/>
 
