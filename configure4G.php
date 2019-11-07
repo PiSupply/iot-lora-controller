@@ -36,7 +36,8 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 <div class="row align-items-center">
    <div class="text-center">
      <h4>4G Module Configuration</h4>
-     <h4>This page allows you to configure the settings for the 4G module.
+     <h4>This page allows you to configure the settings for the 4G module.</h4>
+      <h5>We've created a handy list of 4G Provider information over on <a href="https://docs.google.com/spreadsheets/d/1Na2VgUGWpaG3TpeBZ4gllDe2FNtIHQMS-gvG5rw6kd0/edit?usp=sharing">our documentation</a> for you to use.
      </div>
 
 </div>
@@ -63,23 +64,23 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
 
          <div class="field">
-          <label for="gatewayId">APN:</label> Latitude of the gateway's location.
+          <label for="gatewayId">APN:</label> Access Point Name for your 3G/4G Provider.
           <input type="text" id="latitude" name="latitude" class="form-control" required />
          </div>
          <br/>
          <div class="field">
-          <label for="longitude">Number:</label> Longitude of the gateway's location.
+          <label for="longitude">Number:</label> This is the phone number for your 3G/4G provider.
           <input type="text" id="longitude" name="longitude" class="form-control" required />
          </div>
          <br/>
          <div class="field">
-          <label for="altitude">Username:</label> Approximate altitude of the gateway in meters.
+          <label for="altitude">Username:</label> This is the username for your 3G/4G provider.
           <input type="text" id="altitude" name="altitude" class="form-control" required />
          </div>
          <br/>
 
          <div class="field">
-          <label for="altitude">Password:</label> Approximate altitude of the gateway in meters.
+          <label for="altitude">Password:</label> This is the password for your 3G/4G provider.
           <input type="text" id="altitude" name="altitude" class="form-control" required />
          </div>
          <br/>
