@@ -88,13 +88,13 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
           <!--Display these fields for TTN only-->
           <div class="field" id="ttnIDF" hidden>
            <label for="gatewayId"  >TTN ID:</label> This is the same as the Gateway ID from the TTN Console.
-           <input type="text" id="gatewayId" name="gatewayId" class="form-control" required <?php if($loraConfig['packet-forwarder-id']!=null) { echo "value='".$loraConfig['packet-forwarder-id']."'"; }?>/>
+           <input type="text" id="gatewayId" name="gatewayId" class="form-control"  <?php if($loraConfig['packet-forwarder-id']!=null) { echo "value='".$loraConfig['packet-forwarder-id']."'"; }?>/>
             <br/>
           </div>
 
           <div class="field" id="ttnKeyF" hidden>
            <label for="ttnKey" >TTN Gateway Key:</label> This is the Gateway Key from the TTN Console
-           <input type="text" id="ttnKey"name="ttnKey" class="form-control" required minlength=101 <?php if($loraConfig['packet-forwarder-key']!=null) { echo "value='".$loraConfig['packet-forwarder-key']."'"; }?>/>
+           <input type="text" id="ttnKey"name="ttnKey" class="form-control"  minlength=101 <?php if($loraConfig['packet-forwarder-key']!=null) { echo "value='".$loraConfig['packet-forwarder-key']."'"; }?>/>
 
            <br/>
 
@@ -143,7 +143,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 
           <div class="field" id="servF" hidden>
            <label for="routerOth">Server Address:</label> The IP of the LoRa Server / Provider you wish to use.
-           <input type="text" id="routerOth" name="routerOth" class="form-control" <?php if($loraConfig['router']!=null) { echo "value='".$loraConfig['router']."'"; }?>required />
+           <input type="text" id="routerOth" name="routerOth" class="form-control" <?php if($loraConfig['router']!=null) { echo "value='".$loraConfig['router']."'"; }?> />
 
            <br/>
           </div>
