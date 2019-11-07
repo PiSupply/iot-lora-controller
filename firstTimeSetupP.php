@@ -80,12 +80,18 @@ $configurationFile['gateway-info']['gatway-description'] = $description;
 $configurationFile['user']['email-address'] = $emailAddress;
 $configurationFile['user']['password'] = $password;
 
-$idHash = substr(hash("sha512", $gatewayID), -14);
+$idHash = substr(hash("sha512", $gatewayID), -11);
 
-$eui1 = $idHash."01";
-$eui2 = $idHash."02";
+$splitId = str_split($idhash,6);
+
+$mac1 = $splitId[0].$splitId[1]."1";
+$mac2 = $splitId[0].$splitId[1]."1";
+$eui1 = $splitId[0]."FFFF".$splitId[1]."1";
+$eui1 = $splitId[0]."FFFF".$splitId[1]."2";
 $configurationFile['packet-forwarder-1']['packet-forwarder-eui'] = $eui1;
+$configurationFile['packet-forwarder-1']['packet-forwarder-mac'] = $mac1;
 $configurationFile['packet-forwarder-2']['packet-forwarder-eui'] = $eui2;
+$configurationFile['packet-forwarder-2']['packet-forwarder-mac'] = $mac2;
 
 
 yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configurationFile);

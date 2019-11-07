@@ -121,19 +121,18 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
           <div class="field" id="loriotServF" hidden>
            <label for="routerLor">Loriot Server:</label>
            <select class="ui fluid search dropdown" name="routerLor">
-            <option value="">AF1</option>
-            <option value="">AP1</option>
-            <option value="">AP2</option>
-            <option value="">AP3</option>
-            <option value="">AU1</option>
-            <option value="">CN1</option>
-            <option value="">EU1</option>
-            <option value="">EU2</option>
-            <option value="">EU3</option>
-            <option value="">CN1</option>
-            <option value="">UK1</option>
-            <option value="">US1</option>
-            <option value="">US2</option>
+            <option value="af1.loriot.io">AF1</option>
+            <option value="ap1.loriot.io">AP1</option>
+            <option value="ap2.loriot.io">AP2</option>
+            <option value="ap3.loriot.io">AP3</option>
+            <option value="au1.loriot.io">AU1</option>
+            <option value="cn1.loriot.io">CN1</option>
+            <option value="eu1.loriot.io">EU1</option>
+            <option value="eu2.loriot.io">EU2</option>
+            <option value="eu3.loriot.io">EU3</option
+            <option value="uk1.loriot.io">UK1</option>
+            <option value="us1.loriot.io">US1</option>
+            <option value="us1.loriot.io">US2</option>
            </select>
 
            <br/>
