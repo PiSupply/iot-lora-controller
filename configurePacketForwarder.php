@@ -35,6 +35,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 }
 
 
+$macAddress = implode(':', str_split($loraConfig['packet-forwarder-mac'],2));
 ?>
 
 <div class="row align-items-center">
@@ -80,10 +81,15 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
           <br/>
 
           <div class="field">
-           <label for="emailAddr"  >Gateway EUI:</label> This is the fixed MAC address of this gateway.
+           <label for="emailAddr"  >Gateway EUI:</label> This is the fixed EUI address of this gateway.
            <h4><?php echo($loraConfig['packet-forwarder-eui']); ?></h4>
           </div>
           <br/>
+
+          <label for="emailAddr"  >Gateway MAC:</label> This is the fixed MAC address of this gateway.
+          <h4><?php echo($macAddress); ?></h4>
+         </div>
+         <br/>
 
           <!--Display these fields for TTN only-->
           <div class="field" id="ttnIDF" hidden>
