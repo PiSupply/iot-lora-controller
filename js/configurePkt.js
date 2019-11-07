@@ -26,14 +26,14 @@ function hideBoxes(servType) {
     document.getElementById("ttnServF").hidden=false;
     document.getElementById("freqF").hidden=false;
   }
-  
+
 
   if(serverType.value == "LORIOT") {
     document.getElementById("loriotServF").hidden=false;
     document.getElementById("freqF").hidden=false;
   }
 
-  if(serverType.value == "Other") {
+  if(serverType.value == "OTHER") {
       document.getElementById("servF").hidden=false;
       document.getElementById("freqF").hidden=false;
   }
