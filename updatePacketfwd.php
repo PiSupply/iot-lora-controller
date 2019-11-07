@@ -75,8 +75,8 @@ else {
 }
 
 $configurationFile['location']['latitude'] = $_POST['latitude'];
-$configurationFile['location']['latitude'] = $_POST['longitude'];
-$configurationFile['location']['latitude'] = $_POST['altitude'];
+$configurationFile['location']['longitude'] = $_POST['longitude'];
+$configurationFile['location']['altitude'] = $_POST['altitude'];
 
 
 yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configurationFile);
