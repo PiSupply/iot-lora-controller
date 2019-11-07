@@ -67,7 +67,7 @@ else {
 
 
 
-if($_POST['enabled'] == true) {
+if($_POST['enabled'] == "on") {
   $loraConfig['enabled'] == true;
 }
 else {
