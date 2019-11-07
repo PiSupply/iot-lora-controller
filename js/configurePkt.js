@@ -26,7 +26,7 @@ function hideBoxes(servType) {
     document.getElementById("ttnServF").hidden=false;
     document.getElementById("freqF").hidden=false;
   }
-  }
+  
 
   if(serverType.value == "LORIOT") {
     document.getElementById("loriotServF").hidden=false;
