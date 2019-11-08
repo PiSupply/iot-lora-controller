@@ -97,7 +97,7 @@ if (php_sapi_name() != "cli") {
             }
 
             echo('
-            <a class="item menuButt" href="viewLog.php"><strong>Packet Forwarder Logfile</strong></a>
+            <a class="item menuButt" href=".php"><strong>Gateway Bridge</strong></a>
           </div>
         </div>
         <div class="ui dropdown item menuButt">

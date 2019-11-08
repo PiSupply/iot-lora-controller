@@ -51,6 +51,16 @@ $loraConfig['frequency-plan'] = $_POST['frequencyPlan'];
 
 }
 
+
+elseif($_POST['serverType'] == "CHIRPL") {
+  $loraConfig['providerType'] = "CHIRPL";
+  $loraConfig['router'] = "127.0.0.1";
+  $loraConfig['frequency-plan'] = $_POST['frequencyPlan'];
+
+
+}
+
+
 elseif($_POST['serverType'] == "OTHER") {
   $loraConfig['providerType'] = "OTHER";
   $loraConfig['router'] = $_POST['routerOth'];
