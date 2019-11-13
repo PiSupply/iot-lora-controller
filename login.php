@@ -63,19 +63,19 @@ die();
 
          <div class="field">
           <label for="username">Username:</label> This is your email address.
-          <input type="text" id="username" name="username" class="form-control" />
+          <input type="text" id="username" name="username" class="form-control" required/>
          </div>
          <br/>
 
          <div class="field">
           <label for="password">Password:</label> This is the password you setup when creating the account.
-          <input type="text" id="password" name="password" class="form-control"/>
+          <input type="text" id="password" name="password" class="form-control" required/>
          </div>
          <br/>
 
 
           <br/>
-          <input type="submit" class="ui primary button" value="Update Configuration" >
+          <input type="submit" class="ui primary button" value="Login" >
           </div>
          </form>
        </div>
@@ -83,7 +83,7 @@ die();
     </div>
     </div>
 
-<script src="js/configurePkt.js"></script>
+
 
 <?php
 include('inc/footer.php');

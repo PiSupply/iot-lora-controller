@@ -30,8 +30,8 @@ else {
 }
 
 $configurationFile['lte-modem']['apn'] = $_POST['apn'];
-$configurationFile['lte-modem']['username'] = $_POST['username'];
-$configurationFile['lte-modem']['password'] = $_POST['password'];
+$configurationFile['lte-modem']['username'] = $_POST['username4'];
+$configurationFile['lte-modem']['password'] = $_POST['password4'];
 $configurationFile['lte-modem']['number'] = $_POST['number'];
 
 
