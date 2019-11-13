@@ -20,35 +20,13 @@
 include('inc/header.php');
 
 //var_dump($_POST); //For Dev Only
-
-$username = $_POST['username'];
-if($configurationFile['user']['email-address'] != $username) {
-  echo("<h1>Username Or Password Incorrect</h1>");
-  include('inc/footer.php');
-  exit();
-
-}
-
-$password = hash("sha512", $configurationFile['user']['salt'] .$_POST['password'].$configurationFile['user']['salt'] );
-
-if($configurationFile['user']['password'] != $password) {
-  echo("<h1>Username Or Password Incorrect</h1>");
-  include('inc/footer.php');
-  exit();
-
-}
-
-//If we get to here both should be correct.
-
-$loginHash = hash("sha512", $username.$configurationFile['user']['salt'].$password.$configurationFile['user']['salt']);
-$_SESSION['iotLoRaGatewayLogin'] = $loginHash;
-
-
+$_SESSION['iotLoRaGatewayLogin'] = "moo";
+session_unset();
 
 echo('
 <div class="row align-items-center">
    <div class="text-center">
-     <h1>You are now logged in.</h1>
+     <h1>You are now logged out.</h1>
    </div>
 </div>
 '
