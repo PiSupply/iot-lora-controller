@@ -19,7 +19,18 @@
 
 include('inc/header.php');
 
-var_dump($_POST); //For Dev Only
+
+if($configurationFile['gateway-info']['initial-setup'] == 0) {
+  //Send to first time setup
+  header("Location: firstTimeSetup.php");
+}
+
+if($loggedIn == 0) {
+  //Send to login page
+  header("Location: login.php");
+}
+
+
 
 if($_POST["loraModule"] == 2) {
   $loraModule = 2;
