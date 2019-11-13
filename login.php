@@ -60,36 +60,16 @@ die();
      <form action="update4G.php" method="post" class="ui form">
          <div class="ui bottom attached segment">
 
-           <div class="field">
-             <label for="gps"  >Enable 4G Module:</label> Enables the 4G Module.
-             <br/><br/>
-             <div class="ui slider checkbox">
-              <input type="checkbox" name="enable4G"  class="form-control" <?php if($configurationFile['lte-modem']['enabled'] == true) { echo "checked";}?> >
-              <label>Enable 4G Module</label>
-             </div>
-            </div>
-            <br/>
-
 
          <div class="field">
-          <label for="apn">APN:</label> Access Point Name for your 3G/4G Provider.
-          <input type="text" id="apn" name="apn" class="form-control" required <?php if($configurationFile['lte-modem']['apn']!=null) { echo "value='".$configurationFile['lte-modem']['apn']."'"; }?>/>
-         </div>
-         <br/>
-         <div class="field">
-          <label for="number">Number:</label> This is the phone number for your 3G/4G provider.
-          <input type="text" id="number" name="number" class="form-control"  <?php if($configurationFile['lte-modem']['apn']!=null) { echo "value='".$configurationFile['lte-modem']['number']."'"; }?>/>
-         </div>
-         <br/>
-         <div class="field">
-          <label for="username">Username:</label> This is the username for your 3G/4G provider.
-          <input type="text" id="username" name="username" class="form-control" <?php if($configurationFile['lte-modem']['apn']!=null) { echo "value='".$configurationFile['lte-modem']['username']."'"; }?> />
+          <label for="username">Username:</label> This is your email address.
+          <input type="text" id="username" name="username" class="form-control" />
          </div>
          <br/>
 
          <div class="field">
-          <label for="password">Password:</label> This is the password for your 3G/4G provider.
-          <input type="text" id="password" name="password" class="form-control" <?php if($configurationFile['lte-modem']['apn']!=null) { echo "value='".$configurationFile['lte-modem']['password']."'"; }?>/>
+          <label for="password">Password:</label> This is the password you setup when creating the account.
+          <input type="text" id="password" name="password" class="form-control"/>
          </div>
          <br/>
 
