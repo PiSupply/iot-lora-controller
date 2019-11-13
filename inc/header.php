@@ -30,6 +30,14 @@ $nebra = $configurationFile['gateway-info']['gateway-type'];
 
 $loggedIn = 0;
 
+
+if($_SESSION['iotLoRaGatewayLogin']) {
+  $loginHash = hash("sha512", $configurationFile['user']['email-address'].$configurationFile['user']['salt'].$configurationFile['user']['password'].$configurationFile['user']['salt']);
+  if($_SESSION['iotLoRaGatewayLogin'] == $loginHash) {
+    $loggedIn = 1;
+  }
+}
+
 if (php_sapi_name() != "cli") {
   echo ('
 <!doctype html>

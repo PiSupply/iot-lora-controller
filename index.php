@@ -30,6 +30,11 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
   header("Location: firstTimeSetup.php");
 }
 
+if($loggedIn == 0) {
+  //Send to login page
+  header("Location: login.php");
+}
+
 
 
 //Lets check for external internet connectivity by doing a http request to three servers
