@@ -62,6 +62,9 @@ else {
 
 $salt = "7493669DBF".random_int(100000,999999)."135C06E33A45EA".random_int(100000,999999)."9FCFE5".random_int(100000,999999);
 $configurationFile['user']['salt'] = $salt;
+
+$password = hash("sha512", $salt.$password.$salt);
+
 $salt = "7493669DBF".random_int(100000,999999)."135C06E33A45EA".random_int(100000,999999)."9FCFE5".random_int(100000,999999);
 
 
