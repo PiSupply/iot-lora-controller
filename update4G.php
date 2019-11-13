@@ -19,6 +19,18 @@
 
 include('inc/header.php');
 
+
+if($configurationFile['gateway-info']['initial-setup'] == 0) {
+  //Send to first time setup
+  header("Location: firstTimeSetup.php");
+}
+
+if($loggedIn == 0) {
+  //Send to login page
+  header("Location: login.php");
+}
+
+
 //var_dump($_POST); //For Dev Only
 
 //Update 4G Module
