@@ -54,5 +54,6 @@ echo('
 '
 );
 
+print_r($_SESSION);
 
  ?>
