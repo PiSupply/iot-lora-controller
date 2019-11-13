@@ -57,7 +57,7 @@ die();
 <div class="row">
   <div class="coulumn">
      <h1 class="ui top attached block header">Login</h1>
-     <form action="update4G.php" method="post" class="ui form">
+     <form action="loginS.php" method="post" class="ui form">
          <div class="ui bottom attached segment">
 
 
