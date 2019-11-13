@@ -41,7 +41,7 @@ if($configurationFile['user']['password'] != $password) {
 //If we get to here both should be correct.
 
 $loginHash = hash("sha512", $username.$configurationFile['user']['salt'].$password.$configurationFile['user']['salt']);
-$_SESSION['7dcda35da5d3cf3488ff03026d03d68b'] = $loginHash;
+$_SESSION['iotLoRaGatewayLogin'] = $loginHash;
 
 
 
