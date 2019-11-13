@@ -21,6 +21,8 @@
 
 //Global variables
 
+ session_start();
+
 
 $configurationFile = yaml_parse_file('/opt/iotloragateway/config/gateway_configuration.yml');
 
