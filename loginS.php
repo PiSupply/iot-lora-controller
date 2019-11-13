@@ -48,7 +48,7 @@ $_SESSION['iotLoRaGatewayLogin'] = $loginHash;
 echo('
 <div class="row align-items-center">
    <div class="text-center">
-     <h1>You are logged now logged in</h1>
+     <h1>You are now logged in.</h1>
    </div>
 </div>
 '
