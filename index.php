@@ -94,7 +94,7 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
       <?php
       //Change the alert box's colour based on the status.
       if($configurationFile['packet-forwarder-2']['enabled'] == true) {
-        echo("<div class=\"ui positive message segment\">");
+        echo("<div class=\"ui teal message segment\">");
       }
       else {
         echo("<div class=\"ui error message segment\">");
