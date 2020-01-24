@@ -46,6 +46,13 @@ if($internetCheck1 == FALSE) {
 
 $cpuTemp = shell_exec("cat /sys/class/thermal/thermal_zone0/temp");
 $cpuTemp = $cpuTemp/1000;
+
+$totalRam = shell_exec("free -m  | awk '/Mem/{print $3}'");
+$freeRam = shell_exec("free -m  | awk '/Mem/{print $2}'");
+
+var_dump($totalRam);
+var_dump($freeRam);
+
 ?>
 <?php
 if($nebra) {echo('<h1>IoT Smart LoRa Gateway</h1>');}
