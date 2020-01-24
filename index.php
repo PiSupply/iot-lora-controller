@@ -133,6 +133,7 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 }
 
 else {
+  if($configurationFile['packet-forwarder-1']['enabled'] == true) {
     echo ('
     <div class="row">
     <div class="column">
@@ -142,6 +143,7 @@ else {
   </div>
   </div>
   ');
+}
   if($configurationFile['packet-forwarder-2']['enabled'] == true) {
       echo ('
 
