@@ -50,8 +50,8 @@ $cpuTemp = $cpuTemp/1000;
 $totalRam = shell_exec("free -m  | awk '/Mem/{print $3}'");
 $freeRam = shell_exec("free -m  | awk '/Mem/{print $2}'");
 
-var_dump($totalRam);
-var_dump($freeRam);
+//var_dump($totalRam);
+//var_dump($freeRam);
 
 ?>
 <?php
