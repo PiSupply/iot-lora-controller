@@ -83,11 +83,11 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
     <div class="column wide">
       <?php
       //Change the alert box's colour based on the status.
-      if($packetForwarder == 1) {
+      if($configurationFile['packet-forwarder-1']['enabled'] == true) {
         echo("<div class=\"ui positive message segment\">");
       }
       else {
-        echo("<div class=\"ui error message segment\">");
+        echo("<div class=\"ui teal message segment\">");
       }
        ?>
           <h3>Packet Forwarder 1<i class="microchip icon"></i></h3>
@@ -99,10 +99,10 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
       <?php
       //Change the alert box's colour based on the status.
       if($configurationFile['packet-forwarder-2']['enabled'] == true) {
-        echo("<div class=\"ui teal message segment\">");
+        echo("<div class=\"ui positive message segment\">");
       }
       else {
-        echo("<div class=\"ui error message segment\">");
+        echo("<div class=\"ui teal message segment\">");
       }
        ?>
           <h3>Packet Forwarder 2 <i class="microchip icon"></i></h3>
