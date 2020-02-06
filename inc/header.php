@@ -72,7 +72,7 @@ if (php_sapi_name() != "cli") {
 
 
   <body>
-
+ <div class = "pusher">
     <header>
       <!-- Fixed navbar -->
       <div class="ui left fixed vertical menu">
