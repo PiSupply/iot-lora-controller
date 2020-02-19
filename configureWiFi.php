@@ -69,7 +69,7 @@ if($loggedIn == 0) {
          </div>
          <br/>
          <div class="field">
-          <label for="password">Region Code:</label> This is the Region Code
+          <label for="password">Region Code:</label> This is the 2 letter Region Code, you can find your one <a href="https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes">Here</a>
           <input type="text" id="region" name="region" class="form-control" <?php if($configurationFile['wifi']['region']!=null) { echo "value='".$configurationFile['wifi']['region']."'"; }?>/>
          </div>
          <br/>
