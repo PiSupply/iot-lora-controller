@@ -54,7 +54,7 @@ if($loggedIn == 0) {
 <div class="row">
   <div class="coulumn">
      <h1 class="ui top attached block header">Edit config file - Wi-Fi</h1>
-     <form action="update4G.php" method="post" class="ui form">
+     <form action="updateWiFi.php" method="post" class="ui form">
          <div class="ui bottom attached segment">
 
 

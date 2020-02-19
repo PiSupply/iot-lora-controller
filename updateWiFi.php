@@ -33,18 +33,11 @@ if($loggedIn == 0) {
 
 //var_dump($_POST); //For Dev Only
 
-//Update 4G Module
-if($_POST['enable4G']) {
-  $configurationFile['lte-modem']['enabled'] = true;
-}
-else {
-  $configurationFile['lte-modem']['enabled'] = false;
-}
+//Update WiFi Module
 
-$configurationFile['lte-modem']['apn'] = $_POST['apn'];
-$configurationFile['lte-modem']['username'] = $_POST['username4'];
-$configurationFile['lte-modem']['password'] = $_POST['password4'];
-$configurationFile['lte-modem']['number'] = $_POST['number'];
+$configurationFile['wifi']['ssid'] = $_POST['SSID'];
+$configurationFile['wifi']['password'] = $_POST['passwordWiFi'];
+$configurationFile['wifi']['region'] = $_POST['region'];
 
 
 yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configurationFile);
@@ -52,7 +45,7 @@ yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configura
 echo('
 <div class="row align-items-center">
    <div class="text-center">
-     <h1>4G Configuration Tool</h1>
+     <h1>WiFi Configuration Tool</h1>
      <h4>Configuration has been written, please reboot the system from the commands tab for the changes to be applied.</h4>
    </div>
 </div>
