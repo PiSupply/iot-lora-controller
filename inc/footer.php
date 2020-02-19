@@ -24,6 +24,6 @@
 <br/><br/><br/><br/>
 <hr/>
 <footer>
-<h5>IoT LoRa Gateway Controller, &copy; Nebra LTD. T/A Pi Supply 2018-2019.</h5>
+<h5>IoT LoRa Gateway Controller, &copy; Nebra LTD. T/A Pi Supply 2018-2020.</h5>
 </footer>
 </body>
