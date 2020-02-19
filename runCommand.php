@@ -131,11 +131,11 @@ else if($buttonPressed == "diag") {
 }
 else if($buttonPressed == "rbtSys") {
   //Restart the packet forwarder
-  shell_exec("sudo shutdown -r +1");
+  shell_exec("touch /opt/iotloragateway/config/reboot");
 }
 else if($buttonPressed == "sdSys") {
   //Restart the packet forwarder
-  shell_exec("sudo shutdown -h +1");
+  shell_exec("touch /opt/iotloragateway/config/shutdown");
 }
 
 
