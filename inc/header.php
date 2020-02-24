@@ -102,6 +102,7 @@ if (php_sapi_name() != "cli") {
           <i class="dropdown icon menuButt"></i>
           <div class="menu">
             <a class="item menuButt" href="configure4G.php"><strong>4G Module Configuration</strong></a>
+            <a class="item menuButt" href="configureWiFi.php"><strong>WiFi Configuration</strong></a>
           </div>
         </div>
         <div class="ui dropdown item menuButt">
