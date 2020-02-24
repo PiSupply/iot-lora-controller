@@ -81,8 +81,9 @@ if($loggedIn == 0) {
          </form>
        </div>
      </div>
-    </div>
-    </div>
+
+
+
 
 <script src="js/configurePkt.js"></script>
 
