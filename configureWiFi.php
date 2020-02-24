@@ -59,7 +59,7 @@ if($loggedIn == 0) {
 
 
          <div class="field">
-          <label for="SSID">APN:</label> SSID
+          <label for="SSID">SSID:</label> Name of your Wi-Fi Network
           <input type="text" id="SSID" name="SSID" class="form-control" required <?php if($configurationFile['wifi']['ssid']!=null) { echo "value='".$configurationFile['wifi']['ssid']."'"; }?>/>
          </div>
          <br/>
