@@ -35,12 +35,12 @@ if($loggedIn == 0) {
 
 <div class="row align-items-center">
    <div class="text-center">
-     <h1>4G Module Configuration Tool</h1>
+     <h1>Wi-Fi Configuration Tool</h1>
    </div>
 </div>
 <div class="row align-items-center">
    <div class="text-center">
-     <h4>WiFi Configuration</h4>
+
      <h4>This page allows you to configure the settings for Wi-Fi.</h4>
       <h5>This will configure Wi-Fi on Raspberry Pi, if using the Nebra Gateway you will need to insert a Wi-Fi Adapter</h5>
      </div>
