@@ -54,7 +54,7 @@ if (php_sapi_name() != "cli") {
     <!-- Bootstrap core CSS -->
 
     <link href="css/semantic.min.css" rel="stylesheet">
-     <link href="css/custom.css" rel="stylesheet"> 
+     <link href="css/custom.css" rel="stylesheet">
     ');
 
     if($nebra) { echo ('   <link href="css/custom-nebra.css" rel="stylesheet">  ');}
@@ -75,7 +75,7 @@ if (php_sapi_name() != "cli") {
  <div class = "pusher">
     <header>
       <!-- Fixed navbar -->
-      <div class="ui left fixed vertical menu">
+      <div class="ui fixed menu">
       ');
       if($nebra) { echo ('<div class="header item right"><img id="logo" src="img/nebra-white.png"/></div>');}
 
