@@ -54,11 +54,11 @@ if (php_sapi_name() != "cli") {
     <!-- Bootstrap core CSS -->
 
     <link href="css/semantic.min.css" rel="stylesheet">
-
+     <link href="css/custom.css" rel="stylesheet"> 
     ');
 
     if($nebra) { echo ('   <link href="css/custom-nebra.css" rel="stylesheet">  ');}
-    else { echo ('   <link href="css/custom.css" rel="stylesheet">  '); }
+    else { echo ('   <link href="css/custom-hat.css" rel="stylesheet">  '); }
 
 
 
