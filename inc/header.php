@@ -77,7 +77,7 @@ if (php_sapi_name() != "cli") {
       <!-- Fixed navbar -->
       <div class="ui fixed menu">
       ');
-      if($nebra) { echo ('<div class="header item right"><img id="logo" src="img/nebra-white.png"/></div>');}
+      if($nebra) { echo ('<div class="header item"><img id="logo" src="img/nebra-white.png"/></div>');}
 
        echo ('
         <div class="header item"><img id="logo" src="img/logo.png"/></div>
