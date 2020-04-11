@@ -33,6 +33,10 @@ function hideBoxes(servType) {
     document.getElementById("freqF").hidden=false;
   }
 
+  if(serverType.value == "TTI") {
+      document.getElementById("servF").hidden=false;
+      document.getElementById("freqF").hidden=false;
+  }
   if(serverType.value == "OTHER") {
       document.getElementById("servF").hidden=false;
       document.getElementById("freqF").hidden=false;
