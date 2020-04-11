@@ -24,7 +24,7 @@ if (php_sapi_name() != "cli") {
   <hr/>
   <footer>
   <h5>IoT LoRa Gateway Controller, &copy; Nebra LTD. T/A Pi Supply 2018-2020.</h5>
-  <h6>Last Updated 2019-03-13</h6>
+  <h6>Last Updated 2020-04-11</h6>
   </footer>
   </div>
   </body>');
