@@ -69,7 +69,7 @@ die();
 
          <div class="field">
           <label for="password">Password:</label> This is the password you setup when creating the account.
-          <input type="text" id="password" name="password" class="form-control" required/>
+          <input type="password" id="password" name="password" class="form-control" required/>
          </div>
          <br/>
 
