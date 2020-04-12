@@ -72,6 +72,14 @@ elseif($_POST['serverType'] == "CHIRPL") {
 }
 
 
+elseif($_POST['serverType'] == "TTI") {
+  $loraConfig['providerType'] = "TTI";
+  $loraConfig['router'] = $_POST['routerOth'];
+  $loraConfig['frequency-plan'] = $_POST['frequencyPlan'];
+
+
+}
+
 elseif($_POST['serverType'] == "OTHER") {
   $loraConfig['providerType'] = "OTHER";
   $loraConfig['router'] = $_POST['routerOth'];

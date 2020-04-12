@@ -80,7 +80,7 @@ $macAddress = implode(':', str_split($loraConfig['packet-forwarder-mac'],2));
             <label for="emailAddr">LoRa Provider:</label>
             <select class="ui fluid search dropdown" name="serverType" id="serverType">
              <option value="TTN" <?php if($loraConfig['providerType']=="TTN") { echo "selected"; }?>>The Things Network</option>
-             <option value="TTI" <?php if($loraConfig['providerType']=="TTN") { echo "selected"; }?>>The Things Industries</option>
+             <option value="TTI" <?php if($loraConfig['providerType']=="TTI") { echo "selected"; }?>>The Things Industries</option>
              <option value="LORIOT" <?php if($loraConfig['providerType']=="LORIOT") { echo "selected"; }?>>Loriot</option>
              <option value="CHIRPL" <?php if($loraConfig['providerType']=="CHIRPL") { echo "selected"; }?>>Chirpstack Bridge</option>
              <option value="OTHER" <?php if($loraConfig['providerType']=="OTHER") { echo "selected"; }?>>Other</option>
