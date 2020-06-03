@@ -117,23 +117,9 @@ if($buttonPressed == "rstPkt") {
   //Restart the packet forwarder
   shell_exec("sudo systemctl restart iot-lora-gateway.service");
 }
-else if($buttonPressed == "stpPkt") {
-  //Restart the packet forwarder
-  shell_exec("sudo systemctl stop iot-lora-gateway.service");
-}
-else if($buttonPressed == "strPkt") {
-  //Restart the packet forwarder
-  shell_exec("sudo systemctl start iot-lora-gateway.service");
-}
-else if($buttonPressed == "diag") {
-  //Restart the packet forwarder
-  //shell_exec("sudo systemctl start iot-lora-gateway.service");
-}
 else if($buttonPressed == "rbtSys") {
   //Restart the packet forwarder
-  shell_exec("echo 1 > /proc/sys/kernel/sysrq");
-  shell_exec("echo s > /proc/sysrq-trigger");
-  shell_exec("echo b > /proc/sysrq-trigger");
+  shell_exec("sudo /opt/iotloragateway/controller/iot-lora-controller/reboot.sh");
 }
 else if($buttonPressed == "sdSys") {
   //Restart the packet forwarder
