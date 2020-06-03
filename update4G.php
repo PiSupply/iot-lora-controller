@@ -33,14 +33,7 @@ if($loggedIn == 0) {
 
 //var_dump($_POST); //For Dev Only
 
-//Update 4G Module
-if($_POST['enable4G']) {
-  $configurationFile['lte-modem']['enabled'] = true;
-}
-else {
-  $configurationFile['lte-modem']['enabled'] = false;
-}
-
+//LTE Settings
 $configurationFile['lte-modem']['apn'] = $_POST['apn'];
 $configurationFile['lte-modem']['username'] = $_POST['username4'];
 $configurationFile['lte-modem']['password'] = $_POST['password4'];

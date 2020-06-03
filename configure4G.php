@@ -57,17 +57,6 @@ if($loggedIn == 0) {
      <form action="update4G.php" method="post" class="ui form">
          <div class="ui bottom attached segment">
 
-           <div class="field">
-             <label for="gps"  >Enable 4G Module:</label> Enables the 4G Module.
-             <br/><br/>
-             <div class="ui slider checkbox">
-              <input type="checkbox" name="enable4G"  class="form-control" <?php if($configurationFile['lte-modem']['enabled'] == true) { echo "checked";}?> >
-              <label>Enable 4G Module</label>
-             </div>
-            </div>
-            <br/>
-
-
          <div class="field">
           <label for="apn">APN:</label> Access Point Name for your 3G/4G Provider.
           <input type="text" id="apn" name="apn" class="form-control" required <?php if($configurationFile['lte-modem']['apn']!=null) { echo "value='".$configurationFile['lte-modem']['apn']."'"; }?>/>
