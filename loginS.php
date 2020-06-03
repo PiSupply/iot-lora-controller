@@ -39,6 +39,8 @@ if($configurationFile['user']['password'] != $password) {
 }
 
 //If we get to here both should be correct.
+//Set Refresh header using PHP.
+header( "refresh:5;url=index.php" );
 
 $loginHash = hash("sha512", $username.$configurationFile['user']['salt'].$password.$configurationFile['user']['salt']);
 $_SESSION['iotLoRaGatewayLogin'] = $loginHash;
@@ -48,7 +50,7 @@ $_SESSION['iotLoRaGatewayLogin'] = $loginHash;
 echo('
 <div class="row align-items-center">
    <div class="text-center">
-     <h1>You are now logged in.</h1>
+     <h1>You are now logged in, redirecting to homepage in 5 seconds.</h1>
    </div>
 </div>
 '
