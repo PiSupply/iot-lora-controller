@@ -131,11 +131,15 @@ else if($buttonPressed == "diag") {
 }
 else if($buttonPressed == "rbtSys") {
   //Restart the packet forwarder
-  shell_exec("sudo shutdown -r +1");
+  shell_exec("echo 1 > /proc/sys/kernel/sysrq");
+  shell_exec("echo s > /proc/sysrq-trigger");
+  shell_exec("echo b > /proc/sysrq-trigger");
 }
 else if($buttonPressed == "sdSys") {
   //Restart the packet forwarder
-  shell_exec("sudo shutdown -h +1");
+  shell_exec("echo 1 > /proc/sys/kernel/sysrq");
+  shell_exec("echo s > /proc/sysrq-trigger");
+  shell_exec("echo o > /proc/sysrq-trigger");
 }
 
 
