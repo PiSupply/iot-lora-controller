@@ -26,6 +26,11 @@ include('inc/header.php');
 
 $buttonPressed = $_GET['butt'];
 
+if($loggedIn == 0) {
+  //Send to login page
+  header("Location: login.php");
+}
+
 
 ?>
 

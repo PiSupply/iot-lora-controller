@@ -26,10 +26,14 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
   header("Location: firstTimeSetup.php");
 }
 
+if($loggedIn == 0) {
+  //Send to login page
+  header("Location: login.php");
+}
+
+
 ?>
 <h1>IoT LoRa Gateway Commands</h1>
-
-
 
 
 <div class="ui collumn segment error message ">
