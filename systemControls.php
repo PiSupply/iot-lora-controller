@@ -30,11 +30,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 <h1>IoT LoRa Gateway Commands</h1>
 
 
-<div class="ui warning message">
-  <a href="runCommand.php?butt=rstPkt"  class="ui big orange button fluid">Restart</a>
-        <strong>Restart Packet Forwarder:</strong> This'll restart the packet forwarder service. &amp; Update the configuration details from the TTN Console.
 
-</div>
 
 <div class="ui collumn segment error message ">
     <a href="runCommand.php?butt=rbtSys"  class="ui yellow button big fluid ">Reboot system</a>
