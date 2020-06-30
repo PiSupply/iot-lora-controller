@@ -32,6 +32,7 @@ if($loggedIn == 0) {
 }
 
 
+
 ?>
 <h1>IoT LoRa Gateway Commands</h1>
 
