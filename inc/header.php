@@ -81,7 +81,9 @@ if (php_sapi_name() != "cli") {
 
        echo ('
         <div class="header item"><img id="logo" src="img/logo.png"/></div>
-        <a class="item menuButt" href="index.php"><strong>Gateway Status</strong></a>
+        <a class="item menuButt" href="index.php"><strong>Gateway Status</strong></a>');
+        if($loggedIn) {
+          echo('
         <div class="ui dropdown item menuButt">
           <strong>LoRa Configuration</strong>
           <i class="dropdown icon menuButt"></i>
@@ -89,12 +91,13 @@ if (php_sapi_name() != "cli") {
             <a class="item menuButt" href="configurePacketForwarder.php?loraModule=1"><strong>Configure Packet Forwarder 1</strong></a>
             ');
 
-            if($nebra) {
+            if($nebra && $loggedIn) {
               echo('<a class="item menuButt" href="configurePacketForwarder.php?loraModule=2"><strong>Configure Packet Forwarder 2</strong></a>');
             }
 
+            if($loggedIn) {
             echo('
-            <a class="item menuButt" href=".php"><strong>Gateway Bridge</strong></a>
+            <!--<a class="item menuButt" href=".php"><strong>Gateway Bridge</strong></a>-->
           </div>
         </div>
         <div class="ui dropdown item menuButt">
@@ -112,10 +115,11 @@ if (php_sapi_name() != "cli") {
             <a class="item menuButt" href="systemControls.php"><strong>System Controls</strong></a>
             <a class="item menuButt" href="changePassword.php"><strong>Change Password</strong></a>
           </div>
-        </div>
-        <a class="item menuButt" href="about.php"><strong>About</strong></a>
-        ');
-        if($loggedIn == 1) {
+        </div>');
+      }
+
+        echo('<a class="item menuButt" href="about.php"><strong>About</strong></a>');
+        if($loggedIn) {
           echo ('<a class="item menuButt" href="logout.php"><strong>Logout</strong></a>');
         }
         echo ('
