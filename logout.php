@@ -34,3 +34,6 @@ echo('
 
 
  ?>
+ <?php
+ include('inc/footer.php');
+ ?>
