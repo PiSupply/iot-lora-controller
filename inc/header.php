@@ -90,6 +90,7 @@ if (php_sapi_name() != "cli") {
           <div class="menu">
             <a class="item menuButt" href="configurePacketForwarder.php?loraModule=1"><strong>Configure Packet Forwarder 1</strong></a>
             ');
+          }
 
             if($nebra && $loggedIn) {
               echo('<a class="item menuButt" href="configurePacketForwarder.php?loraModule=2"><strong>Configure Packet Forwarder 2</strong></a>');
