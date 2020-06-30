@@ -28,6 +28,7 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 if($loggedIn == 0) {
   //Send to login page
   header("Location: login.php");
+
 }
 
 
