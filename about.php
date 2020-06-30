@@ -44,6 +44,7 @@ include('inc/header.php');
       <div class="column wide">
         <h3>System Information:</h3>
         <h5>Please send these to technical support if requested</h5>
+        <h5>Hardware Information.</h5>
         <textarea rows="10" cols="50">
 
         <?php
@@ -54,6 +55,16 @@ include('inc/header.php');
 
         ?>
       </textarea>
+
+      <h5>Network information.</h5>
+      <textarea rows="10" cols="50">
+
+      <?php
+      echo(file_get_contents('/opt/iotloragateway/config/ifconfig.txt')
+
+
+      ?>
+    </textarea>
 
   </div>
 </div>
