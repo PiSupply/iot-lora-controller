@@ -60,7 +60,7 @@ include('inc/header.php');
       <textarea rows="10" cols="50">
 
       <?php
-      echo(file_get_contents('/opt/iotloragateway/config/ifconfig.txt')
+      echo(file_get_contents('/opt/iotloragateway/config/ifconfig.txt'));
 
 
       ?>
