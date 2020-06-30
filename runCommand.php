@@ -118,19 +118,21 @@ else if($buttonPressed == "sdSys") {
 <?php
 include("inc/footer.php");
 
+  $rebootFile = fopen("/opt/iotloragateway/config/rebooter.txt", "w");
+
 if($buttonPressed == "rstPkt") {
   //Restart the packet forwarder
-  shell_exec("sudo systemctl restart iot-lora-gateway.service");
+  fwrite($rebootFile,"restart");
+  fclose($rebootFile);
 }
 else if($buttonPressed == "rbtSys") {
   //Restart the packet forwarder
-  shell_exec("sudo /opt/iotloragateway/controller/iot-lora-controller/reboot.sh");
+  fwrite($rebootFile,"reboot");
+  fclose($rebootFile);
 }
 else if($buttonPressed == "sdSys") {
-  //Restart the packet forwarder
-  shell_exec("echo 1 > /proc/sys/kernel/sysrq");
-  shell_exec("echo s > /proc/sysrq-trigger");
-  shell_exec("echo o > /proc/sysrq-trigger");
+  fwrite($rebootFile,"shutdown");
+  fclose($rebootFile);
 }
 
 
