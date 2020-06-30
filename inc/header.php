@@ -113,10 +113,13 @@ if (php_sapi_name() != "cli") {
             <a class="item menuButt" href="changePassword.php"><strong>Change Password</strong></a>
           </div>
         </div>
-
-
-
         <a class="item menuButt" href="about.php"><strong>About</strong></a>
+        ');
+        if($loggedIn == 1) {
+          echo ('<a class="item menuButt" href="logout.php"><strong>Logout</strong></a>');
+        }
+        echo ('
+
 
 
 </div>

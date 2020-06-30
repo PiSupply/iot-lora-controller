@@ -20,7 +20,7 @@
 include('inc/header.php');
 
 //var_dump($_POST); //For Dev Only
-$_SESSION['iotLoRaGatewayLogin'] = "moo";
+$_SESSION['iotLoRaGatewayLogin'] = "Ya like jazz?";
 session_unset();
 
 echo('
