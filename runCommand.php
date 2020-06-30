@@ -38,19 +38,7 @@ if($loggedIn == 0) {
 <?php
 if($buttonPressed == "rstPkt") {
   //Restart the packet forwarder
-  echo("var timePerTick = 300;");
-}
-else if($buttonPressed == "stpPkt") {
-  //Restart the packet forwarder
-  echo("var timePerTick = 300;");
-}
-else if($buttonPressed == "strPkt") {
-  //Restart the packet forwarder
-  echo("var timePerTick = 300;");
-}
-else if($buttonPressed == "diag") {
-  //Restart the packet forwarder
-  //shell_exec("sudo systemctl start iot-lora-gateway.service");
+  echo("var timePerTick = 600;");
 }
 else if($buttonPressed == "rbtSys") {
   //Restart the packet forwarder
@@ -58,7 +46,7 @@ else if($buttonPressed == "rbtSys") {
 }
 else if($buttonPressed == "sdSys") {
   //Restart the packet forwarder
-    echo("var timePerTick = 300;");
+    echo("var timePerTick = 600;");
 }
 ?>
 
@@ -84,27 +72,15 @@ var countdownTimer = window.setInterval(function () {
 
 if($buttonPressed == "rstPkt") {
   //Restart the packet forwarder
-  echo("<h2>The Packet Forwarder Is Restarting</h2>  <p>This may take around 30 Seconds</p>");
-}
-else if($buttonPressed == "stpPkt") {
-  //Restart the packet forwarder
-  echo("<h2>The Packet Forwarder Is Starting</h2>  <p>This may take around 30 Seconds</p>");
-}
-else if($buttonPressed == "strPkt") {
-  //Restart the packet forwarder
-  echo("<h2>The Packet Forwarder Is Stopping</h2> <p>This may take around 30 Seconds</p>");
-}
-else if($buttonPressed == "diag") {
-  //Restart the packet forwarder
-  //shell_exec("sudo systemctl start iot-lora-gateway.service");
+  echo("<h2>The gateway is performing a soft reboot.</h2>  <p>This may take around 1 Minute</p>");
 }
 else if($buttonPressed == "rbtSys") {
   //Restart the packet forwarder
-  echo("<h2>The gateway is restarting</h2> <p>This may take around 2 Minutes</p>");
+  echo("<h2>The gateway is performing a hard reboot</h2> <p>This may take around 2 Minutes</p>");
 }
 else if($buttonPressed == "sdSys") {
   //Restart the packet forwarder
-  echo("<h2>The gateway is shutting down.</h2>");
+  echo("<h2>The gateway is shutting down.</h2>  <p>To turn back on you will require to now power cycle the gateway.</p>");
 }
 
  ?>
