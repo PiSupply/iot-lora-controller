@@ -115,6 +115,7 @@ if (php_sapi_name() != "cli") {
           <div class="menu">
             <a class="item menuButt" href="systemControls.php"><strong>System Controls</strong></a>
             <a class="item menuButt" href="changePassword.php"><strong>Change Password</strong></a>
+            <a class="item menuButt" href="configureGPS.php"><strong>Configure GPS</strong></a>
           </div>
         </div>');
       }
