@@ -38,7 +38,7 @@ if($loggedIn == 0) {
 <h1>IoT LoRa Gateway Commands</h1>
 
 <div class="ui column segment error message ">
-    <a href="runCommand.php?butt=rbtSys"  class="ui yellow button big fluid ">Soft Restart system</a>
+    <a href="runCommand.php?butt=rstPkt"  class="ui yellow button big fluid ">Soft Restart system</a>
   <strong>Soft Restart Gateway:</strong> Restarts the controller software, packet forwarders & updates the system.
 
 </div>
