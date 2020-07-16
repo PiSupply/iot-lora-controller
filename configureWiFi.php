@@ -65,7 +65,7 @@ if($loggedIn == 0) {
          <br/>
          <div class="field">
           <label for="password">Password:</label> This is the password for your Wi-Fi Network
-          <input type="text" id="passwordWifi" name="passwordWifi" class="form-control" <?php if($configurationFile['wifi']['password']!=null) { echo "value='".$configurationFile['wifi']['password']."'"; }?>/>
+          <input type="text" id="passwordWiFi" name="passwordWiFi" class="form-control" <?php if($configurationFile['wifi']['password']!=null) { echo "value='".$configurationFile['wifi']['password']."'"; }?>/>
          </div>
          <br/>
          <div class="field">
