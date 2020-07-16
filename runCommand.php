@@ -38,15 +38,15 @@ if($loggedIn == 0) {
 <?php
 if($buttonPressed == "rstPkt") {
   //Restart the packet forwarder
-  echo("var timePerTick = 600;");
+  echo("var timePerTick = 900;");
 }
 else if($buttonPressed == "rbtSys") {
   //Restart the packet forwarder
-  echo("var timePerTick = 1200;");
+  echo("var timePerTick = 1500;");
 }
 else if($buttonPressed == "sdSys") {
   //Restart the packet forwarder
-    echo("var timePerTick = 600;");
+    echo("var timePerTick = 1200;");
 }
 ?>
 
@@ -72,11 +72,11 @@ var countdownTimer = window.setInterval(function () {
 
 if($buttonPressed == "rstPkt") {
   //Restart the packet forwarder
-  echo("<h2>The gateway is performing a soft reboot.</h2>  <p>This may take around 1 Minute</p>");
+  echo("<h2>The gateway is performing a soft reboot.</h2>  <p>This may take around 1.5 Minutes</p>");
 }
 else if($buttonPressed == "rbtSys") {
   //Restart the packet forwarder
-  echo("<h2>The gateway is performing a hard reboot</h2> <p>This may take around 2 Minutes</p>");
+  echo("<h2>The gateway is performing a hard reboot</h2> <p>This may take around 3 Minutes</p>");
 }
 else if($buttonPressed == "sdSys") {
   //Restart the packet forwarder
