@@ -34,8 +34,16 @@ if($loggedIn == 0) {
 
 //var_dump($_POST); //For Dev Only
 
-//LTE Settings
-$configurationFile['gps']['enabled'] = $_POST['apn'];
+//GPS Settings
+
+if($_POST['enabled'] == "on") {
+  $configurationFile['gps']['enabled'] = true;
+}
+else {
+  $configurationFile['gps']['enabled'] = false;
+
+}
+
 
 yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configurationFile);
 
