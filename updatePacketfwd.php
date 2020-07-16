@@ -129,5 +129,6 @@ echo('
 '
 );
 
+include('inc/footer.php');
 
  ?>

@@ -52,6 +52,7 @@ echo('
 </div>
 '
 );
+include('inc/footer.php');
 
 
  ?>

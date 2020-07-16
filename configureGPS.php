@@ -35,7 +35,7 @@ if($loggedIn == 0) {
 
 <div class="row align-items-center">
    <div class="text-center">
-     <h1>Wi-Fi Configuration Tool</h1>
+     <h1>GPS Configuration Tool</h1>
    </div>
 </div>
 <div class="row align-items-center">
