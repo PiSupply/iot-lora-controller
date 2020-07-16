@@ -54,8 +54,17 @@ if($loggedIn == 0) {
 <div class="row">
   <div class="coulumn">
      <h1 class="ui top attached block header">Edit config file - GPS</h1>
-     <form action="updateWiFi.php" method="post" class="ui form">
+     <form action="updateGPS.php" method="post" class="ui form">
          <div class="ui bottom attached segment">
+           <div class="field">
+             <label for="enable"  >Enable GPS Module :</label> Enables GPS LoRa Module.
+             <br/><br/>
+             <div class="ui slider checkbox">
+              <input type="checkbox" name="enabled" id="enabled" class="form-control" <?php if($configurationFile['gps']['enabled'] == "true") { echo "checked";}?> >
+              <label>Enable GPS</label>
+             </div>
+            </div>
+            <br/>
 
           <br/>
           <input type="submit" class="ui primary button" value="Update Configuration" >
