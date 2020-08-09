@@ -17,7 +17,6 @@
 *along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-
 include('inc/header.php');
 
 
@@ -29,36 +28,31 @@ if($configurationFile['gateway-info']['initial-setup'] == 0) {
 if($loggedIn == 0) {
   //Send to login page
   header("Location: login.php");
-  die();
+
 }
 
 
+//var_dump($_POST); //For Dev Only
 
-?>
-<h1>IoT LoRa Gateway Commands</h1>
+//LTE Settings
+$configurationFile['lte-modem']['apn'] = $_POST['apn'];
+$configurationFile['lte-modem']['username'] = $_POST['username4'];
+$configurationFile['lte-modem']['password'] = $_POST['password4'];
+$configurationFile['lte-modem']['number'] = $_POST['number'];
 
-<div class="ui column segment error message ">
-    <a href="runCommand.php?butt=rstPkt"  class="ui yellow button big fluid ">Soft Restart system</a>
-  <strong>Soft Restart Gateway:</strong> Restarts the controller software, packet forwarders & updates the system.
 
+yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configurationFile);
+
+echo('
+<div class="row align-items-center">
+   <div class="text-center">
+     <h1>4G Configuration Tool</h1>
+     <h4>Configuration has been written, please reboot the system from the commands tab for the changes to be applied.</h4>
+   </div>
 </div>
-
-<div class="ui column segment error message ">
-    <a href="runCommand.php?butt=rbtSys"  class="ui orange button big fluid ">Hard Restart system</a>
-  <strong>Hard Restart Gateway:</strong> Restarts the entire gateway including networking & linux.
-
-</div>
-
-<div class="ui error message">
-    <a href="runCommand.php?butt=sdSys"  class="ui negative button big fluid">Shutdown system</a>
-    <strong>Shutdown Gateway:</strong> Shuts down the entire system, requires a power cycle to re-turn on.
-</div>
-
-
-
-
-
-
-<?php
+'
+);
 include('inc/footer.php');
-?>
+
+
+ ?>

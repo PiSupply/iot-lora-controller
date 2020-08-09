@@ -1,27 +1,3 @@
-header {
-  margin-bottom:20px;
-}
-.ui.vertical.menu      {
+.ui.menu      {
   background:#03a9f4;
-}
-
-.ui.button.fixedWidth {
-  min-width:250px;
-}
-#logo{
-  width:100%;
-}
-.menuButt {
-  color:#ffffff !important;
-}
-.ui.statistics>.statistic {
-  margin-left:auto;
-  margin-right:auto;
-}
-.ui.positive.message {
-  height:100%;
-}
-
-.pusher {
-  margin-left:210px;
 }

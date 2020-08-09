@@ -25,15 +25,17 @@ include('inc/header.php');
 *
 */
 
-//Linux uptime
-$uptime = shell_exec('uptime -p');
-$packetForwarder = shell_exec('systemctl is-active iot-lora-gateway.service');
-if(strlen($packetForwarder) < 9) {
-  $packetForwarder = 1;
+if($configurationFile['gateway-info']['initial-setup'] == 0) {
+  //Send to first time setup
+  header("Location: firstTimeSetup.php");
 }
-else {
-$packetForwarder = 0;
-  }
+
+if($loggedIn == 0) {
+  //Send to login page
+  header("Location: login.php");
+}
+
+
 
 //Lets check for external internet connectivity by doing a http request to three servers
 $internetCheck1 = file_get_contents('https://1.1.1.1');
@@ -41,95 +43,40 @@ $internetStatus = 0;
 if($internetCheck1 == FALSE) {
   $internetStatus++;
 }
-//If the number is greater than 0 then either one of the sites is down, if all three are down there is likely an internet issue.
-//Get Public IP Address from httpbin
-$gatewayIpAddress = explode(",",json_decode($internetCheck1,true)['origin'])[0];
-
-$configHandler = fopen($configLocation, 'r');
-$currentConfig = fread($configHandler, filesize($configLocation));
-
-$jsonDecoded = json_decode($currentConfig,true)['gateway_conf'];
-$jsonServers = $jsonDecoded['servers'][0];
-$gatewayConfigured = 1;
-if($jsonServers == NULL) {
-  $gatewayConfigured = 0;
-  $jsonServers['serv_gw_id'] = "GATEWAY CONFIG IS MISSING";
-}
-
-
-if($jsonServers['serv_type'] == "ttn") {
-
-//Lets get the data from the NOC api
-$ttnNocStatus = json_decode(file_get_contents('http://noc.thethingsnetwork.org:8085/api/v2/gateways/'.trim($jsonServers['serv_gw_id'])),true);
-
-
-if($ttnNocStatus["rx_ok"]) {
-$packetsRx = $ttnNocStatus["rx_ok"];
-}
-else {
-  $packetsRx = "0";
-}
-if($ttnNocStatus["tx_in"]) {
-  $packetsTx = $ttnNocStatus["tx_in"];
-}
-else {
-$packetsTx = " 0";
-}
-}
 
 $cpuTemp = shell_exec("cat /sys/class/thermal/thermal_zone0/temp");
 $cpuTemp = $cpuTemp/1000;
 
+$totalRam = shell_exec("free -m  | awk '/Mem/{print $3}'");
+$freeRam = shell_exec("free -m  | awk '/Mem/{print $2}'");
+
+//var_dump($totalRam);
+//var_dump($freeRam);
 
 ?>
 <?php
 if($nebra) {echo('<h1>IoT Smart LoRa Gateway</h1>');}
 else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 ?>
-<h2>Gateway ID: <?php echo($jsonServers['serv_gw_id']);?></h2>
-
-<?php
-if($gatewayConfigured == 0) {
-  echo '
-  <div class="ui divided grid stackable">
-    <div class="row">
-        <div class="column wide">
-      <div class="ui error message">
-          <h3>Gateway Is Not Configured!</h3>
-          There is no configuration file detected for this gateway. Please use the change configuration tab to configure this gateway.
-      </div>
-    </div>
-  </div>
-  </div>
-
-   ';
-}
-
-
- ?>
-
+<h2>Gateway Name: <?php echo($configurationFile['gateway-info']['gatway-friendly-name']);?></h2>
+<h3><?php echo($configurationFile['gateway-info']['gatway-description']);?></h3>
 
 <div class="ui divided grid stackable">
 
-    <div class="three column row">
+    <div class="<?php if($configurationFile['gateway-info']['gateway-type'] == 1) { echo('three');} else {echo('two');} ?> column row">
     <div class="column wide">
       <?php
       //Change the alert box's colour based on the status.
       if($internetStatus == 0) {
         echo("<div class=\"ui positive message segment\">");
       }
-      elseif($internetStatus == 3) {
+      else{
         echo("<div class=\"ui error message segment\">");
       }
-      else {
-        echo("<div class=\"ui warning message segment\">");
-      }
       ?>
-
           <h3>Internet Connectivity <i class="globe icon"></i></h3>
             <?php
             //Change the text based on the status.
-
             if($internetStatus == 0) {
               echo("All good!");
             }
@@ -139,35 +86,45 @@ if($gatewayConfigured == 0) {
             ?>
       </div>
     </div>
+
     <div class="column wide">
       <?php
       //Change the alert box's colour based on the status.
-      if($packetForwarder == 1) {
+      if($configurationFile['packet-forwarder-1']['enabled'] == true) {
         echo("<div class=\"ui positive message segment\">");
       }
       else {
-        echo("<div class=\"ui error message segment\">");
+        echo("<div class=\"ui teal message segment\">");
       }
        ?>
-          <h3>Packet Forwarder <i class="microchip icon"></i></h3>
-          The packet forwarder service is <?php if($packetForwarder==0){echo("not ");}?>running.
+          <h3>Packet Forwarder 1<i class="microchip icon"></i></h3>
+          The packet forwarder container is <?php if($packetForwarder==0){echo("not ");}?>running.
       </div>
     </div>
 
     <div class="column wide">
-      <div class="ui info message segment">
-          <h3>Uptime <i class="calendar check icon"></i></h3>
-          This gateway has been online for:<br/>
-          <?php echo($uptime); ?>
+      <?php
+      //Change the alert box's colour based on the status.
+      if($configurationFile['packet-forwarder-2']['enabled'] == true) {
+        echo("<div class=\"ui positive message segment\">");
+      }
+      else {
+        echo("<div class=\"ui teal message segment\">");
+      }
+       ?>
+          <h3>Packet Forwarder 2 <i class="microchip icon"></i></h3>
+          The packet forwarder container is <?php if($packetForwarder==0){echo("not ");}?>running.
       </div>
     </div>
+
+
       </div>
   </div>
 <div class="ui divided grid stackable">
 
 
   <?php
-  if($nebra == 0) {
+  if($configurationFile['gateway-info']['gateway-type'] == 0) {
 
   echo ('
 
@@ -175,7 +132,7 @@ if($gatewayConfigured == 0) {
   <div class="row">
     <div class="column">
     <div class="ui positive message">
-        <strong>Configured Server:</strong> '.$jsonServers['server_address'].'
+        <strong>Configured Server:</strong> '.$configurationFile['packet-forwarder-1']['router'].'
     </div>
   </div>
 </div>
@@ -183,22 +140,24 @@ if($gatewayConfigured == 0) {
 }
 
 else {
+  if($configurationFile['packet-forwarder-1']['enabled'] == true) {
     echo ('
     <div class="row">
     <div class="column">
     <div class="ui positive message">
-        <strong>Concentrator 1 Server:</strong> '.$jsonServers['server_address'].'
+        <strong>Packet Forwarder 1 Server:</strong> '.$configurationFile['packet-forwarder-1']['router'].'
     </div>
   </div>
   </div>
   ');
-  if($concentrator2 == true) {
+}
+  if($configurationFile['packet-forwarder-2']['enabled'] == true) {
       echo ('
 
     <div class="row">
     <div class="column">
     <div class="ui positive message">
-        <strong>Concentrator 2 Server:</strong> '.$jsonServers2['server_address'].'
+        <strong>Packet Forwarder 2 Server:</strong> '.$configurationFile['packet-forwarder-2']['router'].'
     </div>
     </div>
     </div>
@@ -220,68 +179,6 @@ else {
 </div>
 </div>
 </div>
-
-
-<?php
-if($jsonServers['serv_type'] == "ttn" && $nebra == 0) {
-
-echo '
-<br/>
-<hr/>
-<br/>
-<div class="ui divided grid stackable centered">
-
-  <h2>Packet Statistics</h2>
-    <div class="two column row">
-      <div class="column wide">
-<div class="ui statistics">
-  <div class="statistic">
-    <div class="value">
-      <i class="arrow down icon"></i> '.$packetsRx.'
-    </div>
-    <div class="label">
-      Packets Received
-    </div>
-  </div>
-</div>
-</div>
-<div class="column wide">
-<div class="ui statistics">
-  <div class="statistic">
-    <div class="value">
-      <i class="arrow up icon"></i> '.$packetsTx.'
-    </div>
-    <div class="label">
-      Packets Transmitted
-    </div>
-  </div>
-</div>
-
-  </div>
-</div>
-<h4>Packet statistics are from The Things Network Console</h4>
-<br/>
-<h4>
-<a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text=My%20@PiSupply%20IoT%20LoRa%20Gateway%20has%20recieved%20<?php echo $packetsRx;?>%20Packets%20on%20%23thethingsnetwork%20&hashtags=IoTLoraGateway,IoT,TTN,LoRaWAN&related=PiSupply,TheThingsNtwrk"
-  data-size="large"
-  >
-  <link rel="me"
-  href="https://twitter.com/pisupply"
->
-Tweet</a>
-</h4>
-</div>
-
-';
-}
-?>
-
-
-
-
-
-
 
 
 

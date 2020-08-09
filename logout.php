@@ -17,22 +17,23 @@
 *along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-
 include('inc/header.php');
 
-/*
-* Lets load most of the information required to fill this page's details out
-*
-*/
+//var_dump($_POST); //For Dev Only
+$_SESSION['iotLoRaGatewayLogin'] = "Ya like jazz?";
+session_unset();
 
-?>
-<h1>IoT LoRa Gateway Log</h1>
-<h2>Viewing last 3000 lines of log file</h2>
+echo('
+<div class="row align-items-center">
+   <div class="text-center">
+     <h1>You are now logged out.</h1>
+   </div>
+</div>
+'
+);
 
-<iframe src="viewLogData.php" style="width:100%; min-height:500px"></iframe>
 
-
-
-<?php
-include('inc/footer.php');
-?>
+ ?>
+ <?php
+ include('inc/footer.php');
+ ?>

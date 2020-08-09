@@ -1,12 +1,9 @@
 header {
-  margin-bottom:20px;
-}
-.ui.vertical.menu      {
-  background:#8bc34a;
+  margin-bottom:100px;
 }
 
 .ui.button.fixedWidth {
-  min-width:200px;
+  min-width:250px;
 }
 #logo{
   width:100%;

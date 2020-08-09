@@ -17,26 +17,46 @@
 *along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-
 include('inc/header.php');
 
-/*
-* Lets load most of the information required to fill this page's details out
-*
-*/
 
-?>
-<h1>IoT LoRa Gateway</h1>
-<h2>Password Error!</h2>
+if($configurationFile['gateway-info']['initial-setup'] == 0) {
+  //Send to first time setup
+  header("Location: firstTimeSetup.php");
+}
 
-  <div class="ui error message">
-        The Username Password Combination is incorrect! The login is the same details you use to login to your Raspberry Pi.
-    </div>
- <div class="ui info message">
-        Hint: The default Raspberry Pi login is "pi" and "raspberry"
-    </div>
+if($loggedIn == 0) {
+  //Send to login page
+  header("Location: login.php");
+
+}
 
 
-<?php
+//var_dump($_POST); //For Dev Only
+
+//GPS Settings
+
+if($_POST['enabled'] == "on") {
+  $configurationFile['gps']['enabled'] = true;
+}
+else {
+  $configurationFile['gps']['enabled'] = false;
+
+}
+
+
+yaml_emit_file('/opt/iotloragateway/config/gateway_configuration.yml',$configurationFile);
+
+echo('
+<div class="row align-items-center">
+   <div class="text-center">
+     <h1>GPS Configuration Tool</h1>
+     <h4>Configuration has been written, please reboot the system from the commands tab for the changes to be applied.</h4>
+   </div>
+</div>
+'
+);
 include('inc/footer.php');
-?>
+
+
+ ?>
