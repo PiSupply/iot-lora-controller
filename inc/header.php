@@ -91,11 +91,15 @@ if (php_sapi_name() != "cli") {
 
                </a>
              </h6>
-             <a class="nav-link active" href="#">
+             <a class="nav-link active" href=index.php">
                <span data-feather="home"></span>
                Dashboard <span class="sr-only">(current)</span>
              </a>
            </li>
+           ');
+
+           if($loggedIn) {
+             echo('
 
            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
              <span>LoRa Configuration</span>
@@ -105,17 +109,26 @@ if (php_sapi_name() != "cli") {
            </h6>
 
            <li class="nav-item">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="configurePacketForwarder.php?loraModule=1">
                <span data-feather="radio"></span>
                Packet Forwarder 1
              </a>
-           </li>
+           </li>');
+
+           if($nebra && $loggedIn) {
+             echo ('
+
            <li class="nav-item">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="configurePacketForwarder.php?loraModule=2">
                <span data-feather="radio"></span>
                Packet Forwarder 2
              </a>
            </li>
+           ');
+         }
+
+         if($loggedIn) {
+           echo('
 
            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
              <span>WAN Configuration</span>
