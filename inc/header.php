@@ -156,7 +156,7 @@ if (php_sapi_name() != "cli") {
              </a>
            </h6>
            <li class="nav-item">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="systemControls.php">
                <span data-feather="sliders"></span>
                System Controls
              </a>
@@ -165,13 +165,13 @@ if (php_sapi_name() != "cli") {
 
          <ul class="nav flex-column mb-2">
            <li class="nav-item">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="changePassword.php">
                <span data-feather="lock"></span>
                Change Password
              </a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="configureGPS.php">
                <span data-feather="compass"></span>
                Enable / Disable GPS
              </a>
@@ -184,13 +184,13 @@ if (php_sapi_name() != "cli") {
              </a>
            </h6>
            <li class="nav-item">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="about.php">
                <span data-feather="help-circle"></span>
                About
              </a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="logout.php">
                <span data-feather="log-out"></span>
                Logout
              </a>
