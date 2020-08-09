@@ -32,7 +32,7 @@ if($loggedIn == 0) {
 
 
 ?>
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap flex-column pt-3 pb-2 mb-3 border-bottom">
   <h1>4G Module Configuration Tool</h1>
 <div class="row align-items-center">
    <div class="text-center">
@@ -46,9 +46,9 @@ if($loggedIn == 0) {
 
 
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+<div class="d-flex justify-content-between flex-wrap flex-column flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
 
-     <h1 class="ui top attached block header">Edit config file - 4G Module</h1>
+
 
      <form action="update4G.php" method="post">
 
