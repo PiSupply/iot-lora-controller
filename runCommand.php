@@ -103,6 +103,7 @@ if($buttonPressed == "rstPkt") {
 }
 else if($buttonPressed == "rbtSys") {
   //Restart the packet forwarder
+
   fwrite($rebootFile,"reboot");
   fclose($rebootFile);
 }
