@@ -39,46 +39,36 @@ die();
 
 ?>
 
-<div class="row align-items-center">
-   <div class="text-center">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap flex-column pt-3 pb-2 mb-3 border-bottom">
+
      <h1>Login</h1>
-   </div>
-</div>
-<div class="row align-items-center">
-   <div class="text-center">
      <h4>Before continuing you must login to access this LoRa gateway</h4>
+   </div>
+   <div class="d-flex justify-content-between flex-wrap flex-column flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
 
-</div>
-<br>
-
-
-<br/><br/>
-
-<div class="row">
-  <div class="coulumn">
-     <h1 class="ui top attached block header">Login</h1>
      <form action="loginS.php" method="post" class="ui form">
-         <div class="ui bottom attached segment">
 
 
-         <div class="field">
+
+         <div class="form-group row">
           <label for="username">Username:</label> This is your email address.
           <input type="text" id="username" name="username" class="form-control" required/>
          </div>
          <br/>
 
-         <div class="field">
+         <div class="form-group row">
           <label for="password">Password:</label> This is the password you setup when creating the account.
           <input type="password" id="password" name="password" class="form-control" required/>
          </div>
          <br/>
 
 
-          <br/>
-          <input type="submit" class="ui primary button" value="Login" >
+          <div class="form-group row">
+            <input type="submit" class="btn btn-primary" value="Login" >
           </div>
+
          </form>
-       </div>
+
      </div>
 
 
