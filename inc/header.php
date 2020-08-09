@@ -88,7 +88,7 @@ if (php_sapi_name() != "cli") {
              <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                <span>Home</span>
                <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-                 <span data-feather="plus-circle"></span>
+
                </a>
              </h6>
              <a class="nav-link active" href="#">
@@ -100,19 +100,19 @@ if (php_sapi_name() != "cli") {
            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
              <span>LoRa Configuration</span>
              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-               <span data-feather="plus-circle"></span>
+
              </a>
            </h6>
 
            <li class="nav-item">
              <a class="nav-link" href="#">
-               <span data-feather="file"></span>
+               <span data-feather="radio"></span>
                Packet Forwarder 1
              </a>
            </li>
            <li class="nav-item">
              <a class="nav-link" href="#">
-               <span data-feather="shopping-cart"></span>
+               <span data-feather="radio"></span>
                Packet Forwarder 2
              </a>
            </li>
@@ -120,19 +120,19 @@ if (php_sapi_name() != "cli") {
            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
              <span>WAN Configuration</span>
              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-               <span data-feather="plus-circle"></span>
+
              </a>
            </h6>
 
            <li class="nav-item">
              <a class="nav-link" href="#">
-               <span data-feather="users"></span>
+               <span data-feather="bar-chart"></span>
                4G Module
              </a>
            </li>
            <li class="nav-item">
              <a class="nav-link" href="#">
-               <span data-feather="bar-chart-2"></span>
+               <span data-feather="wifi"></span>
                Wireless Networks
              </a>
            </li>
@@ -140,12 +140,11 @@ if (php_sapi_name() != "cli") {
            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
              <span>System Configuration</span>
              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-               <span data-feather="plus-circle"></span>
              </a>
            </h6>
            <li class="nav-item">
              <a class="nav-link" href="#">
-               <span data-feather="layers"></span>
+               <span data-feather="sliders"></span>
                System Controls
              </a>
            </li>
@@ -154,13 +153,13 @@ if (php_sapi_name() != "cli") {
          <ul class="nav flex-column mb-2">
            <li class="nav-item">
              <a class="nav-link" href="#">
-               <span data-feather="file-text"></span>
+               <span data-feather="key"></span>
                Change Password
              </a>
            </li>
            <li class="nav-item">
              <a class="nav-link" href="#">
-               <span data-feather="file-text"></span>
+               <span data-feather="globe"></span>
                Enable / Disable GPS
              </a>
            </li>
@@ -168,18 +167,18 @@ if (php_sapi_name() != "cli") {
            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
              <span>Misc</span>
              <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-               <span data-feather="plus-circle"></span>
+
              </a>
            </h6>
            <li class="nav-item">
              <a class="nav-link" href="#">
-               <span data-feather="file-text"></span>
+               <span data-feather="help-circle"></span>
                About
              </a>
            </li>
            <li class="nav-item">
              <a class="nav-link" href="#">
-               <span data-feather="file-text"></span>
+               <span data-feather="log-out"></span>
                Logout
              </a>
            </li>
