@@ -153,7 +153,7 @@ if (php_sapi_name() != "cli") {
          <ul class="nav flex-column mb-2">
            <li class="nav-item">
              <a class="nav-link" href="#">
-               <span data-feather="key"></span>
+               <span data-feather="lock"></span>
                Change Password
              </a>
            </li>
