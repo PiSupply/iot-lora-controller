@@ -26,10 +26,10 @@ include('inc/header.php');
 */
 
 ?>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
 <h1>About IoT LoRa Controller Software</h1>
 
-
-  <div class="ui divided grid stackable">
     <div class="row">
         <div class="column wide">
           <h3>About this software:</h3>
@@ -103,8 +103,6 @@ include('inc/header.php');
 </div>
 
 
-
-  </div>
 
 <?php
 include('inc/footer.php');
