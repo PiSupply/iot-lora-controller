@@ -20,13 +20,24 @@
 
 if (php_sapi_name() != "cli") {
   echo('</main>
-  <br/><br/><br/><br/>
-  <hr/>
-  <footer>
-  <h5>IoT LoRa Gateway Controller, &copy; Nebra LTD. T/A Pi Supply 2018-2020.</h5>
-  <h6>Last Updated 2020-07-16-01</h6>
-  </footer>
+    <footer class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top">
+        <h5>IoT LoRa Gateway Controller, &copy; Nebra LTD. T/A Pi Supply 2018-2020.</h5>
+        <h6>Last Updated 2020-07-16-01</h6>
+
+      </div>
+
+    </footer>
+
+
+
   </div>
-  </body>');
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script>window.jQuery || document.write(\'<script src="js/vendor/jquery.slim.min.js"><\/script>\')</script><script src="js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="dashboard.js"></script></body>
+</html>');
 }
  ?>

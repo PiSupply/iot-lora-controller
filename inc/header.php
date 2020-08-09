@@ -78,70 +78,119 @@ if (php_sapi_name() != "cli") {
        </nav>
 
 
+ <div class="container-fluid">
+   <div class="row">
+     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+       <div class="sidebar-sticky pt-3">
+         <ul class="nav flex-column">
+           <li class="nav-item">
 
+             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+               <span>Home</span>
+               <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+                 <span data-feather="plus-circle"></span>
+               </a>
+             </h6>
+             <a class="nav-link active" href="#">
+               <span data-feather="home"></span>
+               Dashboard <span class="sr-only">(current)</span>
+             </a>
+           </li>
 
+           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+             <span>LoRa Configuration</span>
+             <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+               <span data-feather="plus-circle"></span>
+             </a>
+           </h6>
 
+           <li class="nav-item">
+             <a class="nav-link" href="#">
+               <span data-feather="file"></span>
+               Packet Forwarder 1
+             </a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#">
+               <span data-feather="shopping-cart"></span>
+               Packet Forwarder 2
+             </a>
+           </li>
 
+           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+             <span>WAN Configuration</span>
+             <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+               <span data-feather="plus-circle"></span>
+             </a>
+           </h6>
 
-        <div class="header item"><img id="logo" src="img/logo.png"/></div>
-        <a class="item menuButt" href="index.php"><strong>Gateway Status</strong></a>');
-        if($loggedIn) {
-          echo('
-        <div class="ui dropdown item menuButt">
-          <strong>LoRa Configuration</strong>
-          <i class="dropdown icon menuButt"></i>
-          <div class="menu">
-            <a class="item menuButt" href="configurePacketForwarder.php?loraModule=1"><strong>Configure Packet Forwarder 1</strong></a>
-            ');
-          }
+           <li class="nav-item">
+             <a class="nav-link" href="#">
+               <span data-feather="users"></span>
+               4G Module
+             </a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#">
+               <span data-feather="bar-chart-2"></span>
+               Wireless Networks
+             </a>
+           </li>
 
-            if($nebra && $loggedIn) {
-              echo('<a class="item menuButt" href="configurePacketForwarder.php?loraModule=2"><strong>Configure Packet Forwarder 2</strong></a>');
-            }
+           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+             <span>System Configuration</span>
+             <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+               <span data-feather="plus-circle"></span>
+             </a>
+           </h6>
+           <li class="nav-item">
+             <a class="nav-link" href="#">
+               <span data-feather="layers"></span>
+               System Controls
+             </a>
+           </li>
+         </ul>
 
-            if($loggedIn) {
-            echo('
-            <!--<a class="item menuButt" href=".php"><strong>Gateway Bridge</strong></a>-->
-          </div>
-        </div>
-        <div class="ui dropdown item menuButt">
-          <strong>WAN Configuration</strong>
-          <i class="dropdown icon menuButt"></i>
-          <div class="menu">
-            <a class="item menuButt" href="configure4G.php"><strong>4G Module Configuration</strong></a>
-            <a class="item menuButt" href="configureWiFi.php"><strong>WiFi Configuration</strong></a>
-          </div>
-        </div>
-        <div class="ui dropdown item menuButt">
-          <strong>System Configuration</strong>
-          <i class="dropdown icon menuButt"></i>
-          <div class="menu">
-            <a class="item menuButt" href="systemControls.php"><strong>System Controls</strong></a>
-            <a class="item menuButt" href="changePassword.php"><strong>Change Password</strong></a>
-            <a class="item menuButt" href="configureGPS.php"><strong>Configure GPS</strong></a>
-          </div>
-        </div>');
-      }
+         <ul class="nav flex-column mb-2">
+           <li class="nav-item">
+             <a class="nav-link" href="#">
+               <span data-feather="file-text"></span>
+               Change Password
+             </a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#">
+               <span data-feather="file-text"></span>
+               Enable / Disable GPS
+             </a>
+           </li>
 
-        echo('<a class="item menuButt" href="about.php"><strong>About</strong></a>');
-        if($loggedIn) {
-          echo ('<a class="item menuButt" href="logout.php"><strong>Logout</strong></a>');
-        }
-        echo ('
+           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+             <span>Misc</span>
+             <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+               <span data-feather="plus-circle"></span>
+             </a>
+           </h6>
+           <li class="nav-item">
+             <a class="nav-link" href="#">
+               <span data-feather="file-text"></span>
+               About
+             </a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#">
+               <span data-feather="file-text"></span>
+               Logout
+             </a>
+           </li>
+         </ul>
+       </div>
+     </nav>
 
-
-
-</div>
-<script>
-$(".ui.dropdown")
-  .dropdown()
-;
-</script>
-    </header>
 
 
 <!-- Begin page content -->
-<div class="ui container">
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
 
 ');
 }
