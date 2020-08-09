@@ -159,7 +159,7 @@ if (php_sapi_name() != "cli") {
            </li>
            <li class="nav-item">
              <a class="nav-link" href="#">
-               <span data-feather="globe"></span>
+               <span data-feather="compass"></span>
                Enable / Disable GPS
              </a>
            </li>
