@@ -114,6 +114,7 @@ if (php_sapi_name() != "cli") {
                Packet Forwarder 1
              </a>
            </li>');
+         }
 
            if($nebra && $loggedIn) {
              echo ('
@@ -216,6 +217,6 @@ if (php_sapi_name() != "cli") {
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
 
 ');
-}
+
 
 ?>
