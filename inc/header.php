@@ -125,13 +125,13 @@ if (php_sapi_name() != "cli") {
            </h6>
 
            <li class="nav-item">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="configure4G.php">
                <span data-feather="bar-chart"></span>
                4G Module
              </a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="#">
+             <a class="nav-link" href="configureWiFi.php">
                <span data-feather="wifi"></span>
                Wireless Networks
              </a>

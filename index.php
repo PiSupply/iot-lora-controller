@@ -54,14 +54,22 @@ $freeRam = shell_exec("free -m  | awk '/Mem/{print $2}'");
 //var_dump($freeRam);
 
 ?>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
 <?php
 if($nebra) {echo('<h1>IoT Smart LoRa Gateway</h1>');}
 else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 ?>
+</div>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+
 <h2>Gateway Name: <?php echo($configurationFile['gateway-info']['gatway-friendly-name']);?></h2>
 <h3><?php echo($configurationFile['gateway-info']['gatway-description']);?></h3>
+</div>
 
-<div class="ui divided grid stackable">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+
 
     <div class="<?php if($configurationFile['gateway-info']['gateway-type'] == 1) { echo('three');} else {echo('two');} ?> column row">
     <div class="column wide">
@@ -120,7 +128,8 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 
       </div>
   </div>
-<div class="ui divided grid stackable">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+      
 
 
   <?php
