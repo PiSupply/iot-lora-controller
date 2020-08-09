@@ -40,46 +40,49 @@ if($_SESSION['iotLoRaGatewayLogin']) {
 
 if (php_sapi_name() != "cli") {
   echo ('
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-
-    <title>IoTLoRaGateway Management</title>
-
-    <!-- Bootstrap core CSS -->
-
-    <link href="css/semantic.min.css" rel="stylesheet">
-     <link href="css/custom.css" rel="stylesheet">
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="IoTLoRaGateway Management">
+      <meta name="author" content="Ryan Walmsley">
+      <title>IoTLoRaGateway Management</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/custom.css" rel="stylesheet">
     ');
-
     if($nebra) { echo ('   <link href="css/custom-nebra.css" rel="stylesheet">  ');}
     else { echo ('   <link href="css/custom-hat.css" rel="stylesheet">  '); }
 
-
-
     echo ('
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/semantic.min.js"></script>
-
-
   </head>
 
-
   <body>
- <div class = "pusher">
-    <header>
-      <!-- Fixed navbar -->
-      <div class="ui fixed menu">
-      ');
-      if($nebra) { echo ('<div class="header item"><img id="logo" src="img/nebra-white.png"/></div>');}
 
+  <div class = "pusher">
+    <header>
+
+    <nav class="navbar sticky-top flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">
+
+
+      ');
+      if($nebra) { echo ('<img id="logo" src="img/nebra-white.png"/>');}
+      else { echo ('<img id="logo" src="img/nebra-white.png"/>'); }
        echo ('
+       </a>
+       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <a class="col-md-3 col-lg-2 mr-0 px-3" href="#"><img id="logo" src="img/logo.png"/></a>
+       </nav>
+
+
+
+
+
+
+
         <div class="header item"><img id="logo" src="img/logo.png"/></div>
         <a class="item menuButt" href="index.php"><strong>Gateway Status</strong></a>');
         if($loggedIn) {
