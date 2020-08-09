@@ -34,14 +34,12 @@ if($loggedIn == 0) {
 ?>
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap flex-column pt-3 pb-2 mb-3 border-bottom">
   <h1>4G Module Configuration Tool</h1>
-<div class="row align-items-center">
-   <div class="text-center">
+
+
      <h4>4G Module Configuration</h4>
      <h4>This page allows you to configure the settings for the 4G module.</h4>
       <h5>We've created a handy list of 4G Provider information over on <a href="https://docs.google.com/spreadsheets/d/1Na2VgUGWpaG3TpeBZ4gllDe2FNtIHQMS-gvG5rw6kd0/edit?usp=sharing">our documentation</a> for you to use.
-     </div>
 
-</div>
 </div>
 
 
