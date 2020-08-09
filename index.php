@@ -64,22 +64,19 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
 
-<h2>Gateway Name: <?php echo($configurationFile['gateway-info']['gatway-friendly-name']);?></h2>
-<h3><?php echo($configurationFile['gateway-info']['gatway-description']);?></h3>
+<h4>Gateway Name: <?php echo($configurationFile['gateway-info']['gatway-friendly-name']);?></h4>
+<h4>Description: <?php echo($configurationFile['gateway-info']['gatway-description']);?></h4>
 </div>
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+<div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3">
 
-
-    <div class="<?php if($configurationFile['gateway-info']['gateway-type'] == 1) { echo('three');} else {echo('two');} ?> column row">
-    <div class="column wide">
       <?php
       //Change the alert box's colour based on the status.
       if($internetStatus == 0) {
-        echo("<div class=\"alert alert-success\">");
+        echo("<div class=\"alert alert-success flex-fill\">");
       }
       else{
-        echo("<div class=\"alert alert-warning\">");
+        echo("<div class=\"alert alert-warning flex-fill\">");
       }
       ?>
           <h3>Internet Connectivity <span data-feather="globe"></span></i></h3>
@@ -93,19 +90,17 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
             }
             ?>
       </div>
-    </div>
 
-    <div class="column wide">
       <?php
       //Change the alert box's colour based on the status.
       if($configurationFile['packet-forwarder-1']['enabled'] == true) {
-        echo("<div class=\"alert alert-success\">");
+        echo("<div class=\"alert alert-success flex-fill\">");
       }
       else {
-        echo("<div class=\"alert alert-info\">");
+        echo("<div class=\"alert alert-info flex-fill\">");
       }
        ?>
-          <h3>Packet Forwarder 1<span data-feather="radio"></span></h3>
+          <h3>Packet Forwarder 1 <span data-feather="radio"></span></h3>
           The packet forwarder container is <?php if($packetForwarder==0){echo("not ");}?>running.
       </div>
     </div>
@@ -114,10 +109,10 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
       <?php
       //Change the alert box's colour based on the status.
       if($configurationFile['packet-forwarder-2']['enabled'] == true) {
-        echo("<div class=\"alert alert-success\">");
+        echo("<div class=\"alert alert-success flex-fill\">");
       }
       else {
-        echo("<div class=\"alert alert-info\">");
+        echo("<div class=\"alert alert-info flex-fill\">");
       }
        ?>
           <h3>Packet Forwarder 2 <span data-feather="radio"></span></h3>
