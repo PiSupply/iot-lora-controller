@@ -64,8 +64,8 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
 
-<h4>Gateway Name: <?php echo($configurationFile['gateway-info']['gatway-friendly-name']);?></h4>
-<h4>Description: <?php echo($configurationFile['gateway-info']['gatway-description']);?></h4>
+<h4><b>Gateway Name:</b> <?php echo($configurationFile['gateway-info']['gatway-friendly-name']);?></h4>
+<h4><b>Description:</b> <?php echo($configurationFile['gateway-info']['gatway-description']);?></h4>
 </div>
 
 <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3">
@@ -121,10 +121,9 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 
 
 
+
+
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-
-
-
   <?php
   if($configurationFile['gateway-info']['gateway-type'] == 0) {
 
@@ -144,50 +143,41 @@ else {echo('<h1>IoT LoRa Gateway Status Page</h1>');}
 else {
   if($configurationFile['packet-forwarder-1']['enabled'] == true) {
     echo ('
-    <div class="row">
-    <div class="column">
-    <div class="ui positive message">
+
+
+    <div class="alert alert-info flex-fill">
         <strong>Packet Forwarder 1 Server:</strong> '.$configurationFile['packet-forwarder-1']['router'].'
     </div>
-  </div>
-  </div>
+
   ');
 }
   if($configurationFile['packet-forwarder-2']['enabled'] == true) {
       echo ('
 
-    <div class="row">
-    <div class="column">
-    <div class="ui positive message">
+
+  <div class="alert alert-info flex-fill">
         <strong>Packet Forwarder 2 Server:</strong> '.$configurationFile['packet-forwarder-2']['router'].'
-    </div>
-    </div>
+
     </div>
     ');
     }
 }
 ?>
+</div>
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
 
-<div class="row">
-  <div class="column">
-  <div class="ui info message">
+  <div class="alert alert-info flex-fill">
       <strong>CPU Temperature:</strong>
-      <div class="progress-bar" id="progressBar" data-percent="<?php echo($cpuTemp); ?>">
-        <div class="bar"></div>
 
-        <div class="label"><?php echo($cpuTemp); ?> Degrees C</div>
+      <div class="progress" style="height: 30px;">
+        <div class="progress-bar" role="progressbar" style="width: <?php echo($cpuTemp); ?>%;" aria-valuenow="<?php echo($cpuTemp); ?>" aria-valuemin="0" aria-valuemax="80"><?php echo($cpuTemp); ?> Degrees C</div>
       </div>
+
   </div>
+
 </div>
 </div>
-</div>
 
-
-
-
-<script>
-$('#progressBar').progress();
-</script>
 <?php
 include('inc/footer.php');
 ?>
