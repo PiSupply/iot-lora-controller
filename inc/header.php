@@ -67,8 +67,8 @@ if (php_sapi_name() != "cli") {
 
 
       ');
-      if($nebra) { echo ('<img id="logo" src="img/nebra-white.png"/>');}
-      else { echo ('<img id="logo" src="img/nebra-white.png"/>'); }
+      if($nebra) { echo ('<img id="logo" src="img/nebra.png"/>');}
+      else { echo ('<img id="logo" src="img/pisupply.png"/>'); }
        echo ('
        </a>
        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
