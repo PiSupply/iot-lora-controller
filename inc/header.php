@@ -91,7 +91,7 @@ if (php_sapi_name() != "cli") {
 
                </a>
              </h6>
-             <a class="nav-link active" href=index.php">
+             <a class="nav-link active" href="index.php">
                <span data-feather="home"></span>
                Dashboard <span class="sr-only">(current)</span>
              </a>
