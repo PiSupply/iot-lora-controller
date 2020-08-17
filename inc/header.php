@@ -76,7 +76,7 @@ if (php_sapi_name() != "cli") {
        </button>
        <a class="col-md-3 col-lg-2 mr-0 px-3" href="#"><img id="logo" src="img/logo.png"/></a>
        </nav>
-
+</header>
 
  <div class="container-fluid">
    <div class="row">
