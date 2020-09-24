@@ -33,54 +33,46 @@ if($loggedIn == 0) {
 
 ?>
 
-<div class="row align-items-center">
-   <div class="text-center">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap flex-column pt-3 pb-2 mb-3 border-bottom">
+
      <h1>Wi-Fi Configuration Tool</h1>
-   </div>
-</div>
-<div class="row align-items-center">
-   <div class="text-center">
 
      <h4>This page allows you to configure the settings for Wi-Fi.</h4>
       <h5>This will configure Wi-Fi on Raspberry Pi, if using the Nebra Gateway you will need to insert a Wi-Fi Adapter</h5>
      </div>
 
 </div>
-<br>
+<div class="d-flex justify-content-between flex-wrap flex-column flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
 
 
-<br/><br/>
-
-<div class="row">
-  <div class="coulumn">
-     <h1 class="ui top attached block header">Edit config file - Wi-Fi</h1>
-     <form action="updateWiFi.php" method="post" class="ui form">
-         <div class="ui bottom attached segment">
+     <form action="updateWiFi.php" method="post">
 
 
-         <div class="field">
-          <label for="SSID">SSID:</label> Name of your Wi-Fi Network
+         <div class="form-group row">
+          <b>SSID:</b> Name of your Wi-Fi Network
           <input type="text" id="SSID" name="SSID" class="form-control" required <?php if($configurationFile['wifi']['ssid']!=null) { echo "value='".$configurationFile['wifi']['ssid']."'"; }?>/>
          </div>
-         <br/>
-         <div class="field">
-          <label for="password">Password:</label> This is the password for your Wi-Fi Network
+
+        <div class="form-group row">
+          <b>Password:</b> This is the password for your Wi-Fi Network
           <input type="text" id="passwordWiFi" name="passwordWiFi" class="form-control" <?php if($configurationFile['wifi']['password']!=null) { echo "value='".$configurationFile['wifi']['password']."'"; }?>/>
          </div>
-         <br/>
-         <div class="field">
-          <label for="password">Region Code:</label> This is the 2 letter Region Code, you can find your one <a href="https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes">Here</a>
+
+         <div class="form-group row">
+          <b>Region Code:</b> This is the 2 letter Region Code, you can find your one <a href="https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes">Here</a>
           <input type="text" id="region" name="region" class="form-control" <?php if($configurationFile['wifi']['region']!=null) { echo "value='".$configurationFile['wifi']['region']."'"; }?>/>
          </div>
-         <br/>
 
 
-          <br/>
-          <input type="submit" class="ui primary button" value="Update Configuration" >
+
+          <div class="form-group row">
+          <input type="submit" class="btn btn-primary" value="Update Configuration" >
           </div>
          </form>
        </div>
      </div>
+    </div>
+
 
 
 
