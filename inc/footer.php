@@ -23,7 +23,7 @@ if (php_sapi_name() != "cli") {
     <footer class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-top">
         <h5>IoT LoRa Gateway Controller, &copy; Nebra LTD. T/A Pi Supply 2018-2020.</h5>
-        <h6>Last Updated 2020-08-09-2015</h6>
+        <h6>Last Updated 2020-09-24-2132</h6>
 
       </div>
 
