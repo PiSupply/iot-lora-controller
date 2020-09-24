@@ -25,8 +25,22 @@ include('inc/header.php');
 *
 */
 
+if($configurationFile['gateway-info']['initial-setup'] == 0) {
+  //Send to first time setup
+  header("Location: firstTimeSetup.php");
+}
+
+if($loggedIn == 0) {
+  //Send to login page
+  header("Location: login.php");
+}
+
+
 ?>
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+
+<div class="d-flex justify-content-between flex-wrap flex-column flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+
 
 <h1>About IoT LoRa Controller Software</h1>
 
@@ -39,8 +53,11 @@ include('inc/header.php');
     </div>
   </div>
 
+</div>
 
-  <div class="row">
+<div class="d-flex justify-content-between flex-wrap flex-column flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+
+<div class="row">
       <div class="column wide">
         <h3>System Information:</h3>
         <h5>Please send these to technical support if requested</h5>
@@ -68,6 +85,11 @@ include('inc/header.php');
 
   </div>
 </div>
+</div>
+
+<div class="d-flex justify-content-between flex-wrap flex-column flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+
+
 
 
   <div class="row">
@@ -93,12 +115,18 @@ include('inc/header.php');
 
   </div>
 </div>
+</div>
+
+<div class="d-flex justify-content-between flex-wrap flex-column flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+
+
 
 <div class="row">
     <div class="column wide">
       <h3>Thanks:</h3>
       <p>A special thanks to all of our LoRa Beta Testers for providing feedback. And Jac Kersing (@Kersing) for the packet forwarding software.</p>
 
+</div>
 </div>
 </div>
 
